@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 562895923513549541}
+  - component: {fileID: 3708102439167098927}
   m_Layer: 0
   m_Name: RobberHolder_L_45
   m_TagString: Untagged
@@ -31,6 +32,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3708102439167098927
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649074317698297661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38d0c37d9bb20fc4ab1de8fff4f23661, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5524685123789251777
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,9 +63,10 @@ GameObject:
   - component: {fileID: 1218596464636494257}
   - component: {fileID: 3601036751854812203}
   - component: {fileID: 6083502922368167723}
+  - component: {fileID: 7435222123396950917}
   m_Layer: 0
-  m_Name: Robbers
-  m_TagString: Untagged
+  m_Name: reflector
+  m_TagString: ref
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,8 +79,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5524685123789251777}
   m_LocalRotation: {x: -0.6532815, y: 0.27059805, z: 0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 80, y: 20, z: 25}
+  m_LocalPosition: {x: 0, y: -0.19, z: 0}
+  m_LocalScale: {x: 50, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 562895923513549541}
   m_RootOrder: 0
@@ -92,7 +113,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0939d1f8fb8985949a546d68929bd771, type: 2}
-  - {fileID: 2100000, guid: 92a4a705cdc617f48b157f752c1468ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,3 +148,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2353068579302347406, guid: df4ea2d3d5235184995d9b5c33f170b2, type: 3}
+--- !u!114 &7435222123396950917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524685123789251777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae9c37e1c9077e4c909c24b6fb723d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedReflectors: {fileID: 11400000, guid: 881fe010af651264b868564f9e2548df, type: 2}
+  force: 0
+  pointvalue: 0
+  animator: {fileID: 3708102439167098927}
+  spawnBall: 0
+  extras: {fileID: 0}
