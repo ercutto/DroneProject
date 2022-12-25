@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3141071434412188250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871623347837435257}
+  m_Layer: 0
+  m_Name: holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1871623347837435257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141071434412188250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2847015999979837123}
+  m_Father: {fileID: 6318433597229459748}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3716549145799575836
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6318433597229459748}
+  - component: {fileID: 8513837720284892535}
   m_Layer: 0
   m_Name: RectangleHolder_V
   m_TagString: Untagged
@@ -27,10 +59,29 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2847015999979837123}
+  - {fileID: 1871623347837435257}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8513837720284892535
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716549145799575836}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38d0c37d9bb20fc4ab1de8fff4f23661, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4325575138648416971
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +94,7 @@ GameObject:
   - component: {fileID: 9078505468874746674}
   - component: {fileID: 7813340134076008168}
   - component: {fileID: 2388226922128372129}
+  - component: {fileID: 5779709607730339370}
   m_Layer: 0
   m_Name: RectangleObject
   m_TagString: Untagged
@@ -61,7 +113,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 25}
   m_Children: []
-  m_Father: {fileID: 6318433597229459748}
+  m_Father: {fileID: 1871623347837435257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -45, z: 0}
 --- !u!33 &9078505468874746674
@@ -92,7 +144,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0939d1f8fb8985949a546d68929bd771, type: 2}
-  - {fileID: 2100000, guid: 92a4a705cdc617f48b157f752c1468ed, type: 2}
+  - {fileID: 2100000, guid: 0939d1f8fb8985949a546d68929bd771, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,3 +180,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3981393626185203953, guid: df4ea2d3d5235184995d9b5c33f170b2, type: 3}
+--- !u!114 &5779709607730339370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4325575138648416971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae9c37e1c9077e4c909c24b6fb723d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedReflectors: {fileID: 11400000, guid: 881fe010af651264b868564f9e2548df, type: 2}
+  force: 0
+  pointvalue: 0
+  animator: {fileID: 8513837720284892535}
+  spawnBall: 0
+  extras: {fileID: 0}

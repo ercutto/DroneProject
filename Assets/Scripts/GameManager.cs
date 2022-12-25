@@ -7,8 +7,9 @@ namespace PinBall {
     {
         #region Public
         public static GameManager _GameManager;
-        [Tooltip("ScoreText value is: GameManager.currentScore, MultiplierText value is Gamemanager.Bonus")] public Text scoreText, bonusText,ballCountText;
+        [Tooltip("ScoreText value is: GameManager.currentScore, MultiplierText value is Gamemanager.Bonus")] public Text scoreText, bonusText,ballCountText,machineScore,machineBonus,machineBallCount,messageText;
         public Color red, blue;
+        public MessageTexts messageTexts;
         public int ballMax=3;
         public int currentBall;
         public int totalAmountOfBall;
@@ -22,6 +23,7 @@ namespace PinBall {
         [Tooltip("CanNotChange (private)")] [SerializeField] private float bonus;
         //[Tooltip("CanNotChange (private)")] [SerializeField] private int countOfHit;
         [Tooltip("CanNotChange (private)")] [SerializeField] private bool countDown;
+        private string scoreString, bonusString;
         public Extras extras;
         #endregion
         private void Awake()
@@ -76,17 +78,36 @@ namespace PinBall {
         public void AddScore(float addScore)
         {
 
-            if (countDown) { /*countOfHit++;*/ bonus += addScore; bonusTime = 0; } else { countDown = true; }
+            if (countDown)
+            { /*countOfHit++;*/ bonus += addScore;
+                bonusString = bonus.ToString(); bonusTime = 0;
+                if (bonus >= 1000)
+                {
+                    int i = Random.Range(0, messageTexts.messages.Length);
+                    messageText.text = messageTexts.messages[i];
+                }
+                else
+                {
+                    messageText.text = "work more";
+                }
+            }
+            else
+            {
+                countDown = true;
+            }
 
             ToShakeText();
             currentScore += addScore;
-
+            scoreString = currentScore.ToString();
 
         }
         void ChangeScore()
         {
-            bonusText.text = bonus.ToString() + " +";
-            scoreText.text = currentScore.ToString() + pts;
+            bonusText.text = bonusString+ " +";
+            machineBonus.text = bonusString + " +";
+            scoreText.text = scoreString + pts;
+            machineScore.text = scoreString + pts;
+           
         }
         #region Reset
         void ResetGameVariables()
@@ -146,6 +167,7 @@ namespace PinBall {
             }
 
             ballCountText.text = currentBall.ToString();
+            machineBallCount.text = currentBall.ToString();
 
         }
         public void TotalBallCount(int amount)
