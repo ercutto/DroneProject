@@ -14,6 +14,7 @@ namespace PinBall {
         public int currentBall;
         public int totalAmountOfBall;
         public bool ballFinished,NoMoreBallOnScene;
+        public GameObject table;//for rotate table on play mode
         #endregion
         #region Private
 
@@ -39,6 +40,11 @@ namespace PinBall {
         // Start is called before the first frame update
         void Start()
         {
+            if (Application.isPlaying)//for editing rotates table!
+            {
+                table.transform.Rotate(-45, 0, 0);
+            }
+
 
             ResetGameVariables();
 

@@ -21,6 +21,7 @@ namespace PinBall{
         private GameManager gameManager;
         private Extras extras;
         public bool thisIsMainBall;
+        public float addSpeed,maxSpeed;
    
         
 
@@ -34,6 +35,7 @@ namespace PinBall{
             isOnPull = false;
             isGameStart = false;
             hitToReflector = false;
+            addSpeed = 2;
             extras = FindObjectOfType<Extras>();
             Invoke(nameof(StartGame), startTime);
         }
@@ -45,20 +47,33 @@ namespace PinBall{
         // Update is called once per frame
         void Update()
         {
+            Ball_movement();
+
+
+        }
+        void Ball_movement()
+        {
             if (!isGameStart)
             {
                 return;
             }
             else
             {
+                if (Input.GetKey(KeyCode.Space) && isOnPull)
+                {
+                    //800
+                    if (addSpeed < maxSpeed)
+                        addSpeed += 10f;
 
+                }
 
                 if (Input.GetKeyUp(KeyCode.Space) && isOnPull)
                 {
+                    //800
 
-                    Rb.AddForce(Vector3.up * 800);
-                    Rb.AddForce(Vector3.forward * 800);
-
+                    Rb.AddForce(Vector3.up * addSpeed);
+                    Rb.AddForce(Vector3.forward * addSpeed);
+                    addSpeed = 2;
                 }
 
                 if (hitToReflector)
@@ -73,8 +88,6 @@ namespace PinBall{
 
 
             }
-
-
         }
         private void OnTriggerEnter(Collider other)
         {
@@ -122,8 +135,7 @@ namespace PinBall{
                 hitToReflector = true;
                 Reflector reflector = collision.gameObject.GetComponent<Reflector>();
                 currentHitValue = reflector.force;
-                //point += reflector.pointvalue;
-                //gameManager.AddScore(point);
+      
 
             }
             else if (collision.gameObject.CompareTag("keeper"))

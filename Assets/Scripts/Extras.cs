@@ -14,6 +14,7 @@ namespace PinBall
         public Material extraBallMaterial;
         public GameObject spawnExtraBall_Pos, spawnMainBall_Pos;
         public bool isSpawned,isMainBallSpawned,ballFinished;
+        public GameObject[] ControlledObjects;
         
         // Start is called before the first frame update
         void Start()
@@ -21,8 +22,8 @@ namespace PinBall
             gameManager = FindObjectOfType<GameManager>();
             isSpawned = true;
             isMainBallSpawned = true;
-         
             Spawnball();
+            InvokeRepeating(nameof(Control_Objects), 1, 2);
         }
 
         // Update is called once per frame
@@ -35,10 +36,14 @@ namespace PinBall
             if (isSpawned) { return; }
             else
             {
-                clone= Instantiate(basic_ball, spawnExtraBall_Pos.transform.position, transform.rotation);
-                clone.GetComponent<BallHit>().thisIsMainBall = false;
-                clone.GetComponent<MeshRenderer>().material = extraBallMaterial;
-                gameManager.TotalBallCount(1);
+                if (gameManager.totalAmountOfBall < 2)
+                {
+                    clone = Instantiate(basic_ball, spawnExtraBall_Pos.transform.position, transform.rotation);
+                    clone.GetComponent<BallHit>().thisIsMainBall = false;
+                    clone.GetComponent<MeshRenderer>().material = extraBallMaterial;
+                    gameManager.TotalBallCount(1);
+                }
+               
             }
             isSpawned = true;
 
@@ -57,6 +62,25 @@ namespace PinBall
 
                 }
                 isMainBallSpawned = true;
+            }
+            
+        }
+        void Control_Objects()
+        {
+            int rand = Random.Range(0, ControlledObjects.Length);
+            foreach (var item in ControlledObjects)
+            {
+                if(item!= ControlledObjects[rand])
+                {
+                    item.SetActive(false);
+
+                }
+                else
+                {
+                    item.SetActive(true);
+
+                }
+
             }
             
         }

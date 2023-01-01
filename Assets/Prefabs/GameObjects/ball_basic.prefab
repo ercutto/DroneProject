@@ -129,3 +129,5 @@ MonoBehaviour:
   startTime: 0
   point: 0
   thisIsMainBall: 1
+  addSpeed: 2
+  maxSpeed: 1500
