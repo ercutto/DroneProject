@@ -8,6 +8,7 @@ namespace PinBall {
     public class FollowBall : MonoBehaviour
     {
         private GameObject ball;
+
         float offset;
         Vector3 toMove;
         // Start is called before the first frame update
@@ -19,17 +20,30 @@ namespace PinBall {
         // Update is called once per frame
         void Update()
         {
+            SearchBall();
+
+
+        }
+        void SearchBall()
+        {
             if (ball == null)
             {
-                ball = GameObject.FindGameObjectWithTag("ball");
+
+                GameObject current = GameObject.Find("mainBall");
+                if (current!=null)
+                {
+                    ball = current;
+                }
+                else
+                {
+                   current = GameObject.FindGameObjectWithTag("ball");
+                }
             }
             else
             {
                 toMove = new Vector3(Mathf.Clamp((ball.transform.position.x + offset), -1.3f, 1.3f), transform.position.y, transform.position.z);
 
             }
-
-
         }
         private void LateUpdate()
         {

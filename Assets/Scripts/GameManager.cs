@@ -116,26 +116,32 @@ namespace PinBall {
            
         }
         #region Reset
-        void ResetGameVariables()
+        public void ResetGameVariables()
         {
+            if (totalAmountOfBall == 0) {
+                //totalAmountOfBall = 1;
+                ballFinished = false;
+                NoMoreBallOnScene = false;
+                scoreText.text = "0000 ";
+                bonusTime = 0;
+                countDown = false;
+                bonusTimeEnd = 3f;
+                currentScore = 0;
+                currentBall = ballMax;
+                ballCountText.text = currentBall.ToString();
+                extras.isMainBallSpawned = false;
+                extras.Spawnball_Main();
+                //countOfHit = 0;
+            }
+            else
+            {
+                return;
+            }
 
-            //totalAmountOfBall = 1;
-            ballFinished = false;
-            NoMoreBallOnScene = false;
-            scoreText.text = "0000 ";
-            bonusTime = 0;
-            countDown = false;
-            bonusTimeEnd = 3f;
-            currentScore = 0;
-            currentBall = ballMax;
-            ballCountText.text = currentBall.ToString();
-            extras.isMainBallSpawned = false;
-            extras.Spawnball_Main();
-            //countOfHit = 0;
-        }
-        #endregion
-        #region text Effect
-        void ToShakeText()
+            }
+            #endregion
+            #region text Effect
+            void ToShakeText()
         {
             StartCoroutine(nameof(ShakeText), scoreText);
         }

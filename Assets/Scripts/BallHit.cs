@@ -22,6 +22,8 @@ namespace PinBall{
         private Extras extras;
         public bool thisIsMainBall;
         public float addSpeed,maxSpeed;
+        bool pushing,relased;
+        public bool _editing;
    
         
 
@@ -36,6 +38,8 @@ namespace PinBall{
             isGameStart = false;
             hitToReflector = false;
             addSpeed = 2;
+            pushing = false;
+            relased = false;
             extras = FindObjectOfType<Extras>();
             Invoke(nameof(StartGame), startTime);
         }
@@ -59,22 +63,49 @@ namespace PinBall{
             }
             else
             {
-                if (Input.GetKey(KeyCode.Space) && isOnPull)
+                if (_editing)
                 {
-                    //800
-                    if (addSpeed < maxSpeed)
-                        addSpeed += 10f;
-
+                    pushing = Input.GetKey(KeyCode.Space);
+                    relased = Input.GetKeyUp(KeyCode.Space);
                 }
+               
+                //if (Input.GetKey(KeyCode.Space) && isOnPull)
+                //{
+                //    //800
+                //    if (addSpeed < maxSpeed)
+                //        addSpeed += 10f;
 
-                if (Input.GetKeyUp(KeyCode.Space) && isOnPull)
+                //}
+
+                //if (Input.GetKeyUp(KeyCode.Space) && isOnPull)
+                //{
+                //    //800
+
+                //    Rb.AddForce(Vector3.up * addSpeed);
+                //    Rb.AddForce(Vector3.forward * addSpeed);
+                //    addSpeed = 2;
+                //}
+
+                if (pushing&&isOnPull)
                 {
-                    //800
+                    if (addSpeed < maxSpeed)
+                        addSpeed += 25f;
 
-                    Rb.AddForce(Vector3.up * addSpeed);
-                    Rb.AddForce(Vector3.forward * addSpeed);
+                    //if (relased)
+                    //{
+                    //    Rb.AddForce(Vector3.up * addSpeed);
+                    //    Rb.AddForce(Vector3.forward * addSpeed);
+                    //    addSpeed = 2;
+                    //}
+                }
+                if (relased ) {
+                    Rb.AddForce(addSpeed * Time.deltaTime* Vector3.up, ForceMode.Impulse);
+                    Rb.AddForce(addSpeed * Time.deltaTime * Vector3.forward,ForceMode.Impulse);
                     addSpeed = 2;
                 }
+                
+
+
 
                 if (hitToReflector)
                 {
@@ -89,6 +120,34 @@ namespace PinBall{
 
             }
         }
+        #region MobileUI_buttons
+        public void Trigger_KeyDown()
+        {
+            if (!isGameStart)
+            {
+                return;
+            }
+            else
+            {
+                pushing = true;
+                
+            }
+        }
+        public void Trigger_KeyUp()
+        {
+            if (!isGameStart)
+            {
+                return;
+            }
+            else
+            {
+
+                relased = true;
+               
+                Debug.Log(relased);
+            }
+        }
+        #endregion
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("lose"))
@@ -125,6 +184,8 @@ namespace PinBall{
             if (other.gameObject.CompareTag("trigger"))
             {
                 isOnPull = false;
+                relased = false;
+                pushing = false;
             }
         }
         public void OnCollisionEnter(Collision collision)

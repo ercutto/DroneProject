@@ -10,6 +10,7 @@ namespace PinBall {
         public bool isPushing;
         public bool keeperOnTarget;
         public bool canPush;
+        public bool _editing;
 
         public float speed;
         //this keys buttons described with string (keyButton) left is a(small) right is d(small)
@@ -33,7 +34,11 @@ namespace PinBall {
         // Update is called once per frame
         void Update()
         {
-            isPushing = Input.GetKey(keyButton); //true : false;
+            if (_editing)
+            {
+                isPushing = Input.GetKey(keyButton); //true : false;
+            }
+
 
             if (isPushing)
             {
@@ -44,6 +49,19 @@ namespace PinBall {
 
 
 
+        }
+        public void Keeper_UI_PinterEnter()
+        {
+
+            isPushing = true;
+          
+
+        }
+        public void Keeper_UI_PointerExit()
+        {
+
+            isPushing = false;
+            
         }
         void KeeperMove(GameObject moveTo, float bouncines)
         {

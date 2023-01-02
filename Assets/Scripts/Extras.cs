@@ -58,6 +58,7 @@ namespace PinBall
                 {
                     clone = Instantiate(basic_ball, spawnMainBall_Pos.transform.position, transform.rotation);
                     clone.GetComponent<BallHit>().thisIsMainBall = true;
+                    clone.name = "mainBall";
                     gameManager.TotalBallCount(1);
 
                 }

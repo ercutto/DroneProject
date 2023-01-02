@@ -22,9 +22,11 @@ namespace PinBall
         Quaternion lookPos;
         Vector3 MovePos;
         int i = 0;
+        bool isPushed;
     #endregion
         void Start()
         {
+            isPushed = false;
             cam = Camera.main;
             camRb = camHolder.GetComponent<Rigidbody>();
             camTookPos = true;
@@ -33,7 +35,7 @@ namespace PinBall
         void Update()
         {
             
-            if (Input.GetKeyUp(KeyCode.C)) { NextCamPos(); }
+            if (/*Input.GetKeyUp(KeyCode.C)*/isPushed) { NextCamPos(); }
             //keep empty :)
             if (followBall) { FollowBall(); }//Followball has to be before other cam movement because camTookPos bool returns!
             if (camTookPos) { return; } else { if (!followBall) CurrentCamPos(); else { camTookPos = true; } }
@@ -43,7 +45,9 @@ namespace PinBall
         }
         void NextCamPos()
         {
-          
+            ViewChanged();
+
+
             if (camTookPos)
             {
                 camTookPos = false;
@@ -71,6 +75,15 @@ namespace PinBall
         {
             camRb.transform.position= camPos[3].transform.position;
         }
+        public void ChangeView()
+        {
+            isPushed = true;
+        }
+        public void ViewChanged()
+        {
+            isPushed = false;
+        }
+
     }
     
 }
