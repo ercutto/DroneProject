@@ -145,9 +145,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.52
-  m_Height: 5
+  m_Height: 3.8785977
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0.56069887, z: -0.0000002489945}
 --- !u!114 &1888987065958294031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 8767170150073523618}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: -0.020999998, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 9}
+  m_LocalScale: {x: 16, y: 16, z: 9}
   m_Children:
   - {fileID: 2961258826243831680}
   m_Father: {fileID: 2835216697070373571}

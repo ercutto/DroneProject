@@ -113,7 +113,7 @@ namespace PinBall{
                     //Rb.AddForce(Vector3.forward *currentHitValue);
 
 
-                    Rb.AddForce(currentHitValue * Time.deltaTime * -direction, ForceMode.Impulse);
+                   Rb.AddForce(currentHitValue * Time.deltaTime * -direction, ForceMode.Impulse);
 
                 }
 
@@ -169,6 +169,7 @@ namespace PinBall{
                 if (!thisIsMainBall) { gameManager.TotalBallCount(-1);Destroy(gameObject); }
 
             }
+           
         }
         private void OnTriggerStay(Collider other)
         {
@@ -176,7 +177,7 @@ namespace PinBall{
             {
                 isOnPull = true;
             }
-            
+           
 
         }
         private void OnTriggerExit(Collider other)
@@ -187,6 +188,7 @@ namespace PinBall{
                 relased = false;
                 pushing = false;
             }
+           
         }
         public void OnCollisionEnter(Collision collision)
         {
@@ -211,7 +213,7 @@ namespace PinBall{
                     currentHitValue = reflector.force;
                     point = reflector.pointvalue;
                     gameManager.AddScore(point);
-                    
+
                 }
 
             }

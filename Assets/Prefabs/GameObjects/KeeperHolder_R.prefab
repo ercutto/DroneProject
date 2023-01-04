@@ -179,6 +179,7 @@ MonoBehaviour:
   isPushing: 0
   keeperOnTarget: 0
   canPush: 0
+  _editing: 0
   speed: 90
   keyButton: d
 --- !u!1 &4929894605668628510
@@ -277,7 +278,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
-  m_CookingOptions: 30
+  m_CookingOptions: 0
   m_Mesh: {fileID: -1202910717718968129, guid: df4ea2d3d5235184995d9b5c33f170b2, type: 3}
 --- !u!54 &28863441
 Rigidbody:
@@ -311,3 +312,5 @@ MonoBehaviour:
   force: 0
   pointvalue: 0
   animator: {fileID: 1367232991761979447}
+  spawnBall: 0
+  extras: {fileID: 0}

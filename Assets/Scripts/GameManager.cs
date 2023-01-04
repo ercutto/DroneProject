@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-namespace PinBall {
+namespace PinBall
+{
     public class GameManager : MonoBehaviour
     {
         #region Public
         public static GameManager _GameManager;
-        [Tooltip("ScoreText value is: GameManager.currentScore, MultiplierText value is Gamemanager.Bonus")] public Text scoreText, bonusText,ballCountText,machineScore,machineBonus,machineBallCount,messageText;
+        [Tooltip("ScoreText value is: GameManager.currentScore, MultiplierText value is Gamemanager.Bonus")] public Text scoreText, bonusText, ballCountText, machineScore, machineBonus, machineBallCount, messageText;
         public Color red, blue;
         public MessageTexts messageTexts;
-        public int ballMax=3;
+        public int ballMax = 3;
         public int currentBall;
         public int totalAmountOfBall;
-        public bool ballFinished,NoMoreBallOnScene;
+        public int currentHit;
+        public bool ballFinished, NoMoreBallOnScene;
         public GameObject table;//for rotate table on play mode
         #endregion
         #region Private
@@ -27,6 +29,7 @@ namespace PinBall {
         private string scoreString, bonusString;
         public Extras extras;
         #endregion
+        #region UnityMethods
         private void Awake()
         {
             if (_GameManager == null)
@@ -53,15 +56,18 @@ namespace PinBall {
         // Update is called once per frame
         void Update()
         {
-            if (ballFinished && NoMoreBallOnScene) {
+            if (ballFinished && NoMoreBallOnScene)
+            {
                 if (Input.GetKeyUp(KeyCode.R)) { ResetGameVariables(); }
 
-                
+
             }
 
             IsItbonusTime();
-            ChangeScore();
+
         }
+        #endregion
+        #region BonusTime System And adding bonnus
         void IsItbonusTime()
         {
             if (countDown)
@@ -69,23 +75,34 @@ namespace PinBall {
                 bonusTime += Time.deltaTime;
                 if (bonusTime > bonusTimeEnd)
                 {
-                    bonusTime = 0;
-                    currentScore += bonus;
-                    StartCoroutine(nameof(ShakeText), bonusText);
+                    AddBonus();
 
-                    bonus = 0;
-                    //countOfHit = 0;
-                    countDown = false;
+
                 }
 
             }
         }
+        void AddBonus()
+        {
+            bonusTime = 0;
+            scoreString = (currentScore += bonus).ToString();
+            bonus = 0;
+            bonusString = bonus.ToString();
+            ChangeScore();
+            //StartCoroutine(nameof(ShakeText), bonusText);
+            //ShakeText(machineBonus);
+            countDown = false;
+
+        }
+        #endregion
+        #region ScoreAdding
         //this adds score and also starts bonusTime counts.
         public void AddScore(float addScore)
         {
 
             if (countDown)
-            { /*countOfHit++;*/ bonus += addScore;
+            { /*countOfHit++;*/
+                bonus += addScore;
                 bonusString = bonus.ToString(); bonusTime = 0;
                 if (bonus >= 1000)
                 {
@@ -102,23 +119,28 @@ namespace PinBall {
                 countDown = true;
             }
 
-            ToShakeText();
+            
             currentScore += addScore;
             scoreString = currentScore.ToString();
-
+            //ToShakeText(machineScore);
+            ChangeScore();
         }
+        #endregion
+        #region texts are On write to text aras
         void ChangeScore()
         {
-            bonusText.text = bonusString+ " +";
+            bonusText.text = bonusString + " +";
             machineBonus.text = bonusString + " +";
             scoreText.text = scoreString + pts;
             machineScore.text = scoreString + pts;
-           
+
         }
+        #endregion
         #region Reset
         public void ResetGameVariables()
         {
-            if (totalAmountOfBall == 0) {
+            if (totalAmountOfBall == 0)
+            {
                 //totalAmountOfBall = 1;
                 ballFinished = false;
                 NoMoreBallOnScene = false;
@@ -130,6 +152,7 @@ namespace PinBall {
                 currentBall = ballMax;
                 ballCountText.text = currentBall.ToString();
                 extras.isMainBallSpawned = false;
+                currentHit = 0;
                 extras.Spawnball_Main();
                 //countOfHit = 0;
             }
@@ -138,26 +161,33 @@ namespace PinBall {
                 return;
             }
 
-            }
-            #endregion
-            #region text Effect
-            void ToShakeText()
+        }
+        #endregion
+        #region hitcount
+        public void AddHit(int hit)
         {
-            StartCoroutine(nameof(ShakeText), scoreText);
+            currentHit += hit;
+            Debug.Log(currentHit);
+        }
+        #endregion
+        #region text Effect
+        void ToShakeText(Text text)
+        {
+            StartCoroutine(nameof(ShakeText), text);
         }
         IEnumerator ShakeText(Text effect)
         {
             RectTransform rt = effect.rectTransform;
             Vector2 startPos = rt.anchoredPosition;
 
-            for (float t = 0; t <= 1; t += Time.deltaTime * 10)
+            for (float t = 0; t <= 1; t += Time.deltaTime * 1)
             {
                 rt.anchoredPosition = startPos + new Vector2(transform.position.x + t, transform.position.y + t);
                 effect.color = blue;
 
                 yield return null;
             }
-            for (float t = 0; t <= 1; t += Time.deltaTime * 10)
+            for (float t = 0; t <= 1; t += Time.deltaTime * 1)
             {
                 rt.anchoredPosition = startPos + new Vector2(transform.position.x * (1 - t), transform.position.y * (1 - t));
                 effect.color = red;
@@ -167,10 +197,10 @@ namespace PinBall {
             rt.anchoredPosition = startPos;
         }
         #endregion
-        #region BallSystem
+        #region Ball Counts and Checks if there are no more ball game stops
         public void BallCount(int ballCount)
         {
-           
+
             if (currentBall > 0)
             { currentBall -= ballCount; }
             else
@@ -185,9 +215,9 @@ namespace PinBall {
         public void TotalBallCount(int amount)
         {
             totalAmountOfBall += amount;
-            if (totalAmountOfBall< 1)
+            if (totalAmountOfBall < 1)
             { NoMoreBallOnScene = true; }
-           
+
 
 
         }
