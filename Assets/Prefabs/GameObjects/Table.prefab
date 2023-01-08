@@ -530,6 +530,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1836386205757910893}
     m_Modifications:
+    - target: {fileID: 178316653021832639, guid: 6b6d4f92e902a08488cdff2b2ef98220,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178316653486601820, guid: 6b6d4f92e902a08488cdff2b2ef98220,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 178316653528493059, guid: 6b6d4f92e902a08488cdff2b2ef98220,
         type: 3}
       propertyPath: m_RootOrder
@@ -589,6 +599,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boundry_Colliders
+      objectReference: {fileID: 0}
+    - target: {fileID: 178316654130373334, guid: 6b6d4f92e902a08488cdff2b2ef98220,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178316654322170824, guid: 6b6d4f92e902a08488cdff2b2ef98220,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 263011586237263719, guid: 6b6d4f92e902a08488cdff2b2ef98220,
         type: 3}

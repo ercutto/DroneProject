@@ -6,7 +6,7 @@ namespace PinBall {
     public class SpeedReflectors : ScriptableObject
     {
         /// <summary>
-        /// this has to be added to reflector objects that you want to add in to table
+        /// this has to be added to reflector objects that you want to add in to tablead
         /// </summary>
         public GameObject prefab;
         public string objectName;
