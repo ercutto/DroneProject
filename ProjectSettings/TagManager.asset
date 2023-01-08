@@ -9,6 +9,7 @@ TagManager:
   - keeper
   - ball
   - lose
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -18,6 +18,7 @@ namespace PinBall{
         void Start()
         {
             force = speedReflectors.force;
+            pointvalue = 0;
             pointvalue = speedReflectors.pointValue;
             if (spawnBall) { extras = FindObjectOfType<Extras>(); }
         }
@@ -28,7 +29,7 @@ namespace PinBall{
 
         }
 
-        public void OnCollisionEnter(Collision collision)
+        public virtual void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("ball"))
             {
@@ -44,7 +45,7 @@ namespace PinBall{
                 }
             }
         }
-        public void OnCollisionExit(Collision collision)
+        public virtual void OnCollisionExit(Collision collision)
         {
             if (collision.gameObject.CompareTag("ball"))
             {

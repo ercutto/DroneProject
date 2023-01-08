@@ -8,41 +8,64 @@ namespace PinBall {
         private Material mat;
         private Collider col;
         private GameManager gameManager;
+        public bool isTouched;
+     
         private void Start()
         {
+            isTouched = false;
             gameManager = FindObjectOfType<GameManager>();
             col = GetComponent<BoxCollider>();
             mat= GetComponent<MeshRenderer>().material;
+            
 
         }
-        private void Update()
+        public void Update()
         {
-            
+
         }
         public virtual void ChangeColor()
         {
-            
-            mat.color = Color.red;
+
+            Change(Color.red);
             StartCoroutine(ColorIsWaiting());
         }
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("ball")) {
-                col.enabled = false;
-                gameManager.AddHit(1);
-                ChangeColor();
+                
+                ScoreAndAction();
+                
             }
 
-           
+        }
+  
+        public virtual void ScoreAndAction()
+        {
+            col.enabled = false;
+            ChangeColor();
+            gameManager.AddHit(1);
         }
       
         IEnumerator ColorIsWaiting()
         {
             yield return new WaitForSeconds(1);
-            mat.color= Color.white;
-            col.enabled = true;
+            Change(Color.white);
+            ColliderControll(true);
 
         }
+        
+        public virtual void Change(Color color)
+        {
+            mat.color = color;
+        }
+        public virtual void ColliderControll(bool value)
+        {
+            col.enabled = value;
+        }
+
+       
     }
+
 }
+
 

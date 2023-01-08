@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace PinBall{
+namespace PinBall
+{
     public class BallHit : MonoBehaviour
     {
         /// <summary>
         /// ball hit is controlling allthe ball movements and collision checks
         /// if this is not main ball can not be throw to table back trigger destroys
         /// </summary>
-
+        public GameObject Ground;
         Rigidbody Rb;
         bool isOnPull;
         bool hitToReflector;
@@ -21,11 +22,14 @@ namespace PinBall{
         private GameManager gameManager;
         private Extras extras;
         public bool thisIsMainBall;
-        public float addSpeed,maxSpeed;
-        bool pushing,relased;
+        public float addSpeed, maxSpeed;
+        bool pushing, relased;
         public bool _editing;
-   
+        private Reflector reflector = null;
         
+        private Keepers keepers = null;
+        
+
 
 
 
@@ -40,6 +44,7 @@ namespace PinBall{
             addSpeed = 2;
             pushing = false;
             relased = false;
+            GameObject.FindGameObjectWithTag("Ground");
             extras = FindObjectOfType<Extras>();
             Invoke(nameof(StartGame), startTime);
         }
@@ -51,6 +56,7 @@ namespace PinBall{
         // Update is called once per frame
         void Update()
         {
+           
             Ball_movement();
 
 
@@ -68,7 +74,7 @@ namespace PinBall{
                     pushing = Input.GetKey(KeyCode.Space);
                     relased = Input.GetKeyUp(KeyCode.Space);
                 }
-               
+
                 //if (Input.GetKey(KeyCode.Space) && isOnPull)
                 //{
                 //    //800
@@ -86,7 +92,7 @@ namespace PinBall{
                 //    addSpeed = 2;
                 //}
 
-                if (pushing&&isOnPull)
+                if (pushing && isOnPull)
                 {
                     if (addSpeed < maxSpeed)
                         addSpeed += 25f;
@@ -98,12 +104,13 @@ namespace PinBall{
                     //    addSpeed = 2;
                     //}
                 }
-                if (relased ) {
-                    Rb.AddForce(addSpeed * Time.deltaTime* Vector3.up, ForceMode.Impulse);
-                    Rb.AddForce(addSpeed * Time.deltaTime * Vector3.forward,ForceMode.Impulse);
+                if (relased)
+                {
+                    Rb.AddForce(addSpeed * Time.deltaTime * Vector3.up, ForceMode.Impulse);
+                    Rb.AddForce(addSpeed * Time.deltaTime * Vector3.forward, ForceMode.Impulse);
                     addSpeed = 2;
                 }
-                
+
 
 
 
@@ -113,7 +120,7 @@ namespace PinBall{
                     //Rb.AddForce(Vector3.forward *currentHitValue);
 
 
-                   Rb.AddForce(currentHitValue * Time.deltaTime * -direction, ForceMode.Impulse);
+                    Rb.AddForce(currentHitValue * Time.deltaTime * -direction, ForceMode.Impulse);
 
                 }
 
@@ -123,6 +130,7 @@ namespace PinBall{
         #region MobileUI_buttons
         public void Trigger_KeyDown()
         {
+
             if (!isGameStart)
             {
                 return;
@@ -130,7 +138,7 @@ namespace PinBall{
             else
             {
                 pushing = true;
-                
+
             }
         }
         public void Trigger_KeyUp()
@@ -143,8 +151,8 @@ namespace PinBall{
             {
 
                 relased = true;
-               
-                Debug.Log(relased);
+
+
             }
         }
         #endregion
@@ -152,7 +160,7 @@ namespace PinBall{
         {
             if (other.gameObject.CompareTag("lose"))
             {
-               
+
                 if (thisIsMainBall)
                 {
                     gameManager.BallCount(1);
@@ -162,22 +170,24 @@ namespace PinBall{
 
                 gameManager.TotalBallCount(-1);
                 Destroy(gameObject);
-                
-               
-            }
-            else if (other.gameObject.CompareTag("trigger")){
-                if (!thisIsMainBall) { gameManager.TotalBallCount(-1);Destroy(gameObject); }
+
 
             }
-           
+            else if (other.gameObject.CompareTag("trigger"))
+            {
+                if (!thisIsMainBall) { gameManager.TotalBallCount(-1); Destroy(gameObject); }
+
+            }
+
         }
         private void OnTriggerStay(Collider other)
         {
+
             if (other.gameObject.CompareTag("trigger"))
             {
                 isOnPull = true;
             }
-           
+
 
         }
         private void OnTriggerExit(Collider other)
@@ -188,7 +198,7 @@ namespace PinBall{
                 relased = false;
                 pushing = false;
             }
-           
+
         }
         public void OnCollisionEnter(Collision collision)
         {
@@ -196,43 +206,42 @@ namespace PinBall{
             {
                 direction = (collision.transform.position - transform.position).normalized;
                 hitToReflector = true;
-                Reflector reflector = collision.gameObject.GetComponent<Reflector>();
+                reflector = collision.gameObject.GetComponent<Reflector>();
                 currentHitValue = reflector.force;
-      
+
 
             }
             else if (collision.gameObject.CompareTag("keeper"))
             {
+                
+                
                 direction = (collision.transform.position - transform.position).normalized;
                 Keepers keepers = collision.gameObject.GetComponentInParent<Keepers>();
                 onTarget = keepers.keeperOnTarget;
-                if (!onTarget)
+                if (onTarget) return;
+                else
                 {
                     hitToReflector = keepers.isPushing;
-                    Reflector reflector = collision.gameObject.GetComponent<Reflector>();
+                    reflector = collision.gameObject.GetComponent<Reflector>();
                     currentHitValue = reflector.force;
                     point = reflector.pointvalue;
                     gameManager.AddScore(point);
 
                 }
-
             }
         }
         public void OnCollisionStay(Collision collision)
         {
             if (collision.gameObject.CompareTag("keeper"))
             {
+                
                 direction = (collision.transform.position - transform.position).normalized;
                 Keepers keepers = collision.gameObject.GetComponentInParent<Keepers>();
                 onTarget = keepers.keeperOnTarget;
-                if (!onTarget)
-                {
-                    hitToReflector = keepers.isPushing;
-                    Reflector reflector = collision.gameObject.GetComponent<Reflector>();
-                    currentHitValue = reflector.force;
-                   
-                    
-                }
+                if (onTarget) { return; } else hitToReflector = keepers.isPushing;
+                reflector = collision.gameObject.GetComponent<Reflector>();
+                currentHitValue = reflector.force;
+      
 
             }
         }
@@ -242,13 +251,28 @@ namespace PinBall{
             {
                 hitToReflector = false;
                 onTarget = false;
-                Reflector reflector = collision.gameObject.GetComponent<Reflector>();
+                reflector = collision.gameObject.GetComponent<Reflector>();     
                 point = reflector.pointvalue;
                 gameManager.AddScore(point);
             }
         }
 
-       
+        void KeeperWork()
+        {
+            //direction = (currentKeeper.transform.position - transform.position).normalized;
+            //keepers = currentKeeper.GetComponentInParent<Keepers>();
+            //onTarget = keepers.keeperOnTarget;
+            //if (onTarget) return;
+            //else
+            //{
+            //    hitToReflector = keepers.isPushing;
+            //    reflector = keepers.GetComponent<Reflector>();
+            //    currentHitValue = reflector.force;
+            //    point = reflector.pointvalue;
+            //    gameManager.AddScore(point);
+
+            //}
+        }
 
     }
 }

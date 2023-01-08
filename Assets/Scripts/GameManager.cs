@@ -43,10 +43,10 @@ namespace PinBall
         // Start is called before the first frame update
         void Start()
         {
-            if (Application.isPlaying)//for editing rotates table!
-            {
-                table.transform.Rotate(-45, 0, 0);
-            }
+            //if (Application.isPlaying)//for editing rotates table!
+            //{
+            //    table.transform.Rotate(-45, 0, 0);
+            //}
 
 
             ResetGameVariables();
@@ -129,10 +129,10 @@ namespace PinBall
         #region texts are On write to text aras
         void ChangeScore()
         {
-            bonusText.text = bonusString + " +";
-            machineBonus.text = bonusString + " +";
-            scoreText.text = scoreString + pts;
-            machineScore.text = scoreString + pts;
+            //bonusText.text = bonusString + "+";
+            machineBonus.text = bonusString + "+";
+            //scoreText.text = scoreString;
+            machineScore.text = scoreString;
 
         }
         #endregion
