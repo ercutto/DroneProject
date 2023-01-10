@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 namespace PinBall
 {
     public class GroubPointsCollect : MonoBehaviour
     {
-        public int exBonus;
+        private int exBonus;
+        public int Score;
         private GameManager gameManager;
         public ExtraBonusGroups[] extraBonusGroups;
+        public GameObject bonusCanvasPrefab;
         
         // Start is called before the first frame update
         void Start()
         {
-           
+            bonusCanvasPrefab.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = Score.ToString();
+            bonusCanvasPrefab.SetActive(false);
             gameManager = FindObjectOfType<GameManager>();
             exBonus = 0;
         }
@@ -23,9 +27,10 @@ namespace PinBall
                 if (exBonus == extraBonusGroups.Length)
                 {
                     exBonus = 0;
-                    gameManager.AddScore(500);
+                    gameManager.AddScore(Score);
                     ObjectsBactToStart();
-
+                    bonusCanvasPrefab.SetActive(true);
+                    Invoke(nameof(CanvasFalse),1);
                 }
             } 
         }
@@ -37,6 +42,11 @@ namespace PinBall
             }
         }
         
+        void CanvasFalse()
+        {              
+            bonusCanvasPrefab.SetActive(false);
+        }
+
     }
 
 }

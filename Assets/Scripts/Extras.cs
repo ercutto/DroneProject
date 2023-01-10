@@ -73,12 +73,14 @@ namespace PinBall
             {
                 if(item!= ControlledObjects[rand])
                 {
-                    item.SetActive(false);
+                    item.GetComponent<Animator>().SetTrigger("open");
 
                 }
                 else
                 {
-                    item.SetActive(true);
+                    item.GetComponent<Animator>().SetTrigger("close");
+
+
 
                 }
 
