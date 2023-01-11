@@ -12,7 +12,7 @@ namespace PinBall{
         public float pointvalue;
         public  Animator animator;
         public bool spawnBall = false;
-        public Extras extras;
+        public Mechanics mechanics;
 
         // Start is called before the first frame update
         void Start()
@@ -20,7 +20,7 @@ namespace PinBall{
             force = speedReflectors.force;
             pointvalue = 0;
             pointvalue = speedReflectors.pointValue;
-            if (spawnBall) { extras = FindObjectOfType<Extras>(); }
+            if (spawnBall) { mechanics = FindObjectOfType<Mechanics>(); }
         }
 
         // Update is called once per frame
@@ -38,8 +38,8 @@ namespace PinBall{
                 {
                     if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
                     {
-                        extras.isSpawned = false;
-                        extras.Spawnball();
+                        mechanics.isSpawned = false;
+                        mechanics.Spawnball();
                     }
                    
                 }

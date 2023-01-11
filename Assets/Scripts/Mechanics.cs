@@ -7,7 +7,7 @@ namespace PinBall
     /// Main ball can be spawned only maxball amount from mainspawnPos and when its hits to reflector(reflector has bool "SpawnBall" hasto be true) can spawn new ball.
     /// extraball can be spawned as from extra ball spawnPos,can not spawn new ball and doesnt effects to maxball. 
     /// </summary>
-    public class Extras : MonoBehaviour
+    public class Mechanics : MonoBehaviour
     {
         GameManager gameManager;
         public GameObject basic_ball,clone;
@@ -23,7 +23,7 @@ namespace PinBall
             isSpawned = true;
             isMainBallSpawned = true;
             Spawnball();
-            InvokeRepeating(nameof(Control_Objects), 1, 2);
+            InvokeRepeating(nameof(Control_Objects), 1, 3);
         }
 
         // Update is called once per frame

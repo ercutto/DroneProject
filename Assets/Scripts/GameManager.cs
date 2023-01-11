@@ -17,6 +17,7 @@ namespace PinBall
         public int currentHit;
         public bool ballFinished, NoMoreBallOnScene;
         public GameObject table;//for rotate table on play mode
+        public Mechanics mechanics;
         #endregion
         #region Private
 
@@ -27,7 +28,7 @@ namespace PinBall
         //[Tooltip("CanNotChange (private)")] [SerializeField] private int countOfHit;
         [Tooltip("CanNotChange (private)")] [SerializeField] private bool countDown;
         private string scoreString, bonusString;
-        public Extras extras;
+        
         #endregion
         #region UnityMethods
         private void Awake()
@@ -151,9 +152,9 @@ namespace PinBall
                 currentScore = 0;
                 currentBall = ballMax;
                 ballCountText.text = currentBall.ToString();
-                extras.isMainBallSpawned = false;
+                mechanics.isMainBallSpawned = false;
                 currentHit = 0;
-                extras.Spawnball_Main();
+                mechanics.Spawnball_Main();
                 //countOfHit = 0;
             }
             else

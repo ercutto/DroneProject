@@ -20,7 +20,7 @@ namespace PinBall
         public float point = 0;
         Vector3 direction;
         private GameManager gameManager;
-        private Extras extras;
+        private Mechanics mechanics;
         public bool thisIsMainBall;
         public float addSpeed, maxSpeed;
         bool pushing, relased;
@@ -45,7 +45,7 @@ namespace PinBall
             pushing = false;
             relased = false;
             GameObject.FindGameObjectWithTag("Ground");
-            extras = FindObjectOfType<Extras>();
+            mechanics = FindObjectOfType<Mechanics>();
             Invoke(nameof(StartGame), startTime);
         }
         void StartGame()
@@ -164,8 +164,8 @@ namespace PinBall
                 if (thisIsMainBall)
                 {
                     gameManager.BallCount(1);
-                    extras.isMainBallSpawned = false;
-                    extras.Spawnball_Main();
+                    mechanics.isMainBallSpawned = false;
+                    mechanics.Spawnball_Main();
                 }
 
                 gameManager.TotalBallCount(-1);
