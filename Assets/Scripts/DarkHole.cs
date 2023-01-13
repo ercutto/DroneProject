@@ -10,11 +10,12 @@ namespace PinBall
         GameObject ball;
         TrailRenderer tRenderer;
         Rigidbody rb;
+        Animator animator;
 
         // Start is called before the first frame update
         void Start()
         {
-
+            animator = GetComponentInChildren<Animator>();
         }
 
         // Update is called once per frame
@@ -27,6 +28,7 @@ namespace PinBall
             if (other.gameObject.CompareTag("ball"))
             {
                 ball = other.gameObject;
+                animator.SetTrigger("eat");
                 tRenderer = ball.GetComponentInChildren<TrailRenderer>();
                 rb = ball.GetComponent<Rigidbody>();
                 StartCoroutine(TransportBall());
