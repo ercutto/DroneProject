@@ -19,8 +19,8 @@ namespace PinBall {
         {
             if (ballHit != null)
             {
-                ballSpeed = ballHit.addSpeed;
-                SpeedBar.fillAmount = ballSpeed/100;
+                FillBar();
+                
             }
            
         }
@@ -45,7 +45,14 @@ namespace PinBall {
             {
                 ballHit.Trigger_KeyUp();
             }
-                
+              
+            
+        }
+        public void FillBar()
+        {
+            ballSpeed = ballHit.addSpeed;
+            float max = ballSpeed / 100;
+            SpeedBar.fillAmount = Mathf.Lerp(SpeedBar.fillAmount, max, Time.deltaTime);
         }
     }
 }

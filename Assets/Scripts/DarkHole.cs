@@ -5,17 +5,24 @@ namespace PinBall
 {
     public class DarkHole : MonoBehaviour
     {
+        public int scoreValue = 450;
         public Transform toTransform;
         //belongs to ball
         GameObject ball;
         TrailRenderer tRenderer;
         Rigidbody rb;
         Animator animator;
+        public bool isDarkHole=true;
+        public int WaitingTime=2;
+        public GameManager gameManager;
+        Collider darkCollCollider;
 
         // Start is called before the first frame update
         void Start()
         {
+            darkCollCollider = GetComponent<Collider>();
             animator = GetComponentInChildren<Animator>();
+            gameManager = FindObjectOfType<GameManager>();
         }
 
         // Update is called once per frame
@@ -27,8 +34,9 @@ namespace PinBall
         {
             if (other.gameObject.CompareTag("ball"))
             {
+                darkCollCollider.enabled = false;
+                gameManager.AddScore(scoreValue);
                 ball = other.gameObject;
-                animator.SetTrigger("eat");
                 tRenderer = ball.GetComponentInChildren<TrailRenderer>();
                 rb = ball.GetComponent<Rigidbody>();
                 StartCoroutine(TransportBall());
@@ -37,12 +45,47 @@ namespace PinBall
         }
         IEnumerator TransportBall()
         {
-            tRenderer.enabled = false;
-            ball.transform.position = toTransform.position;
+            SetComponents();
+            yield return new WaitForSeconds(WaitingTime);
+            UnSetComponents();
+
+        }
+        public virtual void SetComponents()
+        {
+            
+            
+           
+            if (isDarkHole)
+            {
+               
+                tRenderer.enabled = false;
+                ball.transform.position = toTransform.position;
+            }
+            else
+            {
+
+            }
+
+            
+            animator.SetTrigger("eat");
             rb.isKinematic = true;
-            yield return new WaitForSeconds(2);
+
+        }
+        public virtual void UnSetComponents()
+        {
+            
+            if (isDarkHole) {
+                tRenderer.enabled = true;
+            }
+            else
+            {
+                ball.transform.position = toTransform.position;
+
+            }
+
             rb.isKinematic = false;
-            tRenderer.enabled = true;
+            darkCollCollider.enabled = true;
+
 
         }
     }
