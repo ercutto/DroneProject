@@ -18,16 +18,20 @@ namespace PinBall
         public bool ballFinished, NoMoreBallOnScene;
         public GameObject table;//for rotate table on play mode
         public Mechanics mechanics;
+        public Restarter restarter;
+        private float[] Scores = { 1000, 2000,3000,4000,5000,6000,7000,8000,9000,10000 };
+        
         #endregion
         #region Private
 
         [Tooltip("CanNotChange (private)")] [SerializeField] private float currentScore;
-        [Tooltip("CanNotChange (private)")] [SerializeField] private string pts = " PTS";
+        //[Tooltip("CanNotChange (private)")] [SerializeField] private string pts = " PTS";
         [Tooltip("CanNotChange (private)")] [SerializeField] private float bonusTime, bonusTimeEnd;
         [Tooltip("CanNotChange (private)")] [SerializeField] private float bonus;
         //[Tooltip("CanNotChange (private)")] [SerializeField] private int countOfHit;
         [Tooltip("CanNotChange (private)")] [SerializeField] private bool countDown;
         private string scoreString, bonusString;
+        
         
         #endregion
         #region UnityMethods
@@ -107,9 +111,12 @@ namespace PinBall
                 bonusString = bonus.ToString(); bonusTime = 0;
                 if (bonus >= 1000)
                 {
-                    int i = Random.Range(0, messageTexts.messages.Length);
-                    messageText.text = messageTexts.messages[i];
+                    //int i = Random.Range(0, messageTexts.messages.Length);
+                    messageText.text = messageTexts.messages[0];
                 }
+                else if(bonus >= 2000) { messageText.text = messageTexts.messages[1]; }
+                else if(bonus >= 3000) { messageText.text = messageTexts.messages[2]; }
+                else if(bonus >= 4000) { messageText.text = messageTexts.messages[3]; }
                 else
                 {
                     messageText.text = "work more";
@@ -126,6 +133,7 @@ namespace PinBall
             //ToShakeText(machineScore);
             ChangeScore();
         }
+        
         #endregion
         #region texts are On write to text aras
         void ChangeScore()
@@ -142,6 +150,7 @@ namespace PinBall
         {
             if (totalAmountOfBall == 0)
             {
+               
                 //totalAmountOfBall = 1;
                 ballFinished = false;
                 NoMoreBallOnScene = false;
@@ -151,10 +160,12 @@ namespace PinBall
                 bonusTimeEnd = 3f;
                 currentScore = 0;
                 currentBall = ballMax;
-                ballCountText.text = currentBall.ToString();
+                machineBallCount.text = currentBall.ToString();
                 mechanics.isMainBallSpawned = false;
                 currentHit = 0;
+                ChangeScore();
                 mechanics.Spawnball_Main();
+                restarter.RestartAll();
                 //countOfHit = 0;
             }
             else

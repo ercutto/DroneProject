@@ -63,12 +63,13 @@ namespace PinBall
             }
             else
             {
-
+                ball.transform.position = this.transform.position;
             }
 
             
             animator.SetTrigger("eat");
             rb.isKinematic = true;
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 
         }
         public virtual void UnSetComponents()
@@ -84,6 +85,8 @@ namespace PinBall
             }
 
             rb.isKinematic = false;
+            rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+
             darkCollCollider.enabled = true;
 
 

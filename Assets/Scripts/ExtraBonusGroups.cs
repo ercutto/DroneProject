@@ -9,7 +9,7 @@ namespace PinBall
         public GameObject pushObject;
         public GroubPointsCollect groubPointsCollect;
         public GroubAnimCont groubAnimCont;
-
+        
         
 
         public override void ScoreAndAction()

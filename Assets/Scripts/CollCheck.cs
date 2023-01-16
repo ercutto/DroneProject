@@ -25,9 +25,10 @@ namespace PinBall {
         }
         public virtual void ChangeColor()
         {
-
-            Change(Color.red);
-            StartCoroutine(ColorIsWaiting());
+           
+                Change(Color.red);
+                StartCoroutine(ColorIsWaiting());
+            
         }
         private void OnTriggerEnter(Collider other)
         {
@@ -56,7 +57,9 @@ namespace PinBall {
         
         public virtual void Change(Color color)
         {
-            mat.color = color;
+            if (mat) { mat.color = color; }
+                
+           
         }
         public virtual void ColliderControll(bool value)
         {

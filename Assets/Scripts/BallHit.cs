@@ -27,7 +27,7 @@ namespace PinBall
         public bool _editing;
         private Reflector reflector = null;
         
-        private Keepers keepers = null;
+        //private Keepers keepers = null;
         
 
 

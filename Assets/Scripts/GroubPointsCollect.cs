@@ -34,11 +34,12 @@ namespace PinBall
                 }
             } 
         }
-        void ObjectsBactToStart()
+        public void ObjectsBactToStart()
         {
             foreach (var item in extraBonusGroups)
             {
                 item.BackToStart();
+                
             }
         }
         
