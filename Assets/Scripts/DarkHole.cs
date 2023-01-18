@@ -68,8 +68,9 @@ namespace PinBall
 
             
             animator.SetTrigger("eat");
-            rb.isKinematic = true;
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            rb.isKinematic = true;
+            
 
         }
         public virtual void UnSetComponents()

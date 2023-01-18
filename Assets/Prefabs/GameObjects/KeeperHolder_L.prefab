@@ -148,7 +148,7 @@ MonoBehaviour:
   pointvalue: 0
   animator: {fileID: 235094241188070056}
   spawnBall: 0
-  extras: {fileID: 0}
+  mechanics: {fileID: 0}
 --- !u!65 &4011272409224085173
 BoxCollider:
   m_ObjectHideFlags: 0

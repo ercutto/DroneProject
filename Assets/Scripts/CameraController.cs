@@ -30,6 +30,7 @@ namespace PinBall
             cam = Camera.main;
             camRb = camHolder.GetComponent<Rigidbody>();
             camTookPos = true;
+            NextCamPos();
         }
 
         void Update()

@@ -19,6 +19,7 @@ namespace PinBall
         public GameObject table;//for rotate table on play mode
         public Mechanics mechanics;
         public Restarter restarter;
+        public PlayerData playerData;
         private float[] Scores = { 1000, 2000,3000,4000,5000,6000,7000,8000,9000,10000 };
         
         #endregion
@@ -218,6 +219,7 @@ namespace PinBall
             else
             {
                 ballFinished = true;
+                
             }
 
             ballCountText.text = currentBall.ToString();
@@ -228,7 +230,9 @@ namespace PinBall
         {
             totalAmountOfBall += amount;
             if (totalAmountOfBall < 1)
-            { NoMoreBallOnScene = true; }
+            { NoMoreBallOnScene = true;
+                playerData.Save(currentScore);
+            }
 
 
 
