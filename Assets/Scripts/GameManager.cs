@@ -20,6 +20,7 @@ namespace PinBall
         public Mechanics mechanics;
         public Restarter restarter;
         public PlayerData playerData;
+        public UIController uIController;
         private float[] Scores = { 1000, 2000,3000,4000,5000,6000,7000,8000,9000,10000 };
         
         #endregion
@@ -55,7 +56,7 @@ namespace PinBall
             //}
 
 
-            ResetGameVariables();
+            
 
         }
 
@@ -232,6 +233,7 @@ namespace PinBall
             if (totalAmountOfBall < 1)
             { NoMoreBallOnScene = true;
                 playerData.Save(currentScore);
+                uIController.ActiveOrFalse(uIController.GameOverUI);
             }
 
 
