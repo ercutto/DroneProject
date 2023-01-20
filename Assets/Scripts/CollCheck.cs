@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 namespace PinBall {
     public class CollCheck : MonoBehaviour
@@ -19,10 +19,7 @@ namespace PinBall {
             
 
         }
-        public void Update()
-        {
-
-        }
+       
         public virtual void ChangeColor()
         {
            

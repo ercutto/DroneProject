@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 namespace PinBall
@@ -70,15 +70,16 @@ namespace PinBall
 
             }
 
-            IsItbonusTime();
+            if (countDown) { IsItbonusTime(); }
+            
 
         }
         #endregion
         #region BonusTime System And adding bonnus
         void IsItbonusTime()
         {
-            if (countDown)
-            {
+            //if (countDown)
+            //{
                 bonusTime += Time.deltaTime;
                 if (bonusTime > bonusTimeEnd)
                 {
@@ -87,7 +88,7 @@ namespace PinBall
 
                 }
 
-            }
+            //}
         }
         void AddBonus()
         {
@@ -181,7 +182,7 @@ namespace PinBall
         public void AddHit(int hit)
         {
             currentHit += hit;
-            Debug.Log(currentHit);
+            
         }
         #endregion
         #region text Effect

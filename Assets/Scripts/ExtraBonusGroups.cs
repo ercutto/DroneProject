@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 namespace PinBall
 {
@@ -22,7 +22,7 @@ namespace PinBall
         }
         public void BackToStart()
         {
-            Debug.Log("oldu");
+           
             Change(Color.white);
             StartCoroutine(ColorDance());
         }

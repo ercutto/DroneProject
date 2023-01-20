@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 namespace PinBall {
     [CreateAssetMenu(fileName = "reflectorsAndPoints", menuName = "ScriptableObjects/PinballAsset", order = 1)]

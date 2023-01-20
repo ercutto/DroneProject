@@ -70,7 +70,7 @@ MonoBehaviour:
   pointvalue: 0
   animator: {fileID: 0}
   spawnBall: 0
-  extras: {fileID: 0}
+  mechanics: {fileID: 0}
   reflector: {fileID: 11400000, guid: 881fe010af651264b868564f9e2548df, type: 2}
 --- !u!65 &2815607402270094656
 BoxCollider:
@@ -144,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d7ca9e0af5f38eb4b99d27178242b037, type: 2}
+  - {fileID: 2100000, guid: 79d662bbeb9127e4482c88961759a500, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 namespace PinBall{
     public class Reflector : MonoBehaviour
@@ -14,7 +13,6 @@ namespace PinBall{
         public bool spawnBall = false;
         public Mechanics mechanics;
 
-        // Start is called before the first frame update
         void Start()
         {
             force = speedReflectors.force;
@@ -22,13 +20,6 @@ namespace PinBall{
             pointvalue = speedReflectors.pointValue;
             if (spawnBall) { mechanics = FindObjectOfType<Mechanics>(); }
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public virtual void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("ball"))

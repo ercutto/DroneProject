@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9a1d78cd99aa545b2554d7fb35c13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ground: {fileID: 0}
   onTarget: 0
   startTime: 0
   point: 0

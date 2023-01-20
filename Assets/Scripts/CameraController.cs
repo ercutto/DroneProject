@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 namespace PinBall
 {
     public class CameraController : MonoBehaviour
     {
-    /// <summary>
+        /// <summary>
         /// this code used for change camera position from one another position.
         /// Player can only change camera position after camera complates movement!
         /// last object of array is followBall object
         /// </summary>
+        
         public GameObject camHolder;
         public GameObject[] camPos;
         public bool camTookPos,followBall;
@@ -35,14 +35,18 @@ namespace PinBall
 
         void Update()
         {
-            
+
+            Current();
+
+
+
+
+        }
+        void Current() {
             if (/*Input.GetKeyUp(KeyCode.C)*/isPushed) { NextCamPos(); }
             //keep empty :)
             if (followBall) { FollowBall(); }//Followball has to be before other cam movement because camTookPos bool returns!
             if (camTookPos) { return; } else { if (!followBall) CurrentCamPos(); else { camTookPos = true; } }
-
-            
-        
         }
         void NextCamPos()
         {

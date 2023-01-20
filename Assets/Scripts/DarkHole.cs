@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 namespace PinBall
 {
@@ -26,10 +26,7 @@ namespace PinBall
         }
 
         // Update is called once per frame
-        void Update()
-        {
-
-        }
+     
         public void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("ball"))

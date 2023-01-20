@@ -10,6 +10,7 @@ TagManager:
   - ball
   - lose
   - Ground
+  - mech
   layers:
   - Default
   - TransparentFX

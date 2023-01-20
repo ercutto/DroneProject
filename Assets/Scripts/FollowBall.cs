@@ -8,19 +8,23 @@ namespace PinBall {
     public class FollowBall : MonoBehaviour
     {
         private GameObject ball;
-
+        public CameraController cameraController;
+        private bool _followBall;
         float offset;
         Vector3 toMove;
         // Start is called before the first frame update
         void Start()
-        {
+        {   
             ball = GameObject.FindGameObjectWithTag("ball");
+            ;
         }
 
         // Update is called once per frame
         void Update()
         {
-            SearchBall();
+            if (!cameraController.followBall) { return; }
+            else { SearchBall(); }
+            
 
 
         }

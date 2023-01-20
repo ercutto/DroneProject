@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 namespace PinBall
 {
@@ -13,11 +12,6 @@ namespace PinBall
             animator = GetComponent<Animator>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
         public void Anim()
         {
             animator.SetTrigger("isTouched");

@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +15,7 @@ namespace PinBall
             UiAnimation,
             startPanel;
         public bool isPushed;
+        public Text fps;
        
 
         // Start is called before the first frame update
@@ -23,11 +24,7 @@ namespace PinBall
             isPushed = false;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+     
 
         public void ActiveOrFalse(GameObject obj)
         {
