@@ -9,12 +9,13 @@ namespace PinBall
         /// Player can only change camera position after camera complates movement!
         /// last object of array is followBall object
         /// </summary>
-        
+        #region public
         public GameObject camHolder;
         public GameObject[] camPos;
         public bool camTookPos,followBall;
         public GameObject ball;
-    #region privates
+        #endregion 
+        #region privates
         Camera cam;
         Rigidbody camRb;
         Quaternion next;
@@ -35,12 +36,8 @@ namespace PinBall
 
         void Update()
         {
-
             Current();
-
-
-
-
+           
         }
         void Current() {
             if (/*Input.GetKeyUp(KeyCode.C)*/isPushed) { NextCamPos(); }
@@ -63,10 +60,7 @@ namespace PinBall
                 cam.orthographic = (i == 1);
                 followBall = (i == 3);
 
-            }
-            
-           
-           
+            }         
         }
         void CurrentCamPos()
         {
@@ -80,6 +74,7 @@ namespace PinBall
         {
             camRb.transform.position= camPos[3].transform.position;
         }
+        #region ButtonCalls
         public void ChangeView()
         {
             isPushed = true;
@@ -88,8 +83,9 @@ namespace PinBall
         {
             isPushed = false;
         }
+        #endregion
 
     }
-    
+
 }
 

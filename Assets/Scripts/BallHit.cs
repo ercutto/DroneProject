@@ -8,6 +8,7 @@ namespace PinBall
         /// ball hit is controlling allthe ball movements and collision checks
         /// if this is not main ball can not be throw to table back trigger destroys
         /// </summary>
+        #region variables
         public GameObject Ground;
         Rigidbody Rb;
         bool isOnPull;
@@ -25,11 +26,10 @@ namespace PinBall
         bool pushing, relased;
         public bool _editing;
         private Reflector reflector = null;
-        
+        #endregion
         //private Keepers keepers = null;
-
-
         // Start is called before the first frame update
+        #region Start&Update
         void Start()
         {
             gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -57,6 +57,8 @@ namespace PinBall
 
 
         }
+        #endregion
+        #region ballMovement
         void Ball_movement()
         {
             if (!isGameStart)
@@ -65,12 +67,7 @@ namespace PinBall
             }
             else
             {
-                //if (_editing)
-                //{
-                //    pushing = Input.GetKey(KeyCode.Space);
-                //    relased = Input.GetKeyUp(KeyCode.Space);
-                //}
-
+               
                 if (pushing && isOnPull)
                 {
                     if (addSpeed < maxSpeed)
@@ -98,6 +95,7 @@ namespace PinBall
             Rb.AddForce(currentHitValue * Time.deltaTime * -direction, ForceMode.Impulse);
            
         }
+        #endregion
         #region MobileUI_buttons
         public void Trigger_KeyDown()
         {
@@ -111,6 +109,7 @@ namespace PinBall
            
         }
         #endregion
+        #region triggers
         private void OnTriggerEnter(Collider other)
         {
 
@@ -157,6 +156,8 @@ namespace PinBall
         {
             gameManager.TotalBallCount(-1); Destroy(gameObject);
         }
+        #endregion
+        #region collision
         public void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("ref"))
@@ -218,4 +219,5 @@ namespace PinBall
      
 
     }
+    #endregion
 }

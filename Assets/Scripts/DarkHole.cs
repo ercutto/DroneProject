@@ -42,12 +42,12 @@ namespace PinBall
         }
         IEnumerator TransportBall()
         {
-            SetComponents();
+            SetComponents(false);
             yield return new WaitForSeconds(WaitingTime);
             UnSetComponents();
 
         }
-        public virtual void SetComponents()
+        public virtual void SetComponents(bool render)
         {
             
             
@@ -65,7 +65,9 @@ namespace PinBall
 
             
             animator.SetTrigger("eat");
-            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative; 
+          
             rb.isKinematic = true;
             
 
@@ -84,7 +86,6 @@ namespace PinBall
 
             rb.isKinematic = false;
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
-
             darkCollCollider.enabled = true;
 
 
