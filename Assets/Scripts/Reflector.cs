@@ -20,21 +20,28 @@ namespace PinBall{
             pointvalue = speedReflectors.pointValue;
             if (spawnBall) { mechanics = FindObjectOfType<Mechanics>(); }
         }
-      
+        public virtual void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("ball"))
+            {
+                animator.SetBool("isTouched", true);
+                if (spawnBall)
+                {
+                    if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
+                    {
+                        mechanics.isSpawned = false;
+                        mechanics.Spawnball();
+                    }
+                   
+                }
+            }
+        }
         public virtual void OnCollisionExit(Collision collision)
         {
-
-            animator.SetTrigger("isTouched");
-            if (spawnBall)
+            if (collision.gameObject.CompareTag("ball"))
             {
-                if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
-                {
-                    mechanics.isSpawned = false;
-                    mechanics.Spawnball();
-                }
-
+                animator.SetBool("isTouched", false);
             }
-
         }
 
     }

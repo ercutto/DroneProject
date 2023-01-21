@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 355573742}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: KeeperStartPosL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887797194}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: KeeperTargetL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7969427310025826379}
   - component: {fileID: 7161293760837641309}
   - component: {fileID: 4011272409224085173}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: KeeperGraphics
   m_TagString: keeper
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   keeperOnTarget: 0
   canPush: 0
   _editing: 0
-  speed: 35
+  speed: 90
   keyButton: a
 --- !u!54 &7969427310025826379
 Rigidbody:
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7080945791513925990}
   - component: {fileID: 3935001510290877096}
   - component: {fileID: 786686006538385817}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Keeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3345653951467277028}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Keeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 553985761838018288}
   - component: {fileID: 235094241188070056}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: KeeperHolder_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
