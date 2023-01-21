@@ -24,23 +24,25 @@ namespace PinBall
             isPushed = false;
         }
 
-     
-
         public void ActiveOrFalse(GameObject obj)
         {
             
             if (obj.activeInHierarchy) { obj.SetActive(false); } else { obj.SetActive(true); }
             
         }
-        public void StartGame()//and Restart
+        public void StartGame()
         {
-            if (!isPushed) { isPushed = true; if (isPushed) { ActiveOrFalse(startPanel); ActiveOrFalse(UiAnimation); StartCoroutine(nameof(StartAfterTime), StartUI);} }
-           
-            
-            
+            if (!isPushed)
+            { isPushed = true;
+                if (isPushed)
+                {
+                    ActiveOrFalse(startPanel); ActiveOrFalse(UiAnimation);
+                    StartCoroutine(nameof(StartAfterTime), StartUI);
+                } 
+            }
 
         }
-        public void RestartGame()
+        public void RestartGame()//simply checks if object is active setting to false
         {
 
             if(!isPushed){ isPushed = true; if(isPushed) { StartCoroutine(nameof(StartAfterTime), GameOverUI); } }

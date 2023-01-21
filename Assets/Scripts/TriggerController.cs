@@ -8,12 +8,14 @@ namespace PinBall {
         public Image SpeedBar;
         public float ballSpeed;
         public UIController uIController;
+        private GameObject triggerButton;
        
         
         // Start is called before the first frame update
         void Start()
         {
             SpeedBar.fillAmount = 0.1f;
+            triggerButton = uIController.TriggerButton;
         }
 
         // Update is called once per frame
@@ -31,7 +33,7 @@ namespace PinBall {
         {
             if (other.gameObject.GetComponent<BallHit>().thisIsMainBall)
             {
-                uIController.ActiveOrFalse(uIController.TriggerButton);
+                uIController.ActiveOrFalse(triggerButton);
                 ballHit = other.gameObject.GetComponent<BallHit>();
             }
 
@@ -40,7 +42,7 @@ namespace PinBall {
         {
             if (other.gameObject.GetComponent<BallHit>().thisIsMainBall)
             {
-                uIController.ActiveOrFalse(uIController.TriggerButton);
+                uIController.ActiveOrFalse(triggerButton);
                 
             }
 

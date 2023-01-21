@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4863291459153481747}
   - component: {fileID: 7620562379519260627}
   - component: {fileID: 1059604607422278019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Board.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4863291459153481747
 Transform:
@@ -92,12 +92,12 @@ GameObject:
   - component: {fileID: 8734134955711507475}
   - component: {fileID: 4670625157629258382}
   - component: {fileID: 854144906728390602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8734134955711507475
 Transform:
@@ -173,12 +173,12 @@ GameObject:
   - component: {fileID: 2124067760679178047}
   - component: {fileID: 3113037763317004132}
   - component: {fileID: 7707601984872452349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Best
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &2124067760679178047
 RectTransform:
@@ -228,7 +228,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 0
     m_FontStyle: 1
     m_BestFit: 0
@@ -253,12 +253,12 @@ GameObject:
   - component: {fileID: 1313426896777114442}
   - component: {fileID: 7070245632386729531}
   - component: {fileID: 2451282566984125992}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UI_Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &8105022113844525739
 RectTransform:
@@ -356,12 +356,12 @@ GameObject:
   - component: {fileID: 5364131726553399546}
   - component: {fileID: 9081541260974012046}
   - component: {fileID: 7678955020740666576}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &5364131726553399546
 RectTransform:
@@ -435,12 +435,12 @@ GameObject:
   - component: {fileID: 2336654985018774061}
   - component: {fileID: 4882757140232611081}
   - component: {fileID: 1084590192578324286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ball_img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &2336654985018774061
 RectTransform:
@@ -511,12 +511,12 @@ GameObject:
   - component: {fileID: 1899441392440561093}
   - component: {fileID: 8515868356987088795}
   - component: {fileID: 6699875430110029771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ligthPulbs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1899441392440561093
 Transform:
@@ -562,7 +562,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 479ddd69d7266c843ae3d2313a505883, type: 2}
+  - {fileID: 2100000, guid: f90a8ecfeba4b984c90e2ea56098a3a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -595,13 +595,12 @@ GameObject:
   - component: {fileID: 4508565351843992945}
   - component: {fileID: 1602728603611956593}
   - component: {fileID: 5919558182871075301}
-  - component: {fileID: 4312350615268526990}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Machine_Texts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4508565351843992945
 Transform:
@@ -668,19 +667,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4312350615268526990
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4935986983075068283}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5714288347458758645
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,12 +678,12 @@ GameObject:
   - component: {fileID: 8163307610200712714}
   - component: {fileID: 2053018321018537084}
   - component: {fileID: 2590250388077996163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &8163307610200712714
 RectTransform:
@@ -771,12 +757,12 @@ GameObject:
   - component: {fileID: 2672377958170436937}
   - component: {fileID: 8840149261413935046}
   - component: {fileID: 2057051767850146842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &2672377958170436937
 RectTransform:
@@ -850,12 +836,12 @@ GameObject:
   - component: {fileID: 6026460338071797218}
   - component: {fileID: 2584585259706213179}
   - component: {fileID: 6436116910135908383}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BallCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &6026460338071797218
 RectTransform:
@@ -929,12 +915,12 @@ GameObject:
   - component: {fileID: 8272908859365299666}
   - component: {fileID: 5764400366610094611}
   - component: {fileID: 1772301881162840384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Board.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8272908859365299666
 Transform:

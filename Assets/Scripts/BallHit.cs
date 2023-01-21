@@ -182,37 +182,22 @@ namespace PinBall
                     hitToReflector = keepers.isPushing;
                     reflector = collision.gameObject.GetComponent<Reflector>();
                     currentHitValue = reflector.force;
-                    //point = reflector.pointvalue;
-                    //gameManager.AddScore(point);
+                    
 
                 }
             }
         }
-        //public void OnCollisionStay(Collision collision)
-        //{
-        //    if (collision.gameObject.CompareTag("keeper"))
-        //    {
-
-        //        direction = (collision.transform.position - transform.position).normalized;
-        //        Keepers keepers = collision.gameObject.GetComponentInParent<Keepers>();
-        //        onTarget = keepers.keeperOnTarget;
-        //        if (onTarget) { return; } else hitToReflector = keepers.isPushing;
-        //        reflector = collision.gameObject.GetComponent<Reflector>();
-        //        currentHitValue = reflector.force;
-
-
-        //    }
-        //}
+  
         public void OnCollisionExit(Collision collision)
         {
-            if (collision.gameObject.CompareTag("ref") || collision.gameObject.CompareTag("keeper"))
+            if (collision.gameObject.CompareTag("ref"))
             {
                 hitToReflector = false;
                 onTarget = false;
                 reflector = collision.gameObject.GetComponent<Reflector>();     
                 point = reflector.pointvalue;
                 gameManager.AddScore(point);
-                reflector = null;
+               
             }
         }
 
