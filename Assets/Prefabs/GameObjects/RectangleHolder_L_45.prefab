@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92a4a705cdc617f48b157f752c1468ed, type: 2}
+  - {fileID: 2100000, guid: ddec8bb64811dca4f8080f6029a43b3c, type: 2}
   - {fileID: 2100000, guid: 0939d1f8fb8985949a546d68929bd771, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   pointvalue: 0
   animator: {fileID: 8186838924993406522}
   spawnBall: 0
-  extras: {fileID: 0}
+  mechanics: {fileID: 0}
 --- !u!1 &5735335021572429196
 GameObject:
   m_ObjectHideFlags: 0
