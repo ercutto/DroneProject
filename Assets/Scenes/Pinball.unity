@@ -2683,6 +2683,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3263001584839692851}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &709209878 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3263001584198335781, guid: 7729e7f259f48ca49a15b5f61e0344a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3263001584839692851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &709209879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3263001584198335780, guid: 7729e7f259f48ca49a15b5f61e0344a5,
@@ -7509,6 +7515,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3263001584839692851}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1621806201 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3263001585365737034, guid: 7729e7f259f48ca49a15b5f61e0344a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3263001584839692851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1637261625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1934932050996883106, guid: 6b6d4f92e902a08488cdff2b2ef98220,
@@ -9846,6 +9858,8 @@ MonoBehaviour:
   camTookPos: 0
   followBall: 0
   ball: {fileID: 0}
+  cam: {fileID: 709209878}
+  camRb: {fileID: 1621806201}
 --- !u!114 &2009991678
 MonoBehaviour:
   m_ObjectHideFlags: 0

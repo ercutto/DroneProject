@@ -9,8 +9,10 @@ namespace PinBall
         public GameObject pushObject;
         public GroubPointsCollect groubPointsCollect;
         public GroubAnimCont groubAnimCont;
-        
-        
+        private Color red = Color.red;
+        private Color white = Color.white;
+        private Color green = Color.green;
+
 
         public override void ScoreAndAction()
         {
@@ -18,20 +20,20 @@ namespace PinBall
             ColliderControll(false);
             groubAnimCont.Anim();
             groubPointsCollect.CountBonus(1);
-            Change(Color.red);
+            Change(red);
         }
         public void BackToStart()
         {
            
-            Change(Color.white);
+            Change(white);
             StartCoroutine(ColorDance());
         }
         IEnumerator ColorDance()
         { 
             yield return new WaitForSeconds(0.3f);
-            Change(Color.green);
+            Change(green);
             yield return new WaitForSeconds(0.3f);
-            Change(Color.white);
+            Change(white);
             ColliderControll(true);
             
 

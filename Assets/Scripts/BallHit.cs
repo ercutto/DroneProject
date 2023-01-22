@@ -209,6 +209,7 @@ namespace PinBall
             hitToReflector = false;
             onTarget = false;
             point = reflector.pointvalue;
+            reflector.SentToAnim();
             gameManager.AddScore(point);
         }
 
