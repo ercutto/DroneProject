@@ -146,7 +146,7 @@ MonoBehaviour:
   speedReflectors: {fileID: 11400000, guid: a6f98d3d9bba14941900aba5249126a0, type: 2}
   force: 0
   pointvalue: 0
-  animator: {fileID: 235094241188070056}
+  animator: {fileID: 0}
   spawnBall: 0
   mechanics: {fileID: 0}
 --- !u!65 &4011272409224085173
@@ -283,7 +283,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 553985761838018288}
-  - component: {fileID: 235094241188070056}
   m_Layer: 0
   m_Name: KeeperHolder_L
   m_TagString: Untagged
@@ -308,22 +307,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &235094241188070056
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6795752893390691956}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0899a2362666e3b4db2334f7cf7f52e8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

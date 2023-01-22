@@ -10,7 +10,7 @@ namespace PinBall {
         private GameManager gameManager;
         public bool isTouched;
      
-        private void Start()
+        private void Awake()
         {
             isTouched = false;
             gameManager = FindObjectOfType<GameManager>();
@@ -41,7 +41,7 @@ namespace PinBall {
         {
             col.enabled = false;
             ChangeColor();
-            gameManager.AddHit(1);
+            //gameManager.AddHit(1);
         }
       
         IEnumerator ColorIsWaiting()

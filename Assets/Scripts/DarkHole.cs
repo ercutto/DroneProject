@@ -18,7 +18,7 @@ namespace PinBall
         Collider darkCollCollider;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             darkCollCollider = GetComponent<Collider>();
             animator = GetComponentInChildren<Animator>();

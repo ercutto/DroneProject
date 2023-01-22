@@ -151,7 +151,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4313932486083603448}
-  - component: {fileID: 1367232991761979447}
   m_Layer: 0
   m_Name: KeeperHolder_R
   m_TagString: Untagged
@@ -176,25 +175,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1367232991761979447
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313164200114574961}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0899a2362666e3b4db2334f7cf7f52e8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3655167092980035170
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +245,7 @@ MonoBehaviour:
   speedReflectors: {fileID: 11400000, guid: a6f98d3d9bba14941900aba5249126a0, type: 2}
   force: 0
   pointvalue: 0
-  animator: {fileID: 1367232991761979447}
+  animator: {fileID: 0}
   spawnBall: 0
   mechanics: {fileID: 0}
 --- !u!65 &4381061836971305400

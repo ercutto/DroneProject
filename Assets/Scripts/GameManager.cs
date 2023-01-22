@@ -8,7 +8,7 @@ namespace PinBall
     {
         #region Public
         public static GameManager _GameManager;
-        [Tooltip("ScoreText value is: GameManager.currentScore, MultiplierText value is Gamemanager.Bonus")] public Text scoreText, bonusText, ballCountText, machineScore, machineBonus, machineBallCount, messageText;
+        [Tooltip("ScoreText value is: GameManager.currentScore, MultiplierText value is Gamemanager.Bonus")] public Text  machineScore, machineBonus, machineBallCount, messageText;
         public Color red, blue;
         public MessageTexts messageTexts;
         public int ballMax = 3;
@@ -33,8 +33,9 @@ namespace PinBall
         //[Tooltip("CanNotChange (private)")] [SerializeField] private int countOfHit;
         [Tooltip("CanNotChange (private)")] [SerializeField] private bool countDown;
         private string scoreString, bonusString;
-        
-        
+   
+
+
         #endregion
         #region UnityMethods
         private void Awake()
@@ -46,6 +47,7 @@ namespace PinBall
             }
             else { Destroy(gameObject); }
 
+            
         }
         // Start is called before the first frame update
         void Start()
@@ -78,17 +80,11 @@ namespace PinBall
         #region BonusTime System And adding bonnus
         void IsItbonusTime()
         {
-            //if (countDown)
-            //{
                 bonusTime += Time.deltaTime;
                 if (bonusTime > bonusTimeEnd)
                 {
                     AddBonus();
-
-
                 }
-
-            //}
         }
         void AddBonus()
         {
@@ -117,12 +113,12 @@ namespace PinBall
                     //int i = Random.Range(0, messageTexts.messages.Length);
                     messageText.text = messageTexts.messages[0];
                 }
-                else if(bonus >= 2000) { messageText.text = messageTexts.messages[1]; }
-                else if(bonus >= 3000) { messageText.text = messageTexts.messages[2]; }
-                else if(bonus >= 4000) { messageText.text = messageTexts.messages[3]; }
+                else if(bonus >= Scores[1]) { TypeBonnus(1); }
+                else if(bonus >= Scores[2]) { TypeBonnus(2); }
+                else if(bonus >= Scores[3]) { TypeBonnus(3); }
                 else
                 {
-                    messageText.text = "work more";
+                    TypeBonnus(0);
                 }
             }
             else
@@ -136,13 +132,18 @@ namespace PinBall
             //ToShakeText(machineScore);
             ChangeScore();
         }
+        void TypeBonnus(int message)
+        {
+            if (messageText.text == messageTexts.messages[message]) { return; }
+            else { messageText.text = messageTexts.messages[message]; }
+        }
         
         #endregion
         #region texts are On write to text aras
         void ChangeScore()
         {
             //bonusText.text = bonusString + "+";
-            machineBonus.text = bonusString + "+";
+            machineBonus.text = bonusString;
             //scoreText.text = scoreString;
             machineScore.text = scoreString;
 
@@ -157,7 +158,7 @@ namespace PinBall
                 //totalAmountOfBall = 1;
                 ballFinished = false;
                 NoMoreBallOnScene = false;
-                scoreText.text = "0000 ";
+                
                 bonusTime = 0;
                 countDown = false;
                 bonusTimeEnd = 3f;
@@ -224,7 +225,7 @@ namespace PinBall
                 
             }
 
-            ballCountText.text = currentBall.ToString();
+            
             machineBallCount.text = currentBall.ToString();
 
         }

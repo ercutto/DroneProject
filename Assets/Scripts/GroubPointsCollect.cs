@@ -12,7 +12,7 @@ namespace PinBall
         public GameObject bonusCanvasPrefab;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             bonusCanvasPrefab.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = Score.ToString();
             bonusCanvasPrefab.SetActive(false);

@@ -16,7 +16,7 @@ namespace PinBall
         public GameObject[] ControlledObjects;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             gameManager = FindObjectOfType<GameManager>();
             isSpawned = true;
