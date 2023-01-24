@@ -216,7 +216,17 @@ namespace PinBall
             }
         }
 
+<<<<<<< HEAD
      
+=======
+        void AfterCollisionExit()
+        {
+            hitToReflector = false;
+            onTarget = false;
+            point = reflector.pointvalue;
+            gameManager.AddScore(point);
+        }
+>>>>>>> parent of 0a59ad7 (scripts violations are cleared now back to graphics)
 
     }
     #endregion
