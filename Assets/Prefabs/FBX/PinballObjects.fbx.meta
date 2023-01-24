@@ -19,9 +19,24 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Glossy
     second: {instanceID: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PinballMaterial
+    second: {fileID: 2100000, guid: 84074407e47c91e4aa9a183d70fa40e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic_venetian_material.001
+    second: {fileID: 2100000, guid: a25f3b2f68d79ff4bb0ff66de03f3874, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: String_material
+    second: {fileID: 2100000, guid: d1c8dec29c3a57046b0637a8273cc3ed, type: 2}
   materials:
-    materialImportMode: 1
-    materialName: 2
+    materialImportMode: 2
+    materialName: 1
     materialSearch: 0
     materialLocation: 0
   animations:

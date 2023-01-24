@@ -80,14 +80,14 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.29592085
-        inSlope: -0.41421586
-        outSlope: -0.41421586
+        time: 0.014187752
+        value: 0.11409289
+        inSlope: 0.0083661545
+        outSlope: 0.0083661545
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.111629315
+        outWeight: 0.19306447
       - serializedVersion: 3
         time: 0.99538106
         value: 0
@@ -167,8 +167,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8396332440854943317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4648399158797357436}
   m_Father: {fileID: 0}
@@ -181,7 +181,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8396332440854943317}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 2122681682525997855, guid: df4ea2d3d5235184995d9b5c33f170b2, type: 3}
 --- !u!23 &8396332440854943318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 316496ada4560a34aa360afd362358df, type: 2}
+  - {fileID: 2100000, guid: 84074407e47c91e4aa9a183d70fa40e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -234,7 +234,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8396332440854943316
 Rigidbody:
@@ -271,4 +271,4 @@ MonoBehaviour:
   thisIsMainBall: 1
   addSpeed: 2
   maxSpeed: 1500
-  _editing: 1
+  _editing: 0
