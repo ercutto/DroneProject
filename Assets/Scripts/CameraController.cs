@@ -14,12 +14,10 @@ namespace PinBall
         public GameObject[] camPos;
         public bool camTookPos,followBall;
         public GameObject ball;
-        public Camera cam;
-        public Rigidbody camRb;
-        #endregion
+        #endregion 
         #region privates
-
-
+        Camera cam;
+        Rigidbody camRb;
         Quaternion next;
         Vector3 nextMove;
         Quaternion lookPos;
@@ -30,8 +28,8 @@ namespace PinBall
         void Awake()
         {
             isPushed = false;
-            
-            
+            cam = Camera.main;
+            camRb = camHolder.GetComponent<Rigidbody>();
             camTookPos = true;
             NextCamPos();
         }

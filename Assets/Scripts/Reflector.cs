@@ -21,42 +21,30 @@ namespace PinBall{
             pointvalue = speedReflectors.pointValue;
             if (spawnBall) { mechanics = FindObjectOfType<Mechanics>(); }
         }
-        //public virtual void OnCollisionEnter(Collision collision)
-        //{
-        //    if (collision.gameObject.CompareTag("ball"))
-        //    {
-                
-        //        if (spawnBall)
-        //        {
-        //            if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
-        //            {
-        //                mechanics.isSpawned = false;
-        //                mechanics.Spawnball();
-        //            }
-                   
-        //        }
-        //    }
-        //}
-        public void SentToAnim()
+        public virtual void OnCollisionEnter(Collision collision)
         {
-            if (spawnBall)
-            {          
-                    mechanics.isSpawned = false;
-                    mechanics.Spawnball();
+            if (collision.gameObject.CompareTag("ball"))
+            {
+                
+                if (spawnBall)
+                {
+                    if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
+                    {
+                        mechanics.isSpawned = false;
+                        mechanics.Spawnball();
+                    }
+                   
+                }
             }
-
-            if (animator != null)
-                animator.SetTrigger("isTouched");
-
         }
-        //public virtual void OnCollisionExit(Collision collision)
-        //{
-        //    if (collision.gameObject.CompareTag("ball"))
-        //    {
-        //        if(animator!=null)
-        //        animator.SetTrigger("isTouched");
-        //    }
-        //}
+        public virtual void OnCollisionExit(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("ball"))
+            {
+                if(animator!=null)
+                animator.SetTrigger("isTouched");
+            }
+        }
 
     }
 }
