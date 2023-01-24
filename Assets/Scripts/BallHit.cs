@@ -26,12 +26,11 @@ namespace PinBall
         bool pushing, relased;
         public bool _editing;
         private Reflector reflector = null;
-        private Keepers keepers = null;
         #endregion
         //private Keepers keepers = null;
         // Start is called before the first frame update
         #region Start&Update
-        void Awake()
+        void Start()
         {
             gameManager = GameObject.FindObjectOfType<GameManager>();
             Rb = GetComponent<Rigidbody>();
@@ -41,7 +40,6 @@ namespace PinBall
             addSpeed = 2;
             pushing = false;
             relased = false;
-            point = 100f;
             GameObject.FindGameObjectWithTag("Ground");
             mechanics = GameObject.FindGameObjectWithTag("mech").GetComponent<Mechanics>();
             Invoke(nameof(StartGame), startTime);
@@ -176,7 +174,7 @@ namespace PinBall
                 
                 
                 direction = (collision.transform.position - transform.position).normalized;
-                keepers = collision.gameObject.GetComponentInParent<Keepers>();
+                Keepers keepers = collision.gameObject.GetComponentInParent<Keepers>();
                 onTarget = keepers.keeperOnTarget;
                 if (onTarget) return;
                 else
@@ -184,33 +182,41 @@ namespace PinBall
                     hitToReflector = keepers.isPushing;
                     reflector = collision.gameObject.GetComponent<Reflector>();
                     currentHitValue = reflector.force;
-                   
+                    //point = reflector.pointvalue;
+                    //gameManager.AddScore(point);
 
                 }
             }
         }
-      
+        //public void OnCollisionStay(Collision collision)
+        //{
+        //    if (collision.gameObject.CompareTag("keeper"))
+        //    {
+
+        //        direction = (collision.transform.position - transform.position).normalized;
+        //        Keepers keepers = collision.gameObject.GetComponentInParent<Keepers>();
+        //        onTarget = keepers.keeperOnTarget;
+        //        if (onTarget) { return; } else hitToReflector = keepers.isPushing;
+        //        reflector = collision.gameObject.GetComponent<Reflector>();
+        //        currentHitValue = reflector.force;
+
+
+        //    }
+        //}
         public void OnCollisionExit(Collision collision)
         {
             if (collision.gameObject.CompareTag("ref") || collision.gameObject.CompareTag("keeper"))
             {
-                //hitToReflector = false;
-                //onTarget = false;
-                reflector = collision.gameObject.GetComponent<Reflector>();
-                //point = reflector.pointvalue;
-
-                //gameManager.AddScore(point);
-                AfterCollisionExit();
+                hitToReflector = false;
+                onTarget = false;
+                reflector = collision.gameObject.GetComponent<Reflector>();     
+                point = reflector.pointvalue;
+                gameManager.AddScore(point);
+                reflector = null;
             }
         }
 
-        void AfterCollisionExit()
-        {
-            hitToReflector = false;
-            onTarget = false;
-            point = reflector.pointvalue;
-            gameManager.AddScore(point);
-        }
+     
 
     }
     #endregion

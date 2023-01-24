@@ -19,7 +19,7 @@ namespace PinBall
        
 
         // Start is called before the first frame update
-        void Awake()
+        void Start()
         {
             isPushed = false;
         }

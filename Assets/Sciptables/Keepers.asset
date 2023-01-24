@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6795752893390691956, guid: 53650379ec29e1f41a8a993c38f50443, type: 3}
   objectName: Keepeer
-  force: 300
+  force: 600
   pointValue: 5

@@ -10,7 +10,7 @@ namespace PinBall
         private float currentHighScore;
         public Text HighScoreText;
         // Start is called before the first frame update
-        void Awake()
+        void Start()
         {
             currentHighScore = PlayerPrefs.GetFloat("highScore", score);
             TypeToTextArea();

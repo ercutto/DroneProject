@@ -19,7 +19,7 @@ namespace PinBall {
         private BoxCollider mColl;
 
         // Start is called before the first frame update
-        void Awake()
+        void Start()
         {
             isPushing = false;
             keeperOnTarget = false;

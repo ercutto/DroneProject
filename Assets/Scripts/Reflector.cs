@@ -9,12 +9,11 @@ namespace PinBall{
         public SpeedReflectors speedReflectors;
         public float force;
         public float pointvalue;
-        
-        public  Animator animator=null;
+        public  Animator animator;
         public bool spawnBall = false;
         public Mechanics mechanics;
 
-        void Awake()
+        void Start()
         {
             force = speedReflectors.force;
             pointvalue = 0;
@@ -25,7 +24,7 @@ namespace PinBall{
         {
             if (collision.gameObject.CompareTag("ball"))
             {
-                
+                animator.SetBool("isTouched", true);
                 if (spawnBall)
                 {
                     if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
@@ -41,8 +40,7 @@ namespace PinBall{
         {
             if (collision.gameObject.CompareTag("ball"))
             {
-                if(animator!=null)
-                animator.SetTrigger("isTouched");
+                animator.SetBool("isTouched", false);
             }
         }
 

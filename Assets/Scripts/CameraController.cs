@@ -25,7 +25,7 @@ namespace PinBall
         int i = 0;
         bool isPushed;
     #endregion
-        void Awake()
+        void Start()
         {
             isPushed = false;
             cam = Camera.main;

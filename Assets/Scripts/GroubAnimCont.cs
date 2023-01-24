@@ -6,7 +6,7 @@ namespace PinBall
     {
         public SpeedReflectors reflector;
         // Start is called before the first frame update
-        void Awake()
+        void Start()
         {
             force = reflector.force;
             animator = GetComponent<Animator>();
