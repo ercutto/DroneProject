@@ -21,7 +21,6 @@ namespace PinBall
         public Restarter restarter;
         public PlayerData playerData;
         public UIController uIController;
-        private float[] Scores = { 1000, 2000,3000,4000,5000,6000,7000,8000,9000,10000 };
         
         #endregion
         #region Private
@@ -29,12 +28,13 @@ namespace PinBall
         [Tooltip("CanNotChange (private)")] [SerializeField] private float currentScore;
         //[Tooltip("CanNotChange (private)")] [SerializeField] private string pts = " PTS";
         [Tooltip("CanNotChange (private)")] [SerializeField] private float bonusTime, bonusTimeEnd;
-        [Tooltip("CanNotChange (private)")] [SerializeField] private float bonus;
+        [Tooltip("CanNotChange (private)")] [SerializeField] private int bonus;
         //[Tooltip("CanNotChange (private)")] [SerializeField] private int countOfHit;
         [Tooltip("CanNotChange (private)")] [SerializeField] private bool countDown;
         private string scoreString, bonusString;
-        
-        
+        private int[] Scores = { 1000, 2000,3000,4000,5000,6000,7000,8000,9000,10000 };
+
+
         #endregion
         #region UnityMethods
         private void Awake()
@@ -97,6 +97,7 @@ namespace PinBall
             bonus = 0;
             bonusString = bonus.ToString();
             ChangeScore();
+            ChangeBonus();
             //StartCoroutine(nameof(ShakeText), bonusText);
             //ShakeText(machineBonus);
             countDown = false;
@@ -105,24 +106,20 @@ namespace PinBall
         #endregion
         #region ScoreAdding
         //this adds score and also starts bonusTime counts.
-        public void AddScore(float addScore)
+        public void AddScore(int addScore)
         {
 
             if (countDown)
             { /*countOfHit++;*/
                 bonus += addScore;
                 bonusString = bonus.ToString(); bonusTime = 0;
-                if (bonus >= 1000)
-                {
-                    //int i = Random.Range(0, messageTexts.messages.Length);
-                    messageText.text = messageTexts.messages[0];
-                }
-                else if(bonus >= 2000) { messageText.text = messageTexts.messages[1]; }
-                else if(bonus >= 3000) { messageText.text = messageTexts.messages[2]; }
-                else if(bonus >= 4000) { messageText.text = messageTexts.messages[3]; }
+               
+                if(bonus >= Scores[2]) { TypingMessage(2); }
+                else if(bonus >= Scores[3]) { TypingMessage(3); }
+                else if(bonus >= Scores[4]) { TypingMessage(4); }
                 else
                 {
-                    messageText.text = "work more";
+                    messageText.text = messageTexts.messages[0];
                 }
             }
             else
@@ -134,16 +131,25 @@ namespace PinBall
             currentScore += addScore;
             scoreString = currentScore.ToString();
             //ToShakeText(machineScore);
-            ChangeScore();
+            ChangeBonus();
         }
-        
+        void TypingMessage(int messages)
+        {
+            if(messageText.text!= messageTexts.messages[messages])
+            {
+                messageText.text = messageTexts.messages[messages];
+            }
+            
+        }
+
         #endregion
         #region texts are On write to text aras
+        void ChangeBonus()
+        {
+            machineBonus.text = bonusString;
+        }
         void ChangeScore()
         {
-            //bonusText.text = bonusString + "+";
-            machineBonus.text = bonusString + "+";
-            //scoreText.text = scoreString;
             machineScore.text = scoreString;
 
         }
@@ -179,11 +185,11 @@ namespace PinBall
         }
         #endregion
         #region hitcount
-        public void AddHit(int hit)
-        {
-            currentHit += hit;
+        //public void AddHit(int hit)
+        //{
+        //    currentHit += hit;
             
-        }
+        //}
         #endregion
         #region text Effect
         void ToShakeText(Text text)

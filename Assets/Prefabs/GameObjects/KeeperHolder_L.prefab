@@ -113,7 +113,7 @@ MonoBehaviour:
   keeperOnTarget: 0
   canPush: 0
   _editing: 0
-  speed: 90
+  speed: 125
   keyButton: a
 --- !u!54 &7969427310025826379
 Rigidbody:

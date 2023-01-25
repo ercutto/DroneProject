@@ -8,7 +8,7 @@ namespace PinBall{
         /// </summary>
         public SpeedReflectors speedReflectors;
         public float force;
-        public float pointvalue;
+        public int pointvalue;
         public  Animator animator;
         public bool spawnBall = false;
         public Mechanics mechanics;

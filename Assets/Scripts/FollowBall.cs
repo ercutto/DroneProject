@@ -11,12 +11,14 @@ namespace PinBall {
         public CameraController cameraController;
         private bool _followBall;
         float offset;
+        string mball = "mainBall";
+        string balTag = "ball";
         Vector3 toMove;
         // Start is called before the first frame update
         void Start()
         {   
-            ball = GameObject.FindGameObjectWithTag("ball");
-            ;
+            ball = GameObject.FindGameObjectWithTag(balTag);
+         
         }
 
         // Update is called once per frame
@@ -33,14 +35,14 @@ namespace PinBall {
             if (ball == null)
             {
 
-                GameObject current = GameObject.Find("mainBall");
+                GameObject current = GameObject.Find(mball);
                 if (current!=null)
                 {
                     ball = current;
                 }
                 else
                 {
-                   current = GameObject.FindGameObjectWithTag("ball");
+                   current = GameObject.FindGameObjectWithTag(balTag);
                 }
             }
             else

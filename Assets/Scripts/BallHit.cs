@@ -17,7 +17,7 @@ namespace PinBall
         public float startTime;
         bool isGameStart;
         private float currentHitValue;
-        public float point = 0;
+        public int point = 0;
         Vector3 direction;
         private GameManager gameManager;
         private Mechanics mechanics;
@@ -26,6 +26,10 @@ namespace PinBall
         bool pushing, relased;
         public bool _editing;
         private Reflector reflector = null;
+        private Keepers keepers = null;
+        private string _refTag = "ref";
+        private string _kepTag = "keeper";
+        private Vector3 from;      
         #endregion
         //private Keepers keepers = null;
         // Start is called before the first frame update
@@ -160,59 +164,51 @@ namespace PinBall
         #region collision
         public void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.CompareTag("ref"))
+            if (collision.gameObject.CompareTag(_refTag))
             {
-                direction = (collision.transform.position - transform.position).normalized;
-                hitToReflector = true;
+                from = collision.transform.position;
                 reflector = collision.gameObject.GetComponent<Reflector>();
                 currentHitValue = reflector.force;
-
+                hitToReflector = true;
+                CallDirection();
+                point = reflector.pointvalue;
+                gameManager.AddScore(point);
 
             }
-            else if (collision.gameObject.CompareTag("keeper"))
+            else if (collision.gameObject.CompareTag(_kepTag))
             {
+
+                from = collision.transform.position;
                 
-                
-                direction = (collision.transform.position - transform.position).normalized;
-                Keepers keepers = collision.gameObject.GetComponentInParent<Keepers>();
+                keepers = collision.gameObject.GetComponentInParent<Keepers>();
                 onTarget = keepers.keeperOnTarget;
                 if (onTarget) return;
                 else
                 {
                     hitToReflector = keepers.isPushing;
-                    reflector = collision.gameObject.GetComponent<Reflector>();
-                    currentHitValue = reflector.force;
-                    //point = reflector.pointvalue;
-                    //gameManager.AddScore(point);
+                    
+                    //reflector = collision.gameObject.GetComponent<Reflector>();
+                    currentHitValue = keepers.force;
+                    CallDirection();
+
+
 
                 }
             }
         }
-        //public void OnCollisionStay(Collision collision)
-        //{
-        //    if (collision.gameObject.CompareTag("keeper"))
-        //    {
-
-        //        direction = (collision.transform.position - transform.position).normalized;
-        //        Keepers keepers = collision.gameObject.GetComponentInParent<Keepers>();
-        //        onTarget = keepers.keeperOnTarget;
-        //        if (onTarget) { return; } else hitToReflector = keepers.isPushing;
-        //        reflector = collision.gameObject.GetComponent<Reflector>();
-        //        currentHitValue = reflector.force;
-
-
-        //    }
-        //}
+        void CallDirection() {
+            direction = (from - transform.position).normalized;
+        }
         public void OnCollisionExit(Collision collision)
         {
-            if (collision.gameObject.CompareTag("ref") || collision.gameObject.CompareTag("keeper"))
+            if (collision.gameObject.CompareTag(_refTag) || collision.gameObject.CompareTag(_kepTag))
             {
                 hitToReflector = false;
                 onTarget = false;
-                reflector = collision.gameObject.GetComponent<Reflector>();     
-                point = reflector.pointvalue;
-                gameManager.AddScore(point);
-                reflector = null;
+                //reflector = collision.gameObject.GetComponent<Reflector>();     
+                //point = reflector.pointvalue;
+                //gameManager.AddScore(point);
+                
             }
         }
 
