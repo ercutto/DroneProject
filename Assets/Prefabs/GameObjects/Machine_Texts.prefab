@@ -562,7 +562,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 479ddd69d7266c843ae3d2313a505883, type: 2}
+  - {fileID: 2100000, guid: aa9f0389e76d5604f9b4de1ab89da3cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -595,7 +595,6 @@ GameObject:
   - component: {fileID: 4508565351843992945}
   - component: {fileID: 1602728603611956593}
   - component: {fileID: 5919558182871075301}
-  - component: {fileID: 4312350615268526990}
   m_Layer: 0
   m_Name: Machine_Texts
   m_TagString: Untagged
@@ -668,19 +667,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4312350615268526990
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4935986983075068283}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5714288347458758645
 GameObject:
   m_ObjectHideFlags: 0
