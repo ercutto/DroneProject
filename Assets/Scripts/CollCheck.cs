@@ -9,7 +9,7 @@ namespace PinBall {
         private Collider col;
         private GameManager gameManager;
         public bool isTouched;
-        private Color red = Color.red;
+        private Color red = Color.yellow;
         private Color white = Color.white;
         private string _tag = "ball";
 

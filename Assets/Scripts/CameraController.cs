@@ -57,7 +57,7 @@ namespace PinBall
                 if (i >= camPos.Length) { i = 0; }
                 next = camPos[i].transform.rotation;
                 nextMove = camPos[i].transform.position;
-                cam.orthographic = (i == 1);
+                //cam.orthographic = (i == 1);
                 followBall = (i == 3);
 
             }         

@@ -13,8 +13,9 @@ namespace PinBall
         Rigidbody rb;
         Animator animator;
         public bool isDarkHole=true;
-        public int WaitingTime=2;
+        public float WaitingTime=2;
         public GameManager gameManager;
+        public Transform from;
         Collider darkCollCollider;
 
         // Start is called before the first frame update
@@ -60,7 +61,7 @@ namespace PinBall
             }
             else
             {
-                ball.transform.position = this.transform.position;
+                ball.transform.position = from.transform.position;
             }
 
             

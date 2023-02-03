@@ -9,7 +9,7 @@ namespace PinBall
         /// if this is not main ball can not be throw to table back trigger destroys
         /// </summary>
         #region variables
-        public GameObject Ground;
+      
         Rigidbody Rb;
         bool isOnPull;
         bool hitToReflector;
@@ -44,7 +44,7 @@ namespace PinBall
             addSpeed = 2;
             pushing = false;
             relased = false;
-            GameObject.FindGameObjectWithTag("Ground");
+            
             mechanics = GameObject.FindGameObjectWithTag("mech").GetComponent<Mechanics>();
             Invoke(nameof(StartGame), startTime);
         }
@@ -90,8 +90,8 @@ namespace PinBall
 
         void RelasedForce()
         {
-            Rb.AddForce(addSpeed * Time.deltaTime * Vector3.up, ForceMode.Impulse);
-            Rb.AddForce(addSpeed * Time.deltaTime * Vector3.forward, ForceMode.Impulse);
+           // Rb.AddForce(addSpeed * Time.deltaTime * Vector3.up, ForceMode.Impulse);
+            Rb.AddForce(2*addSpeed * Time.deltaTime * Vector3.forward, ForceMode.Impulse);
             addSpeed = 2;
         }
         void AfterHit()
