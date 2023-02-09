@@ -11,7 +11,7 @@ namespace PinBall
         GameObject ball;
         TrailRenderer tRenderer;
         Rigidbody rb;
-        Animator animator;
+        public Animator animator;
         public bool isDarkHole=true;
         public float WaitingTime=2;
         public GameManager gameManager;
@@ -22,7 +22,8 @@ namespace PinBall
         void Start()
         {
             darkCollCollider = GetComponent<Collider>();
-            animator = GetComponentInChildren<Animator>();
+            if (animator == null) { animator = GetComponentInChildren<Animator>(); }
+            
             gameManager = FindObjectOfType<GameManager>();
         }
 

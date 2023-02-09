@@ -11,6 +11,8 @@ TagManager:
   - lose
   - Ground
   - mech
+  - Wall
+  - way
   layers:
   - Default
   - TransparentFX

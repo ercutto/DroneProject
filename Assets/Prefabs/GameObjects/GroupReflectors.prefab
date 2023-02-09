@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 8099898164848085591}
   - component: {fileID: 7113768785900947435}
   - component: {fileID: 2732161653412972792}
-  - component: {fileID: 4449196136580650434}
+  - component: {fileID: 3770208208254842504}
+  - component: {fileID: 8377002277669218500}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: ref
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 997759317356443544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.024, y: 0, z: -0}
-  m_LocalScale: {x: 0.5, y: 2.35, z: 0.7}
+  m_LocalScale: {x: 0.32, y: 1.43, z: 0.7}
   m_Children: []
   m_Father: {fileID: 4690671604577815183}
   m_RootOrder: 0
@@ -82,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4449196136580650434
+--- !u!65 &3770208208254842504
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,11 +91,30 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997759317356443544}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24890965, y: 0.11351178, z: 0.113978945}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.2489097, y: 0.56015277, z: 0.11397896}
+  m_Center: {x: -0.00000023283064, y: 0.11271989, z: 2.520934e-22}
+--- !u!114 &8377002277669218500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997759317356443544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876b5b65758b20a46a0e4d3e7a4c5f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedReflectors: {fileID: 11400000, guid: 881fe010af651264b868564f9e2548df, type: 2}
+  force: 0
+  pointvalue: 0
+  animator: {fileID: 4210432665963398174}
+  spawnBall: 0
+  mechanics: {fileID: 0}
+  reflector: {fileID: 11400000, guid: d3f1e5de206f520408baaaacc967473d, type: 2}
 --- !u!1 &1039721041937504522
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,11 +125,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4690671604577815183}
   - component: {fileID: 4210432665963398174}
-  - component: {fileID: 6511711246563577785}
-  - component: {fileID: 2815607402270094656}
   m_Layer: 0
   m_Name: GroupReflectors
-  m_TagString: ref
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,35 +166,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6511711246563577785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039721041937504522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 876b5b65758b20a46a0e4d3e7a4c5f3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedReflectors: {fileID: 11400000, guid: 881fe010af651264b868564f9e2548df, type: 2}
-  force: 0
-  pointvalue: 0
-  animator: {fileID: 0}
-  spawnBall: 0
-  mechanics: {fileID: 0}
-  reflector: {fileID: 11400000, guid: 881fe010af651264b868564f9e2548df, type: 2}
---- !u!65 &2815607402270094656
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039721041937504522}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.14676225, y: 0.5820479, z: 0.23778608}
-  m_Center: {x: -0.0023818016, y: 0.102379024, z: 0.005959913}

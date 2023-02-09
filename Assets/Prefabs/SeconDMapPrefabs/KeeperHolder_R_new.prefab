@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2707955429290213755}
   m_LocalRotation: {x: 0.27234587, y: 0.65255487, z: 0.6525547, w: -0.27234593}
-  m_LocalPosition: {x: -0.64, y: 0, z: 0.01}
+  m_LocalPosition: {x: -0.7, y: 0, z: 0.01}
   m_LocalScale: {x: 29.004461, y: 28.989662, z: 28.376766}
   m_Children:
   - {fileID: 6952639521337195925}
@@ -42,14 +42,14 @@ GameObject:
   - component: {fileID: 4646285994920293603}
   - component: {fileID: 7061105573607094496}
   - component: {fileID: 7256425914731537794}
-  - component: {fileID: 6715639575263367389}
   - component: {fileID: 1549554109587635746}
+  - component: {fileID: 8297972310556804001}
   m_Layer: 0
   m_Name: KeeperGraphics
   m_TagString: keeper
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4646285994920293603
 Transform:
@@ -87,6 +87,7 @@ MonoBehaviour:
   force: 0
   speed: 125
   keyButton: d
+  mColl: {fileID: 8297972310556804001}
 --- !u!114 &7256425914731537794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,19 +106,6 @@ MonoBehaviour:
   animator: {fileID: 8288722500158480722}
   spawnBall: 0
   mechanics: {fileID: 0}
---- !u!65 &6715639575263367389
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6000999230164211463}
-  m_Material: {fileID: 13400000, guid: 2f888acf5dff47f4493e0522862b462b, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9670532, y: 1, z: 0.36161715}
-  m_Center: {x: -0.34525457, y: 0, z: -0.0018805045}
 --- !u!54 &1549554109587635746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,6 +122,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 94
   m_CollisionDetection: 3
+--- !u!65 &8297972310556804001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000999230164211463}
+  m_Material: {fileID: 13400000, guid: f8a81c86df8c7304e943e07fc5c9888e, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8445831, y: 0.2514822, z: 0.13286737}
+  m_Center: {x: -0.33322448, y: -0.012679341, z: 0.0030992336}
 --- !u!1 &7061105573959635066
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7061105573959635066}
   m_LocalRotation: {x: -0, y: 0.078459114, z: 0.0000000018626449, w: 0.99691737}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6494257349863592605}
@@ -306,7 +307,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4895994173744464254, guid: 76c3613abfa029141a383f2b2ba50be5, type: 3}
+  - {fileID: 2100000, guid: e12d816d12fa0134baade84ba4b792b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

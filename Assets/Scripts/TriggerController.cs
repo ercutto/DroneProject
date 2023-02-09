@@ -7,6 +7,7 @@ namespace PinBall {
         public BallHit ballHit = null;
         public Image SpeedBar;
         public float ballSpeed;
+        public float max=500;
         public UIController uIController;
        
         
@@ -65,8 +66,8 @@ namespace PinBall {
         public void FillBar()
         {
             ballSpeed = ballHit.addSpeed;
-            float max = ballSpeed / 100;
-            SpeedBar.fillAmount = Mathf.Lerp(SpeedBar.fillAmount, max, Time.deltaTime);
+            SpeedBar.fillAmount = ballSpeed/max;
+          
         }
     }
 }

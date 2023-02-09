@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4895994173744464254, guid: 76c3613abfa029141a383f2b2ba50be5, type: 3}
+  - {fileID: 2100000, guid: e12d816d12fa0134baade84ba4b792b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,7 +145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4895994173744464254, guid: 76c3613abfa029141a383f2b2ba50be5, type: 3}
+  - {fileID: 2100000, guid: e12d816d12fa0134baade84ba4b792b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -226,7 +226,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4895994173744464254, guid: 76c3613abfa029141a383f2b2ba50be5, type: 3}
+  - {fileID: 2100000, guid: e12d816d12fa0134baade84ba4b792b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -307,7 +307,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4895994173744464254, guid: 76c3613abfa029141a383f2b2ba50be5, type: 3}
+  - {fileID: 2100000, guid: e12d816d12fa0134baade84ba4b792b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -388,7 +388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4895994173744464254, guid: 76c3613abfa029141a383f2b2ba50be5, type: 3}
+  - {fileID: 2100000, guid: e12d816d12fa0134baade84ba4b792b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -469,7 +469,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4895994173744464254, guid: 76c3613abfa029141a383f2b2ba50be5, type: 3}
+  - {fileID: 2100000, guid: e12d816d12fa0134baade84ba4b792b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 8085235389644525952}
   - component: {fileID: 7212202641551611912}
   - component: {fileID: 8292175892607171897}
+  - component: {fileID: 8466123610969661461}
   m_Layer: 0
   m_Name: RobotHold
   m_TagString: Untagged
@@ -571,7 +572,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 450
   toTransform: {fileID: 0}
+  animator: {fileID: 0}
   isDarkHole: 1
   WaitingTime: 2
   gameManager: {fileID: 0}
   from: {fileID: 3227576278907958079}
+--- !u!65 &8466123610969661461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296341666055246189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.36799842, y: 0.44424033, z: 0.19669786}
+  m_Center: {x: 0.015912414, y: 0.5496292, z: 0.2656604}

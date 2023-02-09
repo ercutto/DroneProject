@@ -24,7 +24,9 @@ namespace PinBall{
         {
             if (collision.gameObject.CompareTag("ball"))
             {
+                if(animator!=null)
                 animator.SetBool("isTouched", true);
+               
                 if (spawnBall)
                 {
                     if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
@@ -38,9 +40,11 @@ namespace PinBall{
         }
         public virtual void OnCollisionExit(Collision collision)
         {
-            if (collision.gameObject.CompareTag("ball"))
+            
+          if (collision.gameObject.CompareTag("ball"))
             {
-                animator.SetBool("isTouched", false);
+                if (animator != null)
+                    animator.SetBool("isTouched", false);
             }
         }
 

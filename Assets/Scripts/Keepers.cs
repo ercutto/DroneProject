@@ -16,7 +16,7 @@ namespace PinBall {
         public string keyButton;
         Rigidbody rb;
         //this is Firstchilderen meshcollider
-        private BoxCollider mColl;
+        public BoxCollider mColl;
 
         // Start is called before the first frame update
         void Start()
@@ -27,8 +27,8 @@ namespace PinBall {
             // angleY = transform.eulerAngles.y;
             rb = GetComponent<Rigidbody>();
             force = GetComponent<Reflector>().force;
-            mColl = GetComponentInChildren<BoxCollider>();
-
+            //mColl = GetComponentInChildren<BoxCollider>();
+            //mColl = GetComponent<BoxCollider>();
         }
 
         // Update is called once per frame

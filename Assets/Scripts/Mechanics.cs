@@ -14,6 +14,8 @@ namespace PinBall
         public GameObject spawnExtraBall_Pos, spawnMainBall_Pos;
         public bool isSpawned,isMainBallSpawned,ballFinished;
         public GameObject[] ControlledObjects;
+        public float doorTime = 1f;
+        public float doorReapeat = 3f;
         
         // Start is called before the first frame update
         void Start()
