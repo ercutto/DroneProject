@@ -114,8 +114,8 @@ namespace PinBall
 
         void RelasedForce()
         {
-            Rb.AddForce(3 * addSpeed * Time.deltaTime * Vector3.up, ForceMode.Impulse);
-            Rb.AddForce(3 * addSpeed * Time.deltaTime * Vector3.forward, ForceMode.Impulse);
+            //Rb.AddForce(3 * addSpeed * Time.deltaTime * Vector3.up, ForceMode.Impulse);
+            Rb.AddForce(6 * addSpeed * Time.deltaTime * Vector3.forward, ForceMode.Impulse);
             ////Rb.velocity = Vector3.forward.normalized * addSpeed;
             addSpeed = 2f;
             

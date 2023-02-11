@@ -81,21 +81,21 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.12518784
-        inSlope: -0.1110492
-        outSlope: -0.1110492
+        value: 0.980031
+        inSlope: -0.8543803
+        outSlope: -0.8543803
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.24993491
+        outWeight: 0.12162406
       - serializedVersion: 3
-        time: 0.99538106
-        value: 0
-        inSlope: -0.6715919
-        outSlope: -0.6715919
+        time: 1
+        value: 0.053766232
+        inSlope: -0.76375127
+        outSlope: -0.76375127
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.2900232
+        inWeight: 0.13403665
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -131,7 +131,7 @@ TrailRenderer:
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
+    alignment: 1
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
@@ -269,5 +269,5 @@ MonoBehaviour:
   point: 0
   thisIsMainBall: 1
   addSpeed: 2
-  maxSpeed: 3000
+  maxSpeed: 1000
   _editing: 1
