@@ -49,8 +49,6 @@ namespace PinBall
             pushing = false;
             relased = false;
             ySpeed = 0;
-           
-
             mechanics = GameObject.FindGameObjectWithTag("mech").GetComponent<Mechanics>();
             Invoke(nameof(StartGame), startTime);
         }
@@ -66,9 +64,6 @@ namespace PinBall
 
             CheckGround();
 
-            
-            
-
             Ball_movement();
            
 
@@ -82,6 +77,10 @@ namespace PinBall
                     ySpeed += Physics.gravity.y * Time.deltaTime;
                     velocity.y += ySpeed; }
                 
+            }
+            if (velocity.magnitude >1f&&!isOnPull)
+            {
+                Rb.AddForce(lastVelocity * 10f);
             }
         }
         #endregion
@@ -212,6 +211,14 @@ namespace PinBall
                 //Rb.velocity =  Mathf.Max(currentHitValue) ;
                 gameManager.AddScore(point);
 
+            }
+            else if (collision.gameObject.CompareTag("hit"))
+            {
+                reflector = collision.gameObject.GetComponent<Reflector>();
+                
+                currentHitValue = reflector.force;
+                direction = (collision.gameObject.transform.forward);
+                Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
             }
             else if (collision.gameObject.CompareTag(_kepTag))
             {

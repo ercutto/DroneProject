@@ -13,6 +13,7 @@ TagManager:
   - mech
   - Wall
   - way
+  - hit
   layers:
   - Default
   - TransparentFX
