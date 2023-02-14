@@ -12,7 +12,7 @@ namespace PinBall{
         public  Animator animator;
         public bool spawnBall = false;
         public Mechanics mechanics;
-
+        
         void Start()
         {
             force = speedReflectors.force;
@@ -47,7 +47,7 @@ namespace PinBall{
                     animator.SetBool("isTouched", false);
             }
         }
-
+      
     }
 }
 

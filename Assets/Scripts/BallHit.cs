@@ -29,6 +29,8 @@ namespace PinBall
         private Keepers keepers = null;
         private string _refTag = "ref";
         private string _kepTag = "keeper";
+        private string _hit = "hit";
+        private string _Trigger = "trigger";
         private Vector3 from;
         Vector3 lastVelocity;
         Vector3 velocity;
@@ -104,7 +106,7 @@ namespace PinBall
                 if (relased) { RelasedForce(); } 
   
 
-                if (hitToReflector) {AfterHit(); } else { lastVelocity = Rb.velocity; }
+                if (!hitToReflector) {lastVelocity = Rb.velocity; }
              
 
 
@@ -113,17 +115,13 @@ namespace PinBall
 
         void RelasedForce()
         {
-            //Rb.AddForce(3 * addSpeed * Time.deltaTime * Vector3.up, ForceMode.Impulse);
+         
             Rb.AddForce(6 * addSpeed * Time.deltaTime * Vector3.forward, ForceMode.Impulse);
-            ////Rb.velocity = Vector3.forward.normalized * addSpeed;
+         
             addSpeed = 2f;
             
         }
-        void AfterHit()
-        {
-            // Rb.AddForce(currentHitValue * Time.deltaTime * direction, ForceMode.Impulse);
-            
-        }
+     
         #endregion
         #region MobileUI_buttons
         public void Trigger_KeyDown()
@@ -164,7 +162,7 @@ namespace PinBall
         private void OnTriggerStay(Collider other)
         {
 
-            if (other.gameObject.CompareTag("trigger"))
+            if (other.gameObject.CompareTag(_Trigger))
             {
                 isOnPull = true;
             }
@@ -173,7 +171,7 @@ namespace PinBall
         }
         private void OnTriggerExit(Collider other)
         {
-            if (other.gameObject.CompareTag("trigger"))
+            if (other.gameObject.CompareTag(_Trigger))
             {
                 isOnPull = false;
                 relased = false;
@@ -197,25 +195,18 @@ namespace PinBall
                 reflector = collision.gameObject.GetComponent<Reflector>();
                 
                 currentHitValue = reflector.force;
-                //CallDirection();
+             
                 direction = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
                 hitToReflector = true;
-                //Rb.velocity = direction * Mathf.Max(currentHitValue);
-                //lastVelocity = Vector3.ClampMagnitude(Rb.velocity,currentHitValue);
+            
                 Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
-                point = reflector.pointvalue;
-                // Rb.velocity = direction * currentHitValue;//Mathf.Max(currentHitValue);
-               // Rb.velocity = direction * (currentHitValue / 2);
-                //Rb.velocity = direction * currentHitValue;
-
-                //Rb.velocity =  Mathf.Max(currentHitValue) ;
+           
                 gameManager.AddScore(point);
 
             }
-            else if (collision.gameObject.CompareTag("hit"))
+            else if (collision.gameObject.CompareTag(_hit))
             {
                 reflector = collision.gameObject.GetComponent<Reflector>();
-                
                 currentHitValue = reflector.force;
                 direction = (collision.gameObject.transform.forward);
                 Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
@@ -230,11 +221,11 @@ namespace PinBall
                 {
                     hitToReflector = keepers.isPushing;
 
-                    //reflector = collision.gameObject.GetComponent<Reflector>();
+                
                     currentHitValue = keepers.force;
-                    //CallDirection();
+                
                     direction = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
-                   // Rb.velocity = direction * Mathf.Max(currentHitValue);
+               
                     lastVelocity = Vector3.ClampMagnitude(lastVelocity, currentHitValue);
 
                 }
@@ -245,20 +236,13 @@ namespace PinBall
 
 
         }
-        //void CallDirection()
-        //{
-        //    direction = Vector3.Reflect(Rb.velocity.normalized);
-        //}
-
+ 
         public void OnCollisionExit(Collision collision)
         {
             if (collision.gameObject.CompareTag(_refTag) || collision.gameObject.CompareTag(_kepTag))
             {
                 hitToReflector = false;
-                //onTarget = false;
-                //reflector = collision.gameObject.GetComponent<Reflector>();     
-                //point = reflector.pointvalue;
-                //gameManager.AddScore(point);
+   
                 
             }
 
