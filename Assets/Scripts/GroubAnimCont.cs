@@ -10,8 +10,7 @@ namespace PinBall
         void Start()
         {
             force = reflector.force;
-            
-            
+
         }
 
         public void Anim()

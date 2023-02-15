@@ -270,4 +270,4 @@ MonoBehaviour:
   thisIsMainBall: 1
   addSpeed: 2
   maxSpeed: 1000
-  _editing: 1
+  _editing: 0
