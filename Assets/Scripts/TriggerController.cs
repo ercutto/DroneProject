@@ -9,11 +9,13 @@ namespace PinBall {
         public float ballSpeed;
         public float max=500;
         public UIController uIController;
-       
-        
+        public TriggerAnimationSytem triggerAnimationSytem;
+
+
         // Start is called before the first frame update
         void Start()
         {
+   
             SpeedBar.fillAmount = 0.1f;
         }
 
@@ -41,7 +43,7 @@ namespace PinBall {
         {
             if (other.gameObject.GetComponent<BallHit>().thisIsMainBall)
             {
-                uIController.ActiveOrFalse(uIController.TriggerButton);
+                Invoke(nameof(SetingFalse),0.7f);
                 
             }
 
@@ -50,15 +52,19 @@ namespace PinBall {
         {
             if (ballHit != null) { 
                 ballHit.Trigger_KeyDown();
-                
+                triggerAnimationSytem.isPushingStarted = true;
+                triggerAnimationSytem.isReleaseStarted = false;
+
             }
-            
+
         }
         public void HitToBall()    
         {
             if (ballHit != null)
             {
                 ballHit.Trigger_KeyUp();
+                triggerAnimationSytem.isPushingStarted = false;
+                triggerAnimationSytem.isReleaseStarted = true;
             }
               
             
@@ -69,6 +75,10 @@ namespace PinBall {
             SpeedBar.fillAmount = ballSpeed/max;
           
         }
+        void SetingFalse() {;
+            uIController.ActiveOrFalse(uIController.TriggerButton);
+             }
+        
     }
 }
 

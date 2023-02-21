@@ -54,7 +54,7 @@ namespace PinBall
             //{
             //    table.transform.Rotate(-45, 0, 0);
             //}
-
+            Application.targetFrameRate = 60;
 
             
 
