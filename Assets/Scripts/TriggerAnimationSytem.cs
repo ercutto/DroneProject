@@ -16,13 +16,19 @@ namespace PinBall
         public bool isReleaseStarted;
         float springY, springX, springZ;
         Rigidbody2D Ballrb;
+        public bool isColliding;
+        public BoxCollider2D coll;
         public UIController uIController;
-        // Start Dis called before the first frame update
+        public GameObject triggerButton;
+        private Button trButton;
+        // Start Dis called before the first frame update,
         void Start()
         {
+            trButton = triggerButton.GetComponent<Button>();
+            isColliding = false;
             Ballrb = ball.GetComponent<Rigidbody2D>();
             startPos=ball.transform.position;
-            isPushingStarted = true;
+            isPushingStarted = false;
             springY = spring.transform.localScale.y;
             springX = spring.transform.localScale.x;
             springZ = spring.transform.localScale.z;
@@ -31,35 +37,70 @@ namespace PinBall
         // Update is called once per frame
         void Update()
         {
-            if (isPushingStarted)
-            {
+                
+                if (isPushingStarted)
+                {
 
-                Push();
+                    Push();
 
-            }
-            else if (isReleaseStarted)
-            {
-                Release();
-            }
+                }
+
+
+                if (isReleaseStarted)
+                {
+                    Release();
+                }
+      
         }
-        void Push()
+        public void Push()
         {
             
-            if (springY < 0.7f) { return; } else { spring.transform.localScale = new Vector3(springX, springY -= 0.1f * Time.deltaTime, springZ); }
+            if (springY < 0.7f) { return; } else { spring.transform.localScale = new Vector3(springX, springY -= 0.5f * Time.deltaTime, springZ); }
         }
-        void Release()
+        public void Torelase()
+        {
+            isReleaseStarted = true;
+           
+        }
+        public void Release()
         {
             if (springY >= 1f)
             { return; }
             else
             {
-                spring.transform.localScale = new Vector3(springX, springY += 3f * Time.deltaTime, springZ);
-                Ballrb.AddForce(Vector2.up * ballAnimSpeed * Time.deltaTime, ForceMode2D.Impulse);
-              
+                spring.transform.localScale = new Vector3(springX, springY += 5f * Time.deltaTime, springZ);
                 
+                
+
             }
+            Ballrb.AddForce(Vector2.up * ballAnimSpeed * Time.deltaTime, ForceMode2D.Impulse);
         }
-      
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("UIBall"))
+            {
+                triggerButton.SetActive(true);
+            }
+
+        }
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("UIBall"))
+            {
+                isPushingStarted = false;
+                isReleaseStarted = false;
+                Invoke(nameof(IsReleaseFalse), 0.5f);
+
+            }
+        
+        }
+        void IsReleaseFalse()
+        {
+            isReleaseStarted = false;
+            triggerButton.SetActive(false);
+
+        }
+
     }
 }
 

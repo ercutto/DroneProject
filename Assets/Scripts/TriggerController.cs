@@ -50,10 +50,12 @@ namespace PinBall {
         }
         public void CollectPower()
         {
-            if (ballHit != null) { 
+            if (ballHit != null) {
+              
                 ballHit.Trigger_KeyDown();
-                triggerAnimationSytem.isPushingStarted = true;
-                triggerAnimationSytem.isReleaseStarted = false;
+                triggerAnimationSytem.isPushingStarted = ballHit.pushing;
+                
+                
 
             }
 
@@ -63,19 +65,19 @@ namespace PinBall {
             if (ballHit != null)
             {
                 ballHit.Trigger_KeyUp();
-                triggerAnimationSytem.isPushingStarted = false;
-                triggerAnimationSytem.isReleaseStarted = true;
+                
+
             }
-              
-            
+
+
         }
         public void FillBar()
         {
             ballSpeed = ballHit.addSpeed;
             SpeedBar.fillAmount = ballSpeed/max;
-          
+            
         }
-        void SetingFalse() {;
+        void SetingFalse() {
             uIController.ActiveOrFalse(uIController.TriggerButton);
              }
         

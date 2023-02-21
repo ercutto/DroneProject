@@ -12,6 +12,7 @@ namespace PinBall
             StartUI,
             GameOverUI,         
             TriggerButton,
+            triggerContainer,
             UiAnimation,
             startPanel;
         public bool isPushed;

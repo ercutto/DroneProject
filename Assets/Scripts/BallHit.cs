@@ -23,7 +23,7 @@ namespace PinBall
         private Mechanics mechanics;
         public bool thisIsMainBall;
         public float addSpeed, maxSpeed;
-        bool pushing, relased;
+        public bool pushing, relased;
         public bool _editing;
         private Reflector reflector = null;
         private Keepers keepers = null;
