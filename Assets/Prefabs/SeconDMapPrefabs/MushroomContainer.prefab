@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4380432950992981963}
   - component: {fileID: 4322669214335831283}
   - component: {fileID: 2324350432966692051}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Mushroom
-  m_TagString: ref
+  m_TagString: hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e12d816d12fa0134baade84ba4b792b5, type: 2}
+  - {fileID: 2100000, guid: c4ed753036f820d439193cb2134ddbef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae9c37e1c9077e4c909c24b6fb723d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedReflectors: {fileID: 11400000, guid: d3f1e5de206f520408baaaacc967473d, type: 2}
+  speedReflectors: {fileID: 11400000, guid: 881fe010af651264b868564f9e2548df, type: 2}
   force: 0
   pointvalue: 0
   animator: {fileID: 5519317976220596414}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 1230370310959912275}
   - component: {fileID: 6453227026380031550}
   - component: {fileID: 5092737225467265494}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,8 +210,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8425993289827254046}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.038, y: 0.087, z: 0.025}
-  m_LocalScale: {x: 0.07460842, y: 0.04504835, z: 0.07460842}
+  m_LocalPosition: {x: 0.0577, y: 0.0754, z: 0.0445}
+  m_LocalScale: {x: 0.12802058, y: 0.07729846, z: 0.12802058}
   m_Children: []
   m_Father: {fileID: 3372168776091545356}
   m_RootOrder: 0

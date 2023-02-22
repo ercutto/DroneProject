@@ -20,33 +20,38 @@ namespace PinBall{
             pointvalue = speedReflectors.pointValue;
             if (spawnBall) { mechanics = FindObjectOfType<Mechanics>(); }
         }
-        public virtual void OnCollisionEnter(Collision collision)
+        public void IsTouched()
         {
-            if (collision.gameObject.CompareTag("ball"))
-            {
-                if(animator!=null)
-                animator.SetBool("isTouched", true);
+            if (animator != null)
+                animator.SetTrigger("eat");
+        }
+        //public virtual void OnCollisionEnter(Collision collision)
+        //{
+        //    if (collision.gameObject.CompareTag("ball"))
+        //    {
+        //        if(animator!=null)
+        //        animator.SetBool("isTouched", true);
                
-                if (spawnBall)
-                {
-                    if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
-                    {
-                        mechanics.isSpawned = false;
-                        mechanics.Spawnball();
-                    }
+        //        if (spawnBall)
+        //        {
+        //            if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
+        //            {
+        //                mechanics.isSpawned = false;
+        //                mechanics.Spawnball();
+        //            }
                    
-                }
-            }
-        }
-        public virtual void OnCollisionExit(Collision collision)
-        {
+        //        }
+        //    }
+        //}
+        //public virtual void OnCollisionExit(Collision collision)
+        //{
             
-          if (collision.gameObject.CompareTag("ball"))
-            {
-                if (animator != null)
-                    animator.SetBool("isTouched", false);
-            }
-        }
+        //  if (collision.gameObject.CompareTag("ball"))
+        //    {
+        //        if (animator != null)
+        //            animator.SetBool("isTouched", false);
+        //    }
+        //}
       
     }
 }

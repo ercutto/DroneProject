@@ -15,7 +15,7 @@ namespace PinBall
 
         public void Anim()
         {
-            animator.SetTrigger("isTouched");
+            animator.SetTrigger("eat");
         }
 
     }

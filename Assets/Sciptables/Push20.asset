@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4244709790133552865, guid: ad91a657a67352940a0350cc2cbf89a0, type: 3}
   objectName: Push20
-  force: 1.25
+  force: 5
   pointValue: 50

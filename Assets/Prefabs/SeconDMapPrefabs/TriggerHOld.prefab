@@ -719,9 +719,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spring: {fileID: 3710213087089840908}
   ball: {fileID: 3710213087538897180}
+  ballAnimSpeed: 0
   springTop: {fileID: 8719317191009336564}
   isPushingStarted: 0
   isReleaseStarted: 0
+  isColliding: 0
+  coll: {fileID: 0}
+  uIController: {fileID: 0}
+  triggerButton: {fileID: 0}
 --- !u!1 &8719317191009336563
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &5418572938983441757
 Transform:
@@ -97,7 +97,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8505142269437261560
 Transform:
@@ -183,7 +183,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8931015582699720041
 Transform:
@@ -264,7 +264,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &7661062864581469639
 Transform:
@@ -345,7 +345,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &5916567833696718584
 Transform:
@@ -426,7 +426,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1004598778232309572
 Transform:
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 7212202641551611912}
   - component: {fileID: 8292175892607171897}
   - component: {fileID: 8466123610969661461}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: RobotHold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,8 +556,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3325022, y: 0.3217566, z: 0.10997519}
-  m_Center: {x: 0.019570984, y: 0.56980205, z: 0.14587803}
+  m_Size: {x: 0.3325022, y: 0.32175663, z: 0.066995084}
+  m_Center: {x: 0.019569982, y: 0.5698022, z: 0.12438796}
 --- !u!114 &8292175892607171897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,5 +588,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36799842, y: 0.44424033, z: 0.19669786}
-  m_Center: {x: 0.015912414, y: 0.5496292, z: 0.2656604}
+  m_Size: {x: 0.36799842, y: 0.67126817, z: 0.18895379}
+  m_Center: {x: 0.015907828, y: 0.43611532, z: 0.26953208}

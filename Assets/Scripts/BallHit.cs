@@ -35,7 +35,9 @@ namespace PinBall
         private Vector3 from;
         Vector3 lastVelocity;
         Vector3 velocity;
-        private float speedMultiplier = 25f;
+        public float speedMultiplier = 25f;
+        private GameObject currentReflector;
+        
 
         float ySpeed;
         #endregion
@@ -62,11 +64,11 @@ namespace PinBall
         }
 
         // Update is called once per frame
-        void FixedUpdate()
+        void Update()
         {
             
 
-            CheckGround();
+            //CheckGround();
 
             Ball_movement();
            
@@ -80,12 +82,13 @@ namespace PinBall
             //    if (hit.collider == null) {
             //        ySpeed += Physics.gravity.y * Time.deltaTime;
             //        velocity.y += ySpeed; }
-                
+
             //}
-            if (velocity.magnitude >1f&&!isOnPull)
-            {
-                Rb.AddForce(lastVelocity * 10f);
-            }
+        
+            //if (velocity.magnitude>3f&&!isOnPull)
+            //{
+            //    Rb.AddForce(lastVelocity * 0.98f*Time.deltaTime);
+            //}
         }
         #endregion
         #region ballMovement
@@ -98,21 +101,25 @@ namespace PinBall
             }
             else
             {
-               
                 if (pushing && isOnPull)
                 {
                     if (addSpeed < maxSpeed)
                         addSpeed += speedMultiplier;
-
+                    
                 }
-                if (relased) { RelasedForce(); } 
+                else { return; }
+
+                if (relased) { RelasedForce();  } 
   
 
-                if (!hitToReflector) {lastVelocity = Rb.velocity; }
-             
+               // if (!hitToReflector) { /*lastVelocity = Rb.velocity;*/ }
+                
+               
+                
 
 
             }
+           
         }
 
         void RelasedForce()
@@ -120,7 +127,7 @@ namespace PinBall
          
             Rb.AddForce(6 * addSpeed * Time.deltaTime * Vector3.forward, ForceMode.Impulse);
          
-            addSpeed = 2f;
+            //addSpeed = 2f;
             
         }
      
@@ -191,16 +198,18 @@ namespace PinBall
         {
             
             
-            if (collision.gameObject.CompareTag(_refTag))
+            //if (collision.gameObject.CompareTag(_refTag))
+            //{
+            //    direction = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
+            //    reflector = collision.gameObject.GetComponent<Reflector>();
+            //    AfterCollision();
+            //}
+            //else
+            if (collision.gameObject.CompareTag(_hit))
             {
-                direction = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
-                reflector = collision.gameObject.GetComponent<Reflector>();
-                AfterCollision();
-            }
-            else if (collision.gameObject.CompareTag(_hit))
-            {
-                reflector = collision.gameObject.GetComponent<Reflector>();
-                direction = (collision.gameObject.transform.forward);
+                currentReflector = collision.gameObject;
+                reflector = currentReflector.GetComponent<Reflector>();
+                direction = (currentReflector.transform.forward);
                 AfterCollision();
             }
             else if (collision.gameObject.CompareTag(_kepTag))
@@ -214,7 +223,7 @@ namespace PinBall
                     hitToReflector = keepers.isPushing;
                     currentHitValue = keepers.force;                
                     direction = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);               
-                    lastVelocity = Vector3.ClampMagnitude(lastVelocity, currentHitValue);
+                    //lastVelocity = Vector3.ClampMagnitude(lastVelocity, currentHitValue);
 
                 }
             }
@@ -235,9 +244,11 @@ namespace PinBall
 
         //}
 
-        void AfterCollision() {           
+        void AfterCollision() {
+            
             currentHitValue = reflector.force;
             //hitToReflector = true;
+            reflector.IsTouched();
             Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
             gameManager.AddScore(point);
         }

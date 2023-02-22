@@ -24,8 +24,13 @@ namespace PinBall {
         {
             if (ballHit != null)
             {
-                FillBar();
-                
+                if (ballHit.pushing) { FillBar(); }
+
+
+            }
+            else
+            {
+                SpeedBar.fillAmount = 0.1f;
             }
            
         }
@@ -43,6 +48,7 @@ namespace PinBall {
         {
             if (other.gameObject.GetComponent<BallHit>().thisIsMainBall)
             {
+                
                 Invoke(nameof(SetingFalse),0.7f);
                 
             }

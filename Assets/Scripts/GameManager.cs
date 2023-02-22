@@ -21,6 +21,7 @@ namespace PinBall
         public Restarter restarter;
         public PlayerData playerData;
         public UIController uIController;
+        public ForgeGarbages forgeGarbages;
         
         #endregion
         #region Private
@@ -28,7 +29,7 @@ namespace PinBall
         [Tooltip("CanNotChange (private)")] [SerializeField] private float currentScore;
         //[Tooltip("CanNotChange (private)")] [SerializeField] private string pts = " PTS";
         [Tooltip("CanNotChange (private)")] [SerializeField] private float bonusTime, bonusTimeEnd;
-        [Tooltip("CanNotChange (private)")] [SerializeField] private int bonus;
+        private int bonus;
         //[Tooltip("CanNotChange (private)")] [SerializeField] private int countOfHit;
         [Tooltip("CanNotChange (private)")] [SerializeField] private bool countDown;
         private string scoreString, bonusString;
@@ -54,7 +55,7 @@ namespace PinBall
             //{
             //    table.transform.Rotate(-45, 0, 0);
             //}
-            Application.targetFrameRate = 60;
+            //Application.targetFrameRate = 60;
 
             
 
@@ -112,8 +113,8 @@ namespace PinBall
             if (countDown)
             { /*countOfHit++;*/
                 bonus += addScore;
-                bonusString = bonus.ToString(); bonusTime = 0;
-               
+                bonusString = bonus.ToString();
+                bonusTime = 0;              
                 if(bonus >= Scores[2]) { TypingMessage(2); }
                 else if(bonus >= Scores[3]) { TypingMessage(3); }
                 else if(bonus >= Scores[4]) { TypingMessage(4); }
@@ -223,7 +224,9 @@ namespace PinBall
         {
 
             if (currentBall > 0)
-            { currentBall -= ballCount; }
+            { currentBall -= ballCount;
+                //forgeGarbages.Forge();
+            }
             else
             {
                 ballFinished = true;

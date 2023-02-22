@@ -12,16 +12,21 @@ namespace PinBall
         TrailRenderer tRenderer;
         Rigidbody rb;
         public Animator animator;
-        public bool isDarkHole=true;
-        public float WaitingTime=2;
+        public bool isDarkHole = true;
+        public float WaitingTime = 2;
         public GameManager gameManager;
         public Transform from;
+        Vector3 to,_from,ballPos;
         Collider darkCollCollider;
-
+        WaitForSeconds delayIt = new WaitForSeconds(0);
+        
         // Start is called before the first frame update
         void Start()
         {
+            delayIt = new WaitForSeconds(WaitingTime);
             darkCollCollider = GetComponent<Collider>();
+            to = toTransform.position;
+            _from = from.transform.position;
             if (animator == null) { animator = GetComponentInChildren<Animator>(); }
             
             gameManager = FindObjectOfType<GameManager>();
@@ -36,6 +41,7 @@ namespace PinBall
                 darkCollCollider.enabled = false;
                 gameManager.AddScore(scoreValue);
                 ball = other.gameObject;
+                
                 tRenderer = ball.GetComponentInChildren<TrailRenderer>();
                 rb = ball.GetComponent<Rigidbody>();
                 StartCoroutine(TransportBall());
@@ -45,7 +51,7 @@ namespace PinBall
         IEnumerator TransportBall()
         {
             SetComponents(false);
-            yield return new WaitForSeconds(WaitingTime);
+            yield return delayIt;
             UnSetComponents();
 
         }
@@ -58,11 +64,11 @@ namespace PinBall
             {
                
                 tRenderer.enabled = false;
-                ball.transform.position = toTransform.position;
+                ball.transform.position = to;
             }
             else
             {
-                ball.transform.position = from.transform.position;
+                ball.transform.position = _from;
             }
 
             
@@ -82,7 +88,7 @@ namespace PinBall
             }
             else
             {
-                ball.transform.position = toTransform.position;
+                ball.transform.position = to;
 
             }
 

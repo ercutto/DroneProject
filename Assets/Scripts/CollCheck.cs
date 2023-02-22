@@ -12,7 +12,7 @@ namespace PinBall {
         public Color red = Color.yellow;
         public Color white = Color.white;
         private string _tag = "ball";
-
+        WaitForSeconds delay = new WaitForSeconds(1);
 
 
         private void Start()
@@ -51,7 +51,7 @@ namespace PinBall {
         {
             ColliderControll(false);
             Change(red);
-            yield return new WaitForSeconds(1);
+            yield return delay;
             Change(white);
             ColliderControll(true);
 

@@ -37,19 +37,20 @@ namespace PinBall
         // Update is called once per frame
         void Update()
         {
-                
+            if (!gameObject.activeInHierarchy) { return; } else
+            {
                 if (isPushingStarted)
                 {
 
                     Push();
 
                 }
-
-
                 if (isReleaseStarted)
                 {
                     Release();
                 }
+            }
+               
       
         }
         public void Push()
@@ -69,11 +70,10 @@ namespace PinBall
             else
             {
                 spring.transform.localScale = new Vector3(springX, springY += 5f * Time.deltaTime, springZ);
-                
-                
 
             }
-            Ballrb.AddForce(Vector2.up * ballAnimSpeed * Time.deltaTime, ForceMode2D.Impulse);
+
+            Ballrb.AddForce(ballAnimSpeed * Time.deltaTime * Vector2.up, ForceMode2D.Impulse);
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -97,6 +97,7 @@ namespace PinBall
         void IsReleaseFalse()
         {
             isReleaseStarted = false;
+            ball.transform.position = startPos;
             triggerButton.SetActive(false);
 
         }

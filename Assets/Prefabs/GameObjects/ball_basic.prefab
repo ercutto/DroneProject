@@ -269,5 +269,8 @@ MonoBehaviour:
   point: 0
   thisIsMainBall: 1
   addSpeed: 2
-  maxSpeed: 1000
+  maxSpeed: 500
+  pushing: 0
+  relased: 0
   _editing: 0
+  speedMultiplier: 10

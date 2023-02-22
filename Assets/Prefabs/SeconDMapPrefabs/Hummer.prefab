@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7201509023841189561}
   - component: {fileID: 2617381118962204806}
   - component: {fileID: 336338774653334076}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Hummer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,8 +85,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16149354, y: 0.36605608, z: 0.176462}
-  m_Center: {x: 0.11807726, y: -0.056984372, z: -0.010720745}
+  m_Size: {x: 0.117017254, y: 0.36605608, z: 0.176462}
+  m_Center: {x: 0.14031558, y: -0.056984372, z: -0.010720706}
 --- !u!65 &336338774653334076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2270838, y: 0.42100915, z: 0.22748694}
-  m_Center: {x: -0.04641962, y: -0.081173345, z: 0.005897656}
+  m_Size: {x: 0.2270838, y: 1.0273651, z: 0.22748694}
+  m_Center: {x: -0.04641969, y: -0.0382393, z: 0.005897606}
 --- !u!1 &1438808346727525605
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8597229878992523100
 Transform:
@@ -195,7 +195,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &5945838130280861094
 Transform:
@@ -228,7 +228,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &73466833382705135
 Transform:
@@ -310,7 +310,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &595550080357968388
 Transform:
