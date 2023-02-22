@@ -6,7 +6,7 @@ namespace PinBall
 {
     public class FrameRateTest : MonoBehaviour
     {
-        public int Granularity = 5; // how many frames to wait until you re-calculate the FPS
+        public int Granularity = 60; // how many frames to wait until you re-calculate the FPS
         List<double> times;
         int counter = 5;
         public Text fpsText;

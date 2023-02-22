@@ -9,7 +9,7 @@ namespace PinBall
         public GameObject pushObject;
         public GroubPointsCollect groubPointsCollect;
         public GroubAnimCont groubAnimCont;
-        
+        WaitForSeconds delay = new WaitForSeconds(0.3f);
         
 
         public override void ScoreAndAction()
@@ -28,9 +28,9 @@ namespace PinBall
         }
         IEnumerator ColorDance()
         { 
-            yield return new WaitForSeconds(0.3f);
+            yield return delay;
             Change(Color.green);
-            yield return new WaitForSeconds(0.3f);
+            yield return delay;
             Change(Color.white);
             ColliderControll(true);
             

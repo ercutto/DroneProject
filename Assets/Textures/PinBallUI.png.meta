@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: 2a9dd8eee1c21c144bea325bb69148be
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4025295201422018439
+    second: PinBallUI_0
+  - first:
+      213: -4446616282073152966
+    second: PinBallUI_2
+  - first:
+      213: 7488120218559820052
+    second: PinBallUI_4
+  - first:
+      213: 6523011483669359745
+    second: PinBallUI_6
+  - first:
+      213: 7127652084052971039
+    second: PinBallUI_7
+  - first:
+      213: 7241616933967375406
+    second: PinBallUI_8
+  - first:
+      213: 2590824690217582784
+    second: PinBallUI_9
+  - first:
+      213: -3830884187493538172
+    second: PinBallUI_10
+  - first:
+      213: -4726659100386836211
+    second: PinBallUI_11
+  - first:
+      213: 134218511601872287
+    second: PinBallUI_12
+  - first:
+      213: -5580491378081534964
+    second: PinBallUI_13
+  - first:
+      213: -8223479071881099090
+    second: PinBallUI_14
+  - first:
+      213: -6321343261159060199
+    second: PinBallUI_15
+  - first:
+      213: -7220909635118635357
+    second: PinBallUI_16
+  - first:
+      213: 6425229561805424151
+    second: PinBallUI_17
+  - first:
+      213: 2447227573648266550
+    second: PinBallUI_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 28
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 28
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 28
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 28
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 28
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PinBallUI_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 3426
+        width: 555
+        height: 595
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978f72b57574328c0800000000000000
+      internalID: -4025295201422018439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_2
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 3647
+        width: 2214
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32cf86fc027a42c0800000000000000
+      internalID: -4446616282073152966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_4
+      rect:
+        serializedVersion: 2
+        x: 3045
+        y: 3743
+        width: 876
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411bdae3aa52be760800000000000000
+      internalID: 7488120218559820052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_6
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 3248
+        width: 2272
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ce7ed4264668a50800000000000000
+      internalID: 6523011483669359745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_7
+      rect:
+        serializedVersion: 2
+        x: 3629
+        y: 2685
+        width: 232
+        height: 976
+      alignment: 9
+      pivot: {x: 0.5000011, y: 0.0038312068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ecc887ec18ae260800000000000000
+      internalID: 7127652084052971039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1400
+        width: 1336
+        height: 1083
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c2494db346f7460800000000000000
+      internalID: 7241616933967375406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 2519
+        width: 450
+        height: 708
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c00bb7345574f320800000000000000
+      internalID: 2590824690217582784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_10
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 2519
+        width: 452
+        height: 706
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48669ccd027f5dac0800000000000000
+      internalID: -3830884187493538172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_11
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 1623
+        width: 228
+        height: 1570
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0143135798876eb0800000000000000
+      internalID: -4726659100386836211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_12
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 2527
+        width: 1148
+        height: 662
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9daf427607dcd100800000000000000
+      internalID: 134218511601872287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_13
+      rect:
+        serializedVersion: 2
+        x: 3093
+        y: 2087
+        width: 883
+        height: 530
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ce15988ac1e82b0800000000000000
+      internalID: -5580491378081534964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_14
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 479
+        width: 736
+        height: 754
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea80bae9a5550ed80800000000000000
+      internalID: -8223479071881099090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_15
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 873
+        width: 732
+        height: 1042
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d0e4fbbc31648a0800000000000000
+      internalID: -6321343261159060199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_16
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 24
+        width: 1376
+        height: 2025
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6ee83e1fc2acb90800000000000000
+      internalID: -7220909635118635357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_17
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 453
+        width: 1413
+        height: 347
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71640cf7e300b2950800000000000000
+      internalID: 6425229561805424151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinBallUI_22
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 75
+        width: 1770
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63598d3238c46f120800000000000000
+      internalID: 2447227573648266550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6ce4d698b8959a249b827aefb1d27f8d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

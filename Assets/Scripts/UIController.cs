@@ -12,10 +12,13 @@ namespace PinBall
             StartUI,
             GameOverUI,         
             TriggerButton,
+            triggerContainer,
             UiAnimation,
             startPanel;
         public bool isPushed;
         public Text fps;
+        
+        WaitForSeconds delay =new WaitForSeconds(3f);
        
 
         // Start is called before the first frame update
@@ -50,7 +53,7 @@ namespace PinBall
         IEnumerator StartAfterTime(GameObject obj)
         {
             gameManager.ResetGameVariables();
-            yield return new WaitForSeconds(3);
+            yield return delay;
             ActiveOrFalse(obj);
             isPushed = false;
         }

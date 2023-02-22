@@ -9,7 +9,12 @@ namespace PinBall {
         private Collider col;
         private GameManager gameManager;
         public bool isTouched;
-     
+        public Color red = Color.yellow;
+        public Color white = Color.white;
+        private string _tag = "ball";
+        WaitForSeconds delay = new WaitForSeconds(1);
+
+
         private void Start()
         {
             isTouched = false;
@@ -22,15 +27,13 @@ namespace PinBall {
        
         public virtual void ChangeColor()
         {
-           
-                Change(Color.red);
+ 
                 StartCoroutine(ColorIsWaiting());
             
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("ball")) {
-                
+            if (other.gameObject.CompareTag(_tag)) {
                 ScoreAndAction();
                 
             }
@@ -39,15 +42,17 @@ namespace PinBall {
   
         public virtual void ScoreAndAction()
         {
-            col.enabled = false;
+            //col.enabled = false;
             ChangeColor();
-            gameManager.AddHit(1);
+            //gameManager.AddHit(1);
         }
       
         IEnumerator ColorIsWaiting()
         {
-            yield return new WaitForSeconds(1);
-            Change(Color.white);
+            ColliderControll(false);
+            Change(red);
+            yield return delay;
+            Change(white);
             ColliderControll(true);
 
         }

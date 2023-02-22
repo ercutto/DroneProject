@@ -10,7 +10,7 @@ namespace PinBall {
         public GameObject prefab;
         public string objectName;
         public float force;
-        public float pointValue;
+        public int pointValue;
         
     }
 }

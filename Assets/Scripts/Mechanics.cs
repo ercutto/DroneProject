@@ -1,4 +1,5 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 namespace PinBall
 {
@@ -13,7 +14,9 @@ namespace PinBall
         public Material extraBallMaterial;
         public GameObject spawnExtraBall_Pos, spawnMainBall_Pos;
         public bool isSpawned,isMainBallSpawned,ballFinished;
-        public GameObject[] ControlledObjects;
+        public float doorTime = 1f;
+        public float doorReapeat = 3f;
+        public Animator[] animators;
         
         // Start is called before the first frame update
         void Start()
@@ -22,7 +25,9 @@ namespace PinBall
             isSpawned = true;
             isMainBallSpawned = true;
             Spawnball();
-            InvokeRepeating(nameof(Control_Objects), 1, 3);
+         
+            InvokeRepeating(nameof(Control_Animators), 1, 3);
+
         }
 
         // Update is called once per frame
@@ -65,26 +70,25 @@ namespace PinBall
             }
             
         }
-        void Control_Objects()
+        void Control_Animators()
         {
-            int rand = Random.Range(0, ControlledObjects.Length);
-            foreach (var item in ControlledObjects)
+            int rand = Random.Range(0,animators.Length);
+            foreach (var item in animators)
             {
-                if(item!= ControlledObjects[rand])
+                if (item != animators[rand])
                 {
-                    item.GetComponent<Animator>().SetTrigger("open");
-
+                    
+                    item.SetTrigger("open");
                 }
                 else
                 {
-                    item.GetComponent<Animator>().SetTrigger("close");
-
-
+                  
+                    item.SetTrigger("close");
 
                 }
 
             }
-            
+
         }
 
     }

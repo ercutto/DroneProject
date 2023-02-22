@@ -8,11 +8,11 @@ namespace PinBall{
         /// </summary>
         public SpeedReflectors speedReflectors;
         public float force;
-        public float pointvalue;
+        public int pointvalue;
         public  Animator animator;
         public bool spawnBall = false;
         public Mechanics mechanics;
-
+        
         void Start()
         {
             force = speedReflectors.force;
@@ -20,39 +20,39 @@ namespace PinBall{
             pointvalue = speedReflectors.pointValue;
             if (spawnBall) { mechanics = FindObjectOfType<Mechanics>(); }
         }
-        public virtual void OnCollisionEnter(Collision collision)
+        public void IsTouched()
         {
-            if (collision.gameObject.CompareTag("ball"))
-            {
-<<<<<<< HEAD
-                animator.SetBool("isTouched", true);
-=======
-                
->>>>>>> parent of 0a59ad7 (scripts violations are cleared now back to graphics)
-                if (spawnBall)
-                {
-                    if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
-                    {
-                        mechanics.isSpawned = false;
-                        mechanics.Spawnball();
-                    }
+            if (animator != null)
+                animator.SetTrigger("eat");
+        }
+        //public virtual void OnCollisionEnter(Collision collision)
+        //{
+        //    if (collision.gameObject.CompareTag("ball"))
+        //    {
+        //        if(animator!=null)
+        //        animator.SetBool("isTouched", true);
+               
+        //        if (spawnBall)
+        //        {
+        //            if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
+        //            {
+        //                mechanics.isSpawned = false;
+        //                mechanics.Spawnball();
+        //            }
                    
-                }
-            }
-        }
-        public virtual void OnCollisionExit(Collision collision)
-        {
-            if (collision.gameObject.CompareTag("ball"))
-            {
-<<<<<<< HEAD
-                animator.SetBool("isTouched", false);
-=======
-                if(animator!=null)
-                animator.SetTrigger("isTouched");
->>>>>>> parent of 0a59ad7 (scripts violations are cleared now back to graphics)
-            }
-        }
-
+        //        }
+        //    }
+        //}
+        //public virtual void OnCollisionExit(Collision collision)
+        //{
+            
+        //  if (collision.gameObject.CompareTag("ball"))
+        //    {
+        //        if (animator != null)
+        //            animator.SetBool("isTouched", false);
+        //    }
+        //}
+      
     }
 }
 

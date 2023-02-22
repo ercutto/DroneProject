@@ -248,7 +248,7 @@ MonoBehaviour:
   keeperOnTarget: 0
   canPush: 0
   _editing: 0
-  speed: 90
+  speed: 125
   keyButton: d
 --- !u!114 &381142372371799271
 MonoBehaviour:

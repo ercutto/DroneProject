@@ -11,6 +11,10 @@ TagManager:
   - lose
   - Ground
   - mech
+  - Wall
+  - way
+  - hit
+  - UIBall
   layers:
   - Default
   - TransparentFX
@@ -29,7 +33,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Wall
   - 
   - 
   - 

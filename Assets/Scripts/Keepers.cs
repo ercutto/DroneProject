@@ -10,13 +10,13 @@ namespace PinBall {
         public bool keeperOnTarget;
         public bool canPush;
         public bool _editing;
-
+        public float force;
         public float speed;
         //this keys buttons described with string (keyButton) left is a(small) right is d(small)
         public string keyButton;
         Rigidbody rb;
         //this is Firstchilderen meshcollider
-        private BoxCollider mColl;
+        public BoxCollider mColl;
 
         // Start is called before the first frame update
         void Start()
@@ -26,9 +26,9 @@ namespace PinBall {
 
             // angleY = transform.eulerAngles.y;
             rb = GetComponent<Rigidbody>();
-            
-            mColl = GetComponentInChildren<BoxCollider>();
-
+            force = GetComponent<Reflector>().force;
+            //mColl = GetComponentInChildren<BoxCollider>();
+            //mColl = GetComponent<BoxCollider>();
         }
 
         // Update is called once per frame
