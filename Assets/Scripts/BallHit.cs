@@ -247,6 +247,7 @@ namespace PinBall
         void AfterCollision() {
             
             currentHitValue = reflector.force;
+            point = reflector.pointvalue;
             //hitToReflector = true;
             reflector.IsTouched();
             Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
