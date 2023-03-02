@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef59086a9da45848adacf892813afa2, type: 3}
   m_Name: Minus
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4244709790133552865, guid: ad91a657a67352940a0350cc2cbf89a0, type: 3}
   objectName: Minus
   force: 5
   pointValue: 100
+  clip: {fileID: 8300000, guid: b10890952851fcb4989f3ca9b681babb, type: 3}

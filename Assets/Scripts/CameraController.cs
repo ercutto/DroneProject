@@ -36,6 +36,7 @@ namespace PinBall
 
         void Update()
         {
+            
             Current();
            
         }
@@ -73,6 +74,7 @@ namespace PinBall
         void FollowBall()
         {
             camRb.transform.position= camPos[3].transform.position;
+            camRb.transform.rotation= camPos[3].transform.rotation;
         }
         #region ButtonCalls
         public void ChangeView()

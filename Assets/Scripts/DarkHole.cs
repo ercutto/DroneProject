@@ -18,6 +18,8 @@ namespace PinBall
         public Transform from;
         Vector3 to,_from,ballPos;
         Collider darkCollCollider;
+        public AudioSource effects;
+        public AudioClip clip;
         WaitForSeconds delayIt = new WaitForSeconds(0);
         
         // Start is called before the first frame update
@@ -85,6 +87,7 @@ namespace PinBall
             
             if (isDarkHole) {
                 tRenderer.enabled = true;
+                
             }
             else
             {
@@ -95,7 +98,7 @@ namespace PinBall
             rb.isKinematic = false;
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
             darkCollCollider.enabled = true;
-
+            effects.PlayOneShot(clip);
 
         }
     }

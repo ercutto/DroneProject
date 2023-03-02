@@ -50,7 +50,7 @@ namespace PinBall {
             else
             {
 
-                toMove = new Vector3(Mathf.Clamp((ball.transform.position.x + offset), -1f, 1f), transform.position.y, transform.position.z);
+                toMove = new Vector3(Mathf.Clamp((ball.transform.position.x + offset), -0.5f, 0.5f), transform.position.y, transform.position.z);
                
 
             }
