@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef59086a9da45848adacf892813afa2, type: 3}
   m_Name: Keepers
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6795752893390691956, guid: 53650379ec29e1f41a8a993c38f50443, type: 3}
   objectName: Keepeer
   force: 50
   pointValue: 5
+  clip: {fileID: 8300000, guid: b403134aacfbe8c459634b4cff8ffb9d, type: 3}

@@ -12,9 +12,11 @@ namespace PinBall{
         public  Animator animator;
         public bool spawnBall = false;
         public Mechanics mechanics;
-        
+        private AudioClip _clip;
+        public AudioSource effectsAudioSource;
         void Start()
         {
+            _clip = speedReflectors.clip;
             force = speedReflectors.force;
             pointvalue = 0;
             pointvalue = speedReflectors.pointValue;
@@ -22,8 +24,8 @@ namespace PinBall{
         }
         public void IsTouched()
         {
-            if (animator != null)
-                animator.SetTrigger("eat");
+            if (animator != null) { animator.SetTrigger("eat"); effectsAudioSource.PlayOneShot(_clip); }
+                
         }
         //public virtual void OnCollisionEnter(Collision collision)
         //{

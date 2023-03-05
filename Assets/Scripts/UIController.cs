@@ -17,6 +17,8 @@ namespace PinBall
             startPanel;
         public bool isPushed;
         public Text fps;
+        public AudioSource audioSource;
+        public AudioClip _clip,wellcome,keepers;
         
         WaitForSeconds delay =new WaitForSeconds(3f);
        
@@ -37,7 +39,7 @@ namespace PinBall
         }
         public void StartGame()//and Restart
         {
-            if (!isPushed) { isPushed = true; if (isPushed) { ActiveOrFalse(startPanel); ActiveOrFalse(UiAnimation); StartCoroutine(nameof(StartAfterTime), StartUI);} }
+            if (!isPushed) { isPushed = true; if (isPushed) { PlaySounds(_clip); ActiveOrFalse(startPanel); ActiveOrFalse(UiAnimation); StartCoroutine(nameof(StartAfterTime), StartUI);} }
            
             
             
@@ -46,7 +48,7 @@ namespace PinBall
         public void RestartGame()
         {
 
-            if(!isPushed){ isPushed = true; if(isPushed) { StartCoroutine(nameof(StartAfterTime), GameOverUI); } }
+            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(_clip); StartCoroutine(nameof(StartAfterTime), GameOverUI); } }
                 
                 
         }
@@ -55,14 +57,29 @@ namespace PinBall
             gameManager.ResetGameVariables();
             yield return delay;
             ActiveOrFalse(obj);
+            PlaySounds(wellcome);
             isPushed = false;
         }
         public void CloseApp()
         {
             Application.Quit();
         }
+        public void PlaySound()//ui
+        {
+            PlaySounds(_clip);
+           
+        }
+       public void PlayKeeperSound()
+        {
+            PlaySounds(keepers);
+        }
+        public void PlaySounds(AudioClip clip)
+        {
+            audioSource.PlayOneShot(clip);
+        }
        
-        
+
+
     }
 }
 

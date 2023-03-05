@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef59086a9da45848adacf892813afa2, type: 3}
   m_Name: Zero
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4244709790133552865, guid: ad91a657a67352940a0350cc2cbf89a0, type: 3}
   objectName: Zero
   force: 0
   pointValue: 1000
+  clip: {fileID: 8300000, guid: 1f9191eb358939a4fb5afc4b713aa238, type: 3}

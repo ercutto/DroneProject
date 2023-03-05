@@ -27,7 +27,7 @@ namespace PinBall
         public bool _editing;
         private Reflector reflector = null;
         private Keepers keepers = null;
-        private string _refTag = "ref";
+        //private string _refTag = "ref";
         private string _kepTag = "keeper";
         private string _hit = "hit";
         private string _Trigger = "trigger";
@@ -37,26 +37,30 @@ namespace PinBall
         Vector3 velocity;
         public float speedMultiplier = 25f;
         private GameObject currentReflector;
-        
 
-        float ySpeed;
+
+        //float ySpeed;
         #endregion
         //private Keepers keepers = null;
         // Start is called before the first frame update
         #region Start&Update
-        void Start()
+        private void Awake()
         {
-            gameManager = GameObject.FindObjectOfType<GameManager>();
             Rb = GetComponent<Rigidbody>();
+            gameManager = GameObject.FindObjectOfType<GameManager>();
             isOnPull = false;
             isGameStart = false;
             hitToReflector = false;
             addSpeed = 2;
             pushing = false;
             relased = false;
-            ySpeed = 0;
+            //ySpeed = 0;
             mechanics = GameObject.FindGameObjectWithTag("mech").GetComponent<Mechanics>();
             Invoke(nameof(StartGame), startTime);
+        }
+        void Start()
+        {
+           
         }
         void StartGame()
         {
@@ -247,6 +251,7 @@ namespace PinBall
         void AfterCollision() {
             
             currentHitValue = reflector.force;
+            point = reflector.pointvalue;
             //hitToReflector = true;
             reflector.IsTouched();
             Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);

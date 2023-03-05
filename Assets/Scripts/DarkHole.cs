@@ -18,15 +18,21 @@ namespace PinBall
         public Transform from;
         Vector3 to,_from,ballPos;
         Collider darkCollCollider;
+        public AudioSource effects;
+        public AudioClip clip,roboEat,PowerUp;
         WaitForSeconds delayIt = new WaitForSeconds(0);
+        public Vector3 Hummerdir;
+        
         
         // Start is called before the first frame update
         void Start()
         {
             delayIt = new WaitForSeconds(WaitingTime);
+            Hummerdir = transform.localPosition;
             darkCollCollider = GetComponent<Collider>();
             to = toTransform.position;
             _from = from.transform.position;
+            
             if (animator == null) { animator = GetComponentInChildren<Animator>(); }
             
             gameManager = FindObjectOfType<GameManager>();
@@ -50,12 +56,12 @@ namespace PinBall
         }
         IEnumerator TransportBall()
         {
-            SetComponents(false);
+            SetComponents();
             yield return delayIt;
             UnSetComponents();
 
         }
-        public virtual void SetComponents(bool render)
+        public virtual void SetComponents()
         {
             
             
@@ -65,10 +71,13 @@ namespace PinBall
                
                 tRenderer.enabled = false;
                 ball.transform.position = to;
+                effects.PlayOneShot(roboEat);
             }
             else
             {
                 ball.transform.position = _from;
+                
+                effects.PlayOneShot(PowerUp);
             }
 
             
@@ -85,18 +94,35 @@ namespace PinBall
             
             if (isDarkHole) {
                 tRenderer.enabled = true;
+                darkCollCollider.enabled = true;
+
             }
             else
             {
-                ball.transform.position = to;
-
+                rb.isKinematic = false;
+                rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+                //ball.transform.position = to;
+                KickBall();
             }
 
             rb.isKinematic = false;
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+            
+            effects.PlayOneShot(clip);
+            
+
+        }
+        void KickBall()
+        {
+            
+           
+             rb.AddForce(transform.right* 80f, ForceMode.Impulse);
+             
+            Invoke(nameof(ColliderFalse), 2f);
+        }
+        void ColliderFalse()
+        {
             darkCollCollider.enabled = true;
-
-
         }
     }
 }

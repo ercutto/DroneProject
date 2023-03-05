@@ -10,6 +10,7 @@ namespace PinBall {
             foreach (var item in toRestart)
             {
                 item.GetComponent<GroubPointsCollect>().ObjectsBactToStart();
+                item.GetComponent<GroubPointsCollect>().AfterRestart();
             }
         }
     }

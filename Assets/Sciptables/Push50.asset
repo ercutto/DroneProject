@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef59086a9da45848adacf892813afa2, type: 3}
   m_Name: Push50
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4244709790133552865, guid: ad91a657a67352940a0350cc2cbf89a0, type: 3}
   objectName: Push50
-  force: 0.5
-  pointValue: 120
+  force: 5
+  pointValue: 50
+  clip: {fileID: 8300000, guid: c13f885f562f78c46833d320c426a975, type: 3}

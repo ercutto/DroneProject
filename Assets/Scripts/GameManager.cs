@@ -22,7 +22,7 @@ namespace PinBall
         public PlayerData playerData;
         public UIController uIController;
         public ForgeGarbages forgeGarbages;
-        
+        public ChangeCurrents changeCurrents;
         #endregion
         #region Private
 
@@ -109,7 +109,7 @@ namespace PinBall
         //this adds score and also starts bonusTime counts.
         public void AddScore(int addScore)
         {
-
+            AddHit(1);
             if (countDown)
             { /*countOfHit++;*/
                 bonus += addScore;
@@ -186,11 +186,16 @@ namespace PinBall
         }
         #endregion
         #region hitcount
-        //public void AddHit(int hit)
-        //{
-        //    currentHit += hit;
-            
-        //}
+        public void AddHit(int hit)
+        {
+            currentHit += hit;
+            Debug.Log(currentHit);
+            if (currentHit >= 10)
+            {
+                changeCurrents.ChangeCurrent();
+                return;
+            }
+        }
         #endregion
         #region text Effect
         void ToShakeText(Text text)

@@ -48,8 +48,8 @@ namespace PinBall {
         {
             if (other.gameObject.GetComponent<BallHit>().thisIsMainBall)
             {
-                
-                Invoke(nameof(SetingFalse),0.7f);
+                ballHit = null;
+                Invoke(nameof(SetingFalse),0.2f);
                 
             }
 
