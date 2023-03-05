@@ -75,17 +75,23 @@ namespace PinBall
             int rand = Random.Range(0,animators.Length);
             foreach (var item in animators)
             {
-                if (item != animators[rand])
-                {
-                    
-                    item.SetTrigger("open");
-                }
+                if (!item.gameObject.activeInHierarchy) { return; }
                 else
                 {
-                  
-                    item.SetTrigger("close");
+                    if (item != animators[rand])
+                    {
+
+                        item.SetTrigger("open");
+                    }
+                    else
+                    {
+
+                        item.SetTrigger("close");
+
+                    }
 
                 }
+               
 
             }
 

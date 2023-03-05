@@ -40,7 +40,8 @@ namespace PinBall
         {
             foreach (var item in extraBonusGroups)
             {
-                item.BackToStart();
+                if(item.gameObject.activeInHierarchy){ item.BackToStart(); }
+                
                 
             }
 
