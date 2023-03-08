@@ -18,16 +18,21 @@ namespace PinBall
         private Vector3 bossStart;
         private Vector3 bosEnd;
 
+        public GameObject BossMap;        
         public GameObject ball;
         public GameObject colliders;
         public bool first,second;
-        
+
+        public Transform ballToTrigger;
+
+        public bool wait;
+        float distance;
 
         // Start is called before the first frame update
         void Start()
         {
             if (!ball) { ball = GameObject.FindGameObjectWithTag("ball"); }
-
+            wait=false;
             bosEnd = bossTo.transform.position;
             bossStart = bossFrom.transform.position;
             pinballStart = pinBallfrom.transform.position;
@@ -41,27 +46,36 @@ namespace PinBall
             {
                 ball = GameObject.FindGameObjectWithTag("ball");
             }
+           
 
             if (first)
             {
-                colliders.SetActive(false);
-                ToMove(Boss,bosEnd);
-                ToMove(pinballObjects,pinballEnd);
-
-                Invoke(nameof(SetBack), 10f);
+               
+                //colliders.SetActive(false);
+                ToMove(Boss,bosEnd,true,false);
+                ToMove(pinballObjects,pinballEnd,false,false);
+                ToMove(BossMap,pinballStart,true,false);
+                //ball.transform.position = ballToTrigger.position;
+                
 
             }
 
             if (second)
             {
 
-              
-                ToMove(Boss,bossStart);
-                ToMove(pinballObjects,pinballStart);
+
+                //ball.SetActive(false);
+                ToMove(Boss,bossStart,false,true);
+                ToMove(pinballObjects,pinballStart,true,true);
+                ToMove(BossMap,pinballEnd, false,true);
+               
 
 
 
             }
+
+            
+
 
         }
         public void ChangeCurrent()
@@ -70,7 +84,7 @@ namespace PinBall
             second = false;
             
         }
-        void SetBack()
+        public void SetBack()
         {
             
             first = false;
@@ -78,19 +92,37 @@ namespace PinBall
             
         }
 
-        void ToMove(GameObject obj, Vector3 to)
+        void ToMove(GameObject obj, Vector3 to,bool activeOrFalse,bool collActiveOrfalse)
         {
             Vector3 current = obj.transform.position;
-            if (current == to) {  return; }else { obj.transform.position = Vector3.Lerp(current, to, 1f * Time.deltaTime); }
+            if (current == to) {   return; }else { obj.transform.position = Vector3.Lerp(current, to, 1f * Time.deltaTime); }
 
             //if (to.y - current.y < 1f) { SetColliderFalse(); }
-        }
-        void SetColliderFalse()
-        {
+            distance = Vector3.Distance(obj.transform.position, to);
+            if (distance< 0.2f)
+            {
+              
+                obj.SetActive(activeOrFalse);
+                //colliders.SetActive(activeOrFalse);
+                
+            }
             
         }
-      
+        public void SetBall()
+        {
+           
 
+            ball.transform.position = ballToTrigger.position;
+            ball.SetActive(false);
+            Invoke(nameof(BallSetBack), 5);
+
+        }
+        void BallSetBack()
+        {
+            ball.SetActive(true);
+        }
+
+      
 
 
 

@@ -188,13 +188,20 @@ namespace PinBall
         #region hitcount
         public void AddHit(int hit)
         {
-            currentHit += hit;
-            Debug.Log(currentHit);
-            if (currentHit >= 10)
+            if (!changeCurrents.first)
             {
-                changeCurrents.ChangeCurrent();
-                return;
+                currentHit += hit;
+
+                if (currentHit >= 10)
+                {
+                    currentHit = 0;
+                    changeCurrents.SetBall();
+                    changeCurrents.ChangeCurrent();
+                    
+                    return;
+                }
             }
+           
         }
         #endregion
         #region text Effect
