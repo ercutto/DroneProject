@@ -22,9 +22,11 @@ namespace PinBall{
             pointvalue = speedReflectors.pointValue;
             if (spawnBall) { mechanics = FindObjectOfType<Mechanics>(); }
         }
-        public void IsTouched()
+        public virtual void IsTouched()
         {
-            if (animator != null) { animator.SetTrigger("eat"); effectsAudioSource.PlayOneShot(_clip); }
+            if (animator != null) { animator.SetTrigger("eat"); effectsAudioSource.PlayOneShot(_clip);
+                
+            }
                 
         }
         //public virtual void OnCollisionEnter(Collision collision)

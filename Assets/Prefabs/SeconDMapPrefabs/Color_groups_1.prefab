@@ -111,6 +111,8 @@ MonoBehaviour:
   isTouched: 0
   red: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   white: {r: 1, g: 1, b: 1, a: 1}
+  effectAudioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: b10890952851fcb4989f3ca9b681babb, type: 3}
   pushObject: {fileID: 5976923953495945571}
   groubPointsCollect: {fileID: 1530766300407103500}
   groubAnimCont: {fileID: 2944948833535492269}
@@ -225,6 +227,8 @@ MonoBehaviour:
   isTouched: 0
   red: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   white: {r: 1, g: 1, b: 1, a: 1}
+  effectAudioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: b10890952851fcb4989f3ca9b681babb, type: 3}
   pushObject: {fileID: 1357268859838557015}
   groubPointsCollect: {fileID: 1530766300407103500}
   groubAnimCont: {fileID: 7564146461828700825}
@@ -279,11 +283,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 750
+  currentScore: 0
   extraBonusGroups:
   - {fileID: 8603377532418165877}
   - {fileID: 7946540026552711213}
   - {fileID: 6527947322535548521}
   bonusCanvasPrefab: {fileID: 6638710292613505774}
+  ObjectScore: {fileID: 0}
 --- !u!1 &8658123479298336691
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +401,8 @@ MonoBehaviour:
   isTouched: 0
   red: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   white: {r: 1, g: 1, b: 1, a: 1}
+  effectAudioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: b10890952851fcb4989f3ca9b681babb, type: 3}
   pushObject: {fileID: 4385039936413040996}
   groubPointsCollect: {fileID: 1530766300407103500}
   groubAnimCont: {fileID: 5113284741541310634}

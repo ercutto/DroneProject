@@ -23,6 +23,13 @@ namespace PinBall
         public UIController uIController;
         public ForgeGarbages forgeGarbages;
         public ChangeCurrents changeCurrents;
+
+        public Image ballHitBar;
+        public Image BossHealthBar;
+        public int maxHit=10;
+
+        public AudioSource effectAudioSource;
+        public AudioClip ballMinusSound,ballPlusSound;
         #endregion
         #region Private
 
@@ -173,6 +180,8 @@ namespace PinBall
                 machineBallCount.text = currentBall.ToString();
                 mechanics.isMainBallSpawned = false;
                 currentHit = 0;
+                ballHitBar.fillAmount = 0.0f;
+
                 ChangeScore();
                 mechanics.Spawnball_Main();
                 restarter.RestartAll();
@@ -190,16 +199,28 @@ namespace PinBall
         {
             if (!changeCurrents.first)
             {
-                currentHit += hit;
+                if(ballHitBar.gameObject.activeInHierarchy){
+                    
+                    BossHealthBar.gameObject.SetActive(false);
+                }
+               
 
-                if (currentHit >= 10)
+                currentHit += hit;
+                
+                if (currentHit >= maxHit)
                 {
+                    
                     currentHit = 0;
+                    ballHitBar.fillAmount = (float)currentHit / maxHit;
+
+                    ballHitBar.gameObject.SetActive(false);
                     changeCurrents.SetBall();
                     changeCurrents.ChangeCurrent();
                     
                     return;
                 }
+
+                ballHitBar.fillAmount = (float)currentHit / maxHit;
             }
            
         }
@@ -234,7 +255,10 @@ namespace PinBall
         #region Ball Counts and Checks if there are no more ball game stops
         public void BallCount(int ballCount)
         {
-
+            
+            if (ballCount == 1) { effectAudioSource.PlayOneShot(ballMinusSound); }
+            else{ effectAudioSource.PlayOneShot(ballPlusSound); }
+            
             if (currentBall > 0)
             { currentBall -= ballCount;
                 //forgeGarbages.Forge();
