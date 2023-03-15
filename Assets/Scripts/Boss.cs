@@ -12,6 +12,7 @@ namespace PinBall {
         public Image gamehealthBar;
         public ChangeCurrents changeCurrents;
         public GameManager gameManager;
+        private string ballTag="ball";
         void Start()
         {
             bossHealth = 0;
@@ -25,7 +26,7 @@ namespace PinBall {
         }
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.CompareTag("ball"))
+            if (collision.gameObject.CompareTag(ballTag))
             {
                 if (!bosshealthBar.gameObject.activeInHierarchy)
                 {
@@ -35,7 +36,7 @@ namespace PinBall {
 
                 bossHealth += 1;
                 bosshealthBar.fillAmount = (float)bossHealth / maxBosHealth;
-                Debug.Log("boshealth: " + bossHealth);
+               
                 if (bossHealth >= maxBosHealth)
                 {
                     bosshealthBar.gameObject.SetActive(false);

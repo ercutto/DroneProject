@@ -47,6 +47,27 @@ TextureImporter:
   - first:
       213: -2276695984123998533
     second: PinballScifi_88
+  - first:
+      213: -3518078786666047582
+    second: PinballScifi_9
+  - first:
+      213: -1545424574135073832
+    second: PinballScifi_10
+  - first:
+      213: -1941449275873219074
+    second: PinballScifi_12
+  - first:
+      213: -4806802543370565413
+    second: PinballScifi_13
+  - first:
+      213: -1175272656633353385
+    second: PinballScifi_14
+  - first:
+      213: -7294026973048452530
+    second: PinballScifi_15
+  - first:
+      213: -9045569411609384430
+    second: PinballScifi_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +136,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -127,7 +148,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -139,7 +160,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -151,7 +172,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -163,7 +184,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -180,7 +201,7 @@ TextureImporter:
         width: 4098
         height: 339
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,11 +218,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 35
-        y: 3294
+        y: 3275
         width: 882
-        height: 420
+        height: 418
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,12 +238,12 @@ TextureImporter:
       name: PinballScifi_2
       rect:
         serializedVersion: 2
-        x: 35
-        y: 2835
-        width: 882
-        height: 418
+        x: 1044
+        y: 3153
+        width: 306
+        height: 492
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,12 +259,12 @@ TextureImporter:
       name: PinballScifi_3
       rect:
         serializedVersion: 2
-        x: 35
-        y: 2361
-        width: 882
-        height: 417
+        x: 962
+        y: 40
+        width: 156
+        height: 1858
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,12 +280,12 @@ TextureImporter:
       name: PinballScifi_4
       rect:
         serializedVersion: 2
-        x: 1522
-        y: 50
-        width: 315
-        height: 2112
+        x: 1141
+        y: 26
+        width: 146
+        height: 1882
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,11 +302,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 35
-        y: 1904
+        y: 2817
         width: 882
-        height: 420
+        height: 418
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,12 +322,12 @@ TextureImporter:
       name: PinballScifi_7
       rect:
         serializedVersion: 2
-        x: 1294
-        y: 51
-        width: 204
-        height: 1903
+        x: 35
+        y: 2342
+        width: 882
+        height: 418
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,12 +343,12 @@ TextureImporter:
       name: PinballScifi_8
       rect:
         serializedVersion: 2
-        x: 1885
-        y: 71
-        width: 239
-        height: 2039
+        x: 963
+        y: 2170
+        width: 635
+        height: 948
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,12 +364,12 @@ TextureImporter:
       name: PinballScifi_11
       rect:
         serializedVersion: 2
-        x: 39
-        y: 1420
-        width: 882
-        height: 418
+        x: 1660
+        y: 2206
+        width: 26
+        height: 462
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -361,97 +382,160 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PinballScifi_24
+      name: PinballScifi_6
       rect:
         serializedVersion: 2
-        x: 1138
-        y: 50
-        width: 139
-        height: 1848
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5434460378904c130800000000000000
-      internalID: 3586001679530869573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PinballScifi_37
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 960
-        width: 882
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f1f09c353cf99c20800000000000000
-      internalID: 3213877114685157879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PinballScifi_63
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 487
-        width: 882
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0940eb83d3e0f4350800000000000000
-      internalID: 6003032484415931536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PinballScifi_76
-      rect:
-        serializedVersion: 2
-        x: 970
-        y: 59
-        width: 138
-        height: 1844
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff2bec8e6e2a21e80800000000000000
-      internalID: -8209320058110954753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PinballScifi_88
-      rect:
-        serializedVersion: 2
-        x: 39
+        x: 1287
         y: 31
+        width: 221
+        height: 1919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 14, w: 19}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ab1a7d851e4d010800000000000000
+      internalID: 1212841971360578105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinballScifi_9
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 2742
+        width: 205
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7deecabf54d2fc0800000000000000
+      internalID: -3518078786666047582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinballScifi_10
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1888
         width: 882
         height: 418
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3058fa98c8d8ae0800000000000000
+      internalID: -1545424574135073832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinballScifi_12
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 2205
+        width: 116
+        height: 465
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd232a7b269e05e0800000000000000
+      internalID: -1941449275873219074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinballScifi_13
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 64
+        width: 259
+        height: 2037
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd804f8ed8eca4db0800000000000000
+      internalID: -4806802543370565413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinballScifi_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1409
+        width: 889
+        height: 428
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ba323eeb790bfe0800000000000000
+      internalID: -1175272656633353385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinballScifi_15
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 948
+        width: 903
+        height: 419
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a44590d1966ca90800000000000000
+      internalID: -7294026973048452530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PinballScifi_16
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 40
+        width: 305
+        height: 2103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -459,8 +543,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbe0bbc901d8760e0800000000000000
-      internalID: -2276695984123998533
+      spriteID: 21a22edab8ea77280800000000000000
+      internalID: -9045569411609384430
       vertices: []
       indices: 
       edges: []

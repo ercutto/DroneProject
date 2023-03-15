@@ -30,6 +30,7 @@ namespace PinBall
         //private string _refTag = "ref";
         private string _kepTag = "keeper";
         private string _hit = "hit";
+        private string _ref = "ref";
         private string _Trigger = "trigger";
         private string _lose = "lose";
         private Vector3 from;
@@ -37,7 +38,7 @@ namespace PinBall
         Vector3 velocity;
         public float speedMultiplier = 25f;
         private GameObject currentReflector;
-
+       
 
         //float ySpeed;
         #endregion
@@ -70,10 +71,9 @@ namespace PinBall
         // Update is called once per frame
         void Update()
         {
-            
 
+            lastVelocity = Rb.velocity;
             //CheckGround();
-
             Ball_movement();
            
 
@@ -200,8 +200,8 @@ namespace PinBall
         #region collision
         public void OnCollisionEnter(Collision collision)
         {
-            
-            
+
+
             //if (collision.gameObject.CompareTag(_refTag))
             //{
             //    direction = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
@@ -214,6 +214,13 @@ namespace PinBall
                 currentReflector = collision.gameObject;
                 reflector = currentReflector.GetComponent<Reflector>();
                 direction = (currentReflector.transform.forward);
+                AfterCollisionBumper();
+            }
+            if (collision.gameObject.CompareTag(_ref))
+            {
+                currentReflector = collision.gameObject;
+                reflector = currentReflector.GetComponent<Reflector>();
+                direction = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
                 AfterCollision();
             }
             else if (collision.gameObject.CompareTag(_kepTag))
@@ -242,23 +249,35 @@ namespace PinBall
         //    if (/*collision.gameObject.CompareTag(_refTag) ||*/ collision.gameObject.CompareTag(_kepTag))
         //    {
         //        hitToReflector = false;
-   
-                
+
+
         //    }
 
         //}
 
-        void AfterCollision() {
-            
+        void AfterCollision()
+        {
+
             currentHitValue = reflector.force;
             point = reflector.pointvalue;
             //hitToReflector = true;
             reflector.IsTouched();
+            Rb.AddForce(direction /** currentHitValue*/, ForceMode.Impulse);
+            gameManager.AddScore(point);
+        }
+        void AfterCollisionBumper()
+        {
+
+            currentHitValue = reflector.force;
+            point = reflector.pointvalue;
+            //hitToReflector = true;
+            reflector.IsTouched();
+            
             Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
             gameManager.AddScore(point);
         }
 
 
-}
+    }
     #endregion
 }

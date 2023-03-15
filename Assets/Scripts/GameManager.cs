@@ -73,6 +73,7 @@ namespace PinBall
         {
             if (ballFinished && NoMoreBallOnScene)
             {
+                
                 if (Input.GetKeyUp(KeyCode.R)) { ResetGameVariables(); }
 
 
@@ -255,19 +256,30 @@ namespace PinBall
         #region Ball Counts and Checks if there are no more ball game stops
         public void BallCount(int ballCount)
         {
-            
-            if (ballCount == 1) { effectAudioSource.PlayOneShot(ballMinusSound); }
-            else{ effectAudioSource.PlayOneShot(ballPlusSound); }
-            
-            if (currentBall > 0)
-            { currentBall -= ballCount;
-                //forgeGarbages.Forge();
-            }
-            else
+
+            if (ballCount == 1) {  effectAudioSource.PlayOneShot(ballMinusSound); }
+            else { effectAudioSource.PlayOneShot(ballPlusSound); }
+
+            currentBall -= ballCount;
+            if (currentBall <= 0)
             {
+                currentBall = 0;
                 ballFinished = true;
-                
             }
+            //if (currentBall > 0)
+            //{
+                     
+            //    currentBall -= ballCount;
+
+            //}
+           
+            //else
+            //{
+            //    ballFinished = true;
+
+            //}
+            
+            
 
             ballCountText.text = currentBall.ToString();
             machineBallCount.text = currentBall.ToString();

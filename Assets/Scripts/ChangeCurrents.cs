@@ -21,7 +21,7 @@ namespace PinBall
         public GameObject BossMap;        
         public GameObject ball;
         public GameObject colliders;
-        public bool first,second;
+        public bool first,second,transforming;
 
         public Transform ballToTrigger;
 
@@ -32,6 +32,7 @@ namespace PinBall
         void Start()
         {
             if (!ball) { ball = GameObject.FindGameObjectWithTag("ball"); }
+            transforming = false;
             wait=false;
             bosEnd = bossTo.transform.position;
             bossStart = bossFrom.transform.position;
@@ -104,7 +105,11 @@ namespace PinBall
               
                 obj.SetActive(activeOrFalse);
                 //colliders.SetActive(activeOrFalse);
-                
+                transforming = true;
+            }
+            else
+            {
+                transforming = false;
             }
             
         }
