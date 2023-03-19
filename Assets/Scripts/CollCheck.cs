@@ -13,7 +13,8 @@ namespace PinBall {
         public Color white = Color.white;
         private string _tag = "ball";
         WaitForSeconds delay = new WaitForSeconds(1);
-
+        public AudioSource effectAudioSource;
+        public AudioClip clip;
 
         private void Start()
         {
@@ -35,7 +36,7 @@ namespace PinBall {
         {
             if (other.gameObject.CompareTag(_tag)) {
                 ScoreAndAction();
-                
+                effectAudioSource.PlayOneShot(clip);
             }
 
         }
@@ -43,6 +44,7 @@ namespace PinBall {
         public virtual void ScoreAndAction()
         {
             //col.enabled = false;
+            
             ChangeColor();
             //gameManager.AddHit(1);
         }

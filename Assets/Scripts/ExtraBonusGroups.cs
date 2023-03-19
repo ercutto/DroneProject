@@ -16,7 +16,7 @@ namespace PinBall
         {
            
             ColliderControll(false);
-            groubAnimCont.Anim();
+            groubAnimCont.IsTouched();
             groubPointsCollect.CountBonus(1);
             Change(Color.red);
         }

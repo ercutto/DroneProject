@@ -22,7 +22,9 @@ namespace PinBall
         public AudioClip clip,roboEat,PowerUp;
         WaitForSeconds delayIt = new WaitForSeconds(0);
         public Vector3 Hummerdir;
-        
+        public ChangeCurrents currents;
+        public Transform mainSpawnPoint;
+        public Vector3 toMainSpawnPosition;
         
         // Start is called before the first frame update
         void Start()
@@ -32,7 +34,7 @@ namespace PinBall
             darkCollCollider = GetComponent<Collider>();
             to = toTransform.position;
             _from = from.transform.position;
-            
+            toMainSpawnPosition = mainSpawnPoint.position;
             if (animator == null) { animator = GetComponentInChildren<Animator>(); }
             
             gameManager = FindObjectOfType<GameManager>();
@@ -70,14 +72,31 @@ namespace PinBall
             {
                
                 tRenderer.enabled = false;
-                ball.transform.position = to;
-                effects.PlayOneShot(roboEat);
+                if (currents.transforming)
+                {
+                    ball.transform.position = toMainSpawnPosition;
+                }
+                else
+                {
+                    ball.transform.position = to;
+                    effects.PlayOneShot(roboEat);
+
+                }
+                
             }
             else
             {
-                ball.transform.position = _from;
+                if (currents.transforming)
+                {
+                    ball.transform.position = toMainSpawnPosition;
+                }
+                else
+                {
+                    ball.transform.position = _from;
+
+                    effects.PlayOneShot(PowerUp);
+                }
                 
-                effects.PlayOneShot(PowerUp);
             }
 
             

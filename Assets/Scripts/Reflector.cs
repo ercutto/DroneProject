@@ -22,39 +22,41 @@ namespace PinBall{
             pointvalue = speedReflectors.pointValue;
             if (spawnBall) { mechanics = FindObjectOfType<Mechanics>(); }
         }
-        public void IsTouched()
+        public virtual void IsTouched()
         {
-            if (animator != null) { animator.SetTrigger("eat"); effectsAudioSource.PlayOneShot(_clip); }
+            if (animator != null) { animator.SetTrigger("eat"); effectsAudioSource.PlayOneShot(_clip);
+                
+            }
                 
         }
         //public virtual void OnCollisionEnter(Collision collision)
         //{
         //    if (collision.gameObject.CompareTag("ball"))
         //    {
-        //        if(animator!=null)
-        //        animator.SetBool("isTouched", true);
-               
-        //        if (spawnBall)
-        //        {
-        //            if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
-        //            {
-        //                mechanics.isSpawned = false;
-        //                mechanics.Spawnball();
-        //            }
-                   
-        //        }
-        //    }
-        //}
+                               //if (animator != null)
+                //    animator.SetBool("isTouched", true);
+
+                //if (spawnBall)
+                //{
+                //    if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
+                //    {
+                //        mechanics.isSpawned = false;
+                //        mechanics.Spawnball();
+                //    }
+
+                //}
+         //   }
+       //}
         //public virtual void OnCollisionExit(Collision collision)
         //{
-            
+
         //  if (collision.gameObject.CompareTag("ball"))
         //    {
         //        if (animator != null)
         //            animator.SetBool("isTouched", false);
         //    }
         //}
-      
+
     }
 }
 

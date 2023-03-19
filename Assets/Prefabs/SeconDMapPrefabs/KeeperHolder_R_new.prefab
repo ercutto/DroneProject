@@ -106,6 +106,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   spawnBall: 0
   mechanics: {fileID: 0}
+  effectsAudioSource: {fileID: 0}
 --- !u!54 &1549554109587635746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,8 +134,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8445831, y: 0.2514822, z: 0.13286737}
-  m_Center: {x: -0.33322448, y: -0.012679341, z: 0.0030992336}
+  m_Size: {x: 0.84458303, y: 0.7109175, z: 0.13286737}
+  m_Center: {x: -0.3332246, y: 0.051293477, z: 0.0030998413}
 --- !u!1 &7061105573959635066
 GameObject:
   m_ObjectHideFlags: 0

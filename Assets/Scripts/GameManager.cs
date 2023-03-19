@@ -23,6 +23,13 @@ namespace PinBall
         public UIController uIController;
         public ForgeGarbages forgeGarbages;
         public ChangeCurrents changeCurrents;
+
+        public Image ballHitBar;
+        public Image BossHealthBar;
+        public int maxHit=10;
+
+        public AudioSource effectAudioSource;
+        public AudioClip ballMinusSound,ballPlusSound;
         #endregion
         #region Private
 
@@ -66,6 +73,7 @@ namespace PinBall
         {
             if (ballFinished && NoMoreBallOnScene)
             {
+                
                 if (Input.GetKeyUp(KeyCode.R)) { ResetGameVariables(); }
 
 
@@ -173,6 +181,8 @@ namespace PinBall
                 machineBallCount.text = currentBall.ToString();
                 mechanics.isMainBallSpawned = false;
                 currentHit = 0;
+                ballHitBar.fillAmount = 0.0f;
+
                 ChangeScore();
                 mechanics.Spawnball_Main();
                 restarter.RestartAll();
@@ -188,13 +198,32 @@ namespace PinBall
         #region hitcount
         public void AddHit(int hit)
         {
-            currentHit += hit;
-            Debug.Log(currentHit);
-            if (currentHit >= 10)
+            if (!changeCurrents.first)
             {
-                changeCurrents.ChangeCurrent();
-                return;
+                if(ballHitBar.gameObject.activeInHierarchy){
+                    
+                    BossHealthBar.gameObject.SetActive(false);
+                }
+               
+
+                currentHit += hit;
+                
+                if (currentHit >= maxHit)
+                {
+                    
+                    currentHit = 0;
+                    ballHitBar.fillAmount = (float)currentHit / maxHit;
+
+                    ballHitBar.gameObject.SetActive(false);
+                    changeCurrents.SetBall();
+                    changeCurrents.ChangeCurrent();
+                    
+                    return;
+                }
+
+                ballHitBar.fillAmount = (float)currentHit / maxHit;
             }
+           
         }
         #endregion
         #region text Effect
@@ -228,15 +257,29 @@ namespace PinBall
         public void BallCount(int ballCount)
         {
 
-            if (currentBall > 0)
-            { currentBall -= ballCount;
-                //forgeGarbages.Forge();
-            }
-            else
+            if (ballCount == 1) {  effectAudioSource.PlayOneShot(ballMinusSound); }
+            else { effectAudioSource.PlayOneShot(ballPlusSound); }
+
+            currentBall -= ballCount;
+            if (currentBall <= 0)
             {
+                currentBall = 0;
                 ballFinished = true;
-                
             }
+            //if (currentBall > 0)
+            //{
+                     
+            //    currentBall -= ballCount;
+
+            //}
+           
+            //else
+            //{
+            //    ballFinished = true;
+
+            //}
+            
+            
 
             ballCountText.text = currentBall.ToString();
             machineBallCount.text = currentBall.ToString();
