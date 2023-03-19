@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Push150
   m_EditorClassIdentifier: 
   objectName: Push150
-  force: 2
+  force: 35
   pointValue: 100
   clip: {fileID: 8300000, guid: 0523af0ce0c80f24a8e1215a1852cf9c, type: 3}

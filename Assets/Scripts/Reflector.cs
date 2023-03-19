@@ -33,30 +33,30 @@ namespace PinBall{
         //{
         //    if (collision.gameObject.CompareTag("ball"))
         //    {
-        //        if(animator!=null)
-        //        animator.SetBool("isTouched", true);
-               
-        //        if (spawnBall)
-        //        {
-        //            if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
-        //            {
-        //                mechanics.isSpawned = false;
-        //                mechanics.Spawnball();
-        //            }
-                   
-        //        }
-        //    }
-        //}
+                               //if (animator != null)
+                //    animator.SetBool("isTouched", true);
+
+                //if (spawnBall)
+                //{
+                //    if (collision.gameObject.GetComponent<BallHit>().thisIsMainBall == true)
+                //    {
+                //        mechanics.isSpawned = false;
+                //        mechanics.Spawnball();
+                //    }
+
+                //}
+         //   }
+       //}
         //public virtual void OnCollisionExit(Collision collision)
         //{
-            
+
         //  if (collision.gameObject.CompareTag("ball"))
         //    {
         //        if (animator != null)
         //            animator.SetBool("isTouched", false);
         //    }
         //}
-      
+
     }
 }
 

@@ -22,6 +22,8 @@ namespace PinBall
         public GameObject ball;
         public GameObject colliders;
         public bool first,second,transforming;
+        public GateController gateController;
+        
 
         public Transform ballToTrigger;
 
@@ -57,7 +59,7 @@ namespace PinBall
                 ToMove(pinballObjects,pinballEnd,false,false);
                 ToMove(BossMap,pinballStart,true,false);
                 //ball.transform.position = ballToTrigger.position;
-                
+               
 
             }
 
@@ -106,6 +108,8 @@ namespace PinBall
                 obj.SetActive(activeOrFalse);
                 //colliders.SetActive(activeOrFalse);
                 transforming = true;
+                
+                
             }
             else
             {
@@ -119,11 +123,13 @@ namespace PinBall
 
             ball.transform.position = ballToTrigger.position;
             ball.SetActive(false);
+            gateController.GateClosing();
             Invoke(nameof(BallSetBack), 5);
 
         }
         void BallSetBack()
         {
+           
             ball.SetActive(true);
         }
 
