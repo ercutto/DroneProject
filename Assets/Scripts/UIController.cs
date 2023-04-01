@@ -18,6 +18,7 @@ namespace PinBall
         public bool isPushed;
         public Text fps;
         public AudioSource audioSource;
+        public AudioSource HandlesAndHigVolumes;
         public AudioClip _clip,wellcome,keepers;
         
         WaitForSeconds delay =new WaitForSeconds(3f);
@@ -39,7 +40,7 @@ namespace PinBall
         }
         public void StartGame()//and Restart
         {
-            if (!isPushed) { isPushed = true; if (isPushed) { PlaySounds(_clip); ActiveOrFalse(startPanel); ActiveOrFalse(UiAnimation); StartCoroutine(nameof(StartAfterTime), StartUI);} }
+            if (!isPushed) { isPushed = true; if (isPushed) { PlaySounds( audioSource, _clip); ActiveOrFalse(startPanel); ActiveOrFalse(UiAnimation); StartCoroutine(nameof(StartAfterTime), StartUI);} }
            
             
             
@@ -48,7 +49,7 @@ namespace PinBall
         public void RestartGame()
         {
 
-            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(_clip); StartCoroutine(nameof(StartAfterTime), GameOverUI); } }
+            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(audioSource, _clip); StartCoroutine(nameof(StartAfterTime), GameOverUI); } }
                 
                 
         }
@@ -57,7 +58,7 @@ namespace PinBall
             gameManager.ResetGameVariables();
             yield return delay;
             ActiveOrFalse(obj);
-            PlaySounds(wellcome);
+            PlaySounds(audioSource, wellcome);
             isPushed = false;
         }
         public void CloseApp()
@@ -66,16 +67,16 @@ namespace PinBall
         }
         public void PlaySound()//ui
         {
-            PlaySounds(_clip);
+            PlaySounds(audioSource, _clip);
            
         }
        public void PlayKeeperSound()
         {
-            PlaySounds(keepers);
+            PlaySounds(HandlesAndHigVolumes, keepers);
         }
-        public void PlaySounds(AudioClip clip)
+        public void PlaySounds(AudioSource source, AudioClip clip)
         {
-            audioSource.PlayOneShot(clip);
+            source.PlayOneShot(clip);
         }
        
         

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ef59086a9da45848adacf892813afa2, type: 3}
-  m_Name: Keepers
+  m_Name: PushBossBumper
   m_EditorClassIdentifier: 
-  objectName: Keepeer
-  force: 150
-  pointValue: 5
-  clip: {fileID: 8300000, guid: 3ace82f8f1cd5104abc7d71c872976b7, type: 3}
+  objectName: pushBumper
+  force: 35
+  pointValue: 150
+  clip: {fileID: 8300000, guid: b25475371417a564cb51fee6c5b0172c, type: 3}
