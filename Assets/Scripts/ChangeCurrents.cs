@@ -80,16 +80,26 @@ namespace PinBall
         {
             first = true;
             second = false;
-            sceneAnimator.SetTrigger("boss");
+           
+            Invoke(nameof(InvokeAnimatorBoss), 1f);
         }
         public void SetBack()
         {
-            sceneAnimator.SetTrigger("main");
+            
+            Invoke(nameof(InvokeAnimatorMain), 1f);
+
             first = false;
             second = true;
             
         }
-
+        void InvokeAnimatorBoss()
+        {
+            sceneAnimator.SetTrigger("boss");
+        }
+        void InvokeAnimatorMain()
+        {
+            sceneAnimator.SetTrigger("main");
+        }
         void ToMove(GameObject obj, Vector3 to,bool activeOrFalse,bool collActiveOrfalse)
         {
             Vector3 current = obj.transform.position;
@@ -125,14 +135,14 @@ namespace PinBall
            
 
             ball.transform.position = ballToTrigger.position;
+            ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
             ball.SetActive(false);
             gateController.GateClosing();
-            Invoke(nameof(BallSetBack), 3);
+            Invoke(nameof(BallSetBack), 5f);
 
         }
         void BallSetBack()
         {
-           
             ball.SetActive(true);
         }
 

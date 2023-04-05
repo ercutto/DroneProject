@@ -218,6 +218,7 @@ namespace PinBall
                     changeCurrents.SetBall();
                     changeCurrents.ChangeCurrent();
                     
+                    
                     return;
                 }
 
@@ -266,20 +267,7 @@ namespace PinBall
                 currentBall = 0;
                 ballFinished = true;
             }
-            //if (currentBall > 0)
-            //{
-                     
-            //    currentBall -= ballCount;
-
-            //}
-           
-            //else
-            //{
-            //    ballFinished = true;
-
-            //}
-            
-            
+          
 
             ballCountText.text = currentBall.ToString();
             machineBallCount.text = currentBall.ToString();

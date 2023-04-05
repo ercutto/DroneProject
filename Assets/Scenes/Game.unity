@@ -578,6 +578,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1926864, z: 1}
   m_Center: {x: 0.0000019762483, y: -0.096345, z: 0.000000012570351}
+--- !u!1 &128556488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7871944182598455235, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &131065383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4673,7 +4679,7 @@ MonoBehaviour:
   changeCurrents: {fileID: 31404255}
   ballHitBar: {fileID: 1445834626}
   BossHealthBar: {fileID: 1886580279}
-  maxHit: 50
+  maxHit: 5
   effectAudioSource: {fileID: 161528465}
   ballMinusSound: {fileID: 8300000, guid: 1f9191eb358939a4fb5afc4b713aa238, type: 3}
   ballPlusSound: {fileID: 8300000, guid: fdac916ea954be4499dd500dd43f9bd8, type: 3}
@@ -4706,12 +4712,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc8117b2becdf44bb1a07b29296ac29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 1722449519}
   toRestart:
   - {fileID: 1918905584}
   - {fileID: 1782411801}
   - {fileID: 1454421029}
   - {fileID: 675150066}
   - {fileID: 265590905}
+  - {fileID: 915187281}
+  - {fileID: 576237926}
+  - {fileID: 930591350}
+  - {fileID: 128556488}
+  - {fileID: 1527989436}
+  - {fileID: 959220903}
+  - {fileID: 1865725189}
+  - {fileID: 857056298}
+  - {fileID: 1909104269}
 --- !u!114 &512224506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5073,6 +5089,12 @@ Transform:
   m_Father: {fileID: 1730441666}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 29.027, y: 180, z: -90}
+--- !u!1 &576237926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3182234847917532309, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &609090133
 GameObject:
   m_ObjectHideFlags: 0
@@ -6902,6 +6924,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &857056298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6786489233862159249, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &857478805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7438,6 +7466,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &915187281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7242750857952469896, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &920621642
 GameObject:
   m_ObjectHideFlags: 0
@@ -7568,6 +7602,12 @@ Transform:
   m_Father: {fileID: 1543113433}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -34.181, y: -35.821, z: 22.073}
+--- !u!1 &930591350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3112484713373026743, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &935814084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7756,6 +7796,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &959220903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2163223832259757810, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &960380301
 GameObject:
   m_ObjectHideFlags: 0
@@ -8374,7 +8420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991600844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.476, y: 0.141, z: -3.226}
+  m_LocalPosition: {x: 1.476, y: 0.1216, z: -3.226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 773650185}
@@ -10222,7 +10268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.629303, y: 0.2590332}
+  m_AnchoredPosition: {x: -0.62927246, y: 0.2590332}
   m_SizeDelta: {x: 1.2585, y: -0.51799774}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169328794
@@ -13578,6 +13624,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2144704048}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1527989436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5969864375805699875, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1535565131
 GameObject:
   m_ObjectHideFlags: 0
@@ -14373,6 +14425,18 @@ Transform:
   m_Father: {fileID: 1919421634}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1624433286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4431721343640034563, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7595e12e3a64c27469c942a775ec80ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1641307228
 GameObject:
   m_ObjectHideFlags: 0
@@ -14674,7 +14738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.089302, y: 0.5205777}
   m_AnchorMax: {x: 0.48200002, y: 0.57575244}
-  m_AnchoredPosition: {x: -0.8930664, y: -5.296692}
+  m_AnchoredPosition: {x: -0.8930664, y: -5.2965393}
   m_SizeDelta: {x: -1.7859, y: 9}
   m_Pivot: {x: 0.49999997, y: 0.41147536}
 --- !u!114 &1705189391
@@ -15323,7 +15387,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1722449514}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.27207372
   m_Height: 2.9016497
   m_Direction: 0
@@ -15404,11 +15468,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b30229bc63fe27429b11431c3c490d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBosHealth: 10
+  bossHealth: 0
+  maxBosHealth: 9
   bosshealthBar: {fileID: 1886580279}
   gamehealthBar: {fileID: 1445834626}
   changeCurrents: {fileID: 31404255}
   gameManager: {fileID: 512224503}
+  bonusComplating: {fileID: 1624433286}
+  restarter: {fileID: 512224505}
 --- !u!114 &1722449520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17022,6 +17089,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1865725189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6794191357189057692, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1865874064
 GameObject:
   m_ObjectHideFlags: 0
@@ -17793,6 +17866,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1816708621}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1909104269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7423319268614968354, guid: f343abe0559e6da4cbbc0e3579fae7db,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149303998256857095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1911563454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3987668485725272948, guid: 4d338f5e43721f3439d06c3bdecf18c5,
@@ -18137,7 +18216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2bca531ed160c40a307affc6e71b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editing: 0
+  editing: 1
   objects:
   - {fileID: 2026750649}
   - {fileID: 1891705607}
@@ -29791,6 +29870,10 @@ MonoBehaviour:
   key: isTouched
   source: {fileID: 161528465}
   clip: {fileID: 8300000, guid: 6affb787d47e6be4f887f798695af7dc, type: 3}
+  isPuzlle: 0
+  coll: {fileID: 0}
+  boss: {fileID: 0}
+  bonusComplating: {fileID: 0}
 --- !u!65 &920591956616175651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31849,6 +31932,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 31404253}
     m_Modifications:
+    - target: {fileID: 6310070571242268, guid: f343abe0559e6da4cbbc0e3579fae7db, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 39026367474461817, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 39026367474461817, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
+    - target: {fileID: 66713198579280756, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 66713198579280756, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
     - target: {fileID: 76690165820429270, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
@@ -31895,6 +32002,21 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 872096655658215366, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 872096655658215366, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
+    - target: {fileID: 1646964187694102578, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
     - target: {fileID: 1771301616159379557, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
@@ -31905,6 +32027,11 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 2163223832259757810, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2443685481549996453, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
@@ -31915,6 +32042,16 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 3112484713373026743, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182234847917532309, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3545556453340457182, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
@@ -31931,6 +32068,41 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 3746349246195158822, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 3746349246195158822, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
+    - target: {fileID: 3858580787161365844, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163466563563001031, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 4163466563563001031, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
+    - target: {fileID: 4197386483458483053, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 4197386483458483053, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
     - target: {fileID: 4422676547152583349, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
@@ -31941,6 +32113,26 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 4431721343640034563, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 4667461845453932055, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 4667461845453932055, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
+    - target: {fileID: 5194979683228448983, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5812836162187955930, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
@@ -31951,6 +32143,26 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 5969864375805699875, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786489233862159249, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794191357189057692, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6833400673997951993, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
     - target: {fileID: 7149303997976206817, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32031,6 +32243,21 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 7242750857952469896, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423319268614968354, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7871944182598455235, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8065197163324126455, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
@@ -32041,6 +32268,16 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 8280684815192581232, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 8280684815192581232, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
     - target: {fileID: 8360807261791839759, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
@@ -32051,6 +32288,41 @@ PrefabInstance:
       propertyPath: effectsAudioSource
       value: 
       objectReference: {fileID: 161528465}
+    - target: {fileID: 8499052360886569298, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1722449519}
+    - target: {fileID: 8499052360886569298, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1327304328}
+    - target: {fileID: 8624670675673775465, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9228253
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624670675673775465, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624670675673775465, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.038587373
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624670675673775465, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.00000005532853
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624670675673775465, guid: f343abe0559e6da4cbbc0e3579fae7db,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 6.010493e-18
+      objectReference: {fileID: 0}
     - target: {fileID: 9016697949653257467, guid: f343abe0559e6da4cbbc0e3579fae7db,
         type: 3}
       propertyPath: mechanics
