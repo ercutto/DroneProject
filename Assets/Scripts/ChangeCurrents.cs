@@ -6,11 +6,7 @@ namespace PinBall
     public class ChangeCurrents : MonoBehaviour
     {
         
-        public GameObject pinballObjects;
-        public Transform pinBallTo;
-        public Transform pinBallfrom;
-        private Vector3 pinballStart;
-        private Vector3 pinballEnd;
+  
 
         public GameObject Boss;
         public Transform bossTo;
@@ -23,8 +19,8 @@ namespace PinBall
         public GameObject colliders;
         public bool first,second,transforming;
         public GateController gateController;
-        
 
+        public Animator sceneAnimator;
         public Transform ballToTrigger;
 
         public bool wait;
@@ -38,8 +34,7 @@ namespace PinBall
             wait=false;
             bosEnd = bossTo.transform.position;
             bossStart = bossFrom.transform.position;
-            pinballStart = pinBallfrom.transform.position;
-            pinballEnd = pinBallTo.transform.position;
+           
         }
 
         // Update is called once per frame
@@ -56,10 +51,10 @@ namespace PinBall
                
                 //colliders.SetActive(false);
                 ToMove(Boss,bosEnd,true,false);
-                ToMove(pinballObjects,pinballEnd,false,false);
-                ToMove(BossMap,pinballStart,true,false);
+                //ToMove(pinballObjects,pinballEnd,false,false);
+                //ToMove(BossMap,pinballStart,true,false);
                 //ball.transform.position = ballToTrigger.position;
-               
+                
 
             }
 
@@ -69,15 +64,15 @@ namespace PinBall
 
                 //ball.SetActive(false);
                 ToMove(Boss,bossStart,false,true);
-                ToMove(pinballObjects,pinballStart,true,true);
-                ToMove(BossMap,pinballEnd, false,true);
+                //ToMove(pinballObjects,pinballStart,true,true);
+                //ToMove(BossMap,pinballEnd, false,true);
                
 
 
 
             }
 
-            
+           
 
 
         }
@@ -85,16 +80,26 @@ namespace PinBall
         {
             first = true;
             second = false;
-            
+           
+            Invoke(nameof(InvokeAnimatorBoss), 1f);
         }
         public void SetBack()
         {
             
+            Invoke(nameof(InvokeAnimatorMain), 1f);
+
             first = false;
             second = true;
             
         }
-
+        void InvokeAnimatorBoss()
+        {
+            sceneAnimator.SetTrigger("boss");
+        }
+        void InvokeAnimatorMain()
+        {
+            sceneAnimator.SetTrigger("main");
+        }
         void ToMove(GameObject obj, Vector3 to,bool activeOrFalse,bool collActiveOrfalse)
         {
             Vector3 current = obj.transform.position;
@@ -107,29 +112,37 @@ namespace PinBall
               
                 obj.SetActive(activeOrFalse);
                 //colliders.SetActive(activeOrFalse);
-                transforming = true;
+                
                 
                 
             }
             else
             {
-                transforming = false;
+                //transforming = false;
             }
             
+        }
+        public void Transforming()
+        {
+            transforming = true;
+        }
+        public void TransformingEnded()
+        {
+            transforming = false;
         }
         public void SetBall()
         {
            
 
             ball.transform.position = ballToTrigger.position;
+            ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
             ball.SetActive(false);
             gateController.GateClosing();
-            Invoke(nameof(BallSetBack), 5);
+            Invoke(nameof(BallSetBack), 5f);
 
         }
         void BallSetBack()
         {
-           
             ball.SetActive(true);
         }
 

@@ -14,6 +14,7 @@ namespace PinBall{
         public Mechanics mechanics;
         private AudioClip _clip;
         public AudioSource effectsAudioSource;
+       
         void Start()
         {
             _clip = speedReflectors.clip;
@@ -24,9 +25,11 @@ namespace PinBall{
         }
         public virtual void IsTouched()
         {
-            if (animator != null) { animator.SetTrigger("eat"); effectsAudioSource.PlayOneShot(_clip);
+            if (animator != null) {
+                animator.SetTrigger("eat"); effectsAudioSource.PlayOneShot(_clip);
                 
             }
+           
                 
         }
         //public virtual void OnCollisionEnter(Collision collision)

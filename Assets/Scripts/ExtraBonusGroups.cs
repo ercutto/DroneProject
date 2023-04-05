@@ -9,12 +9,14 @@ namespace PinBall
         public GameObject pushObject;
         public GroubPointsCollect groubPointsCollect;
         public GroubAnimCont groubAnimCont;
+    
+        
+       
         WaitForSeconds delay = new WaitForSeconds(0.3f);
         
 
         public override void ScoreAndAction()
         {
-           
             ColliderControll(false);
             groubAnimCont.IsTouched();
             groubPointsCollect.CountBonus(1);
@@ -24,7 +26,8 @@ namespace PinBall
         {
            
             Change(Color.white);
-            StartCoroutine(ColorDance());
+            StartCoroutine(ColorDance()); 
+            
         }
         IEnumerator ColorDance()
         { 

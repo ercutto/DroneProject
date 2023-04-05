@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Push150
   force: 35
   pointValue: 100
-  clip: {fileID: 8300000, guid: 0523af0ce0c80f24a8e1215a1852cf9c, type: 3}
+  clip: {fileID: 8300000, guid: 34b186a414b085f4a8ebfd53d20269e0, type: 3}

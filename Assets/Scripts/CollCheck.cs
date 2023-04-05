@@ -6,7 +6,7 @@ namespace PinBall {
     {
      
         private Material mat;
-        private Collider col;
+        public Collider col;
         private GameManager gameManager;
         public bool isTouched;
         public Color red = Color.yellow;
@@ -16,36 +16,45 @@ namespace PinBall {
         public AudioSource effectAudioSource;
         public AudioClip clip;
 
+     
+
         private void Start()
         {
             isTouched = false;
-            gameManager = FindObjectOfType<GameManager>();
+            gameManager = FindObjectOfType<GameManager>();      
             col = GetComponent<BoxCollider>();
-            mat= GetComponent<MeshRenderer>().material;
+            mat = GetComponent<MeshRenderer>().material;
             
 
         }
        
         public virtual void ChangeColor()
         {
- 
+         
                 StartCoroutine(ColorIsWaiting());
+           
+ 
             
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag(_tag)) {
+            if (other.gameObject.CompareTag(_tag))
+            {
+            
                 ScoreAndAction();
                 effectAudioSource.PlayOneShot(clip);
+
             }
 
         }
-  
+
         public virtual void ScoreAndAction()
         {
             //col.enabled = false;
-            
-            ChangeColor();
+      
+                col.enabled = false;
+         
+           
             //gameManager.AddHit(1);
         }
       
@@ -67,8 +76,10 @@ namespace PinBall {
         }
         public virtual void ColliderControll(bool value)
         {
+            
             col.enabled = value;
         }
+       
 
        
     }

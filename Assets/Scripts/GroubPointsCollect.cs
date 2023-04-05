@@ -12,6 +12,7 @@ namespace PinBall
         public ExtraBonusGroups[] extraBonusGroups;
         public GameObject bonusCanvasPrefab;
         public Text ObjectScore;
+      
         
         // Start is called before the first frame update
         void Start()
@@ -67,6 +68,8 @@ namespace PinBall
         }
         public  void AfterRestart()
         {
+           
+            
             exBonus = 0;
             scoreMulipiler = 0;
             count = 0;

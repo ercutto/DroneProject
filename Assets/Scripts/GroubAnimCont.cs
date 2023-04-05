@@ -7,18 +7,24 @@ namespace PinBall
         public SpeedReflectors reflector;
         public AudioClip grClip;
         public AudioSource effects;
+  
+        public Animator DiamondHolderAnimator = null;
+        
         
         // Start is called before the first frame update
         void Start()
         {
             
             force = reflector.force;
+           
             
         }
 
         public override void IsTouched()
         {
-            animator.SetTrigger("eat");
+            
+          
+            animator.SetTrigger("eat"); 
             effects.PlayOneShot(grClip);
         }
 

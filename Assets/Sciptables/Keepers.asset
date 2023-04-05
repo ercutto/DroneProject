@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Keepers
   m_EditorClassIdentifier: 
   objectName: Keepeer
-  force: 50
+  force: 150
   pointValue: 5
-  clip: {fileID: 8300000, guid: b403134aacfbe8c459634b4cff8ffb9d, type: 3}
+  clip: {fileID: 8300000, guid: 3ace82f8f1cd5104abc7d71c872976b7, type: 3}
