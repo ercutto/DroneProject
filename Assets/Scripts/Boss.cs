@@ -14,11 +14,11 @@ namespace PinBall {
         public GameManager gameManager;
         private string ballTag="ball";
         public BonusComplating bonusComplating;
+        public AnimWithTrigger[] animWithTriggers;
         public Restarter restarter;
         void Start()
         {
-            bossHealth = 0;
-            bosshealthBar.fillAmount = 0.0f;
+            AnimatorsReset();
         }
         private void OnCollisionEnter(Collision collision)
         {
@@ -49,12 +49,23 @@ namespace PinBall {
                 bosshealthBar.gameObject.SetActive(false);
                 gamehealthBar.gameObject.SetActive(true);
                 gameManager.BallCount(-1);
-                bossHealth = 0;
-                //bonusComplating.SetBack();
                 changeCurrents.SetBall();
                 changeCurrents.SetBack();
                 restarter.RestartAll();
-                
+                Invoke(nameof(AnimatorsReset),2f);
+
+
+            }
+        }
+        public void AnimatorsReset()
+        {
+            bossHealth = 0;
+            bosshealthBar.fillAmount = 0.0f;
+
+            foreach (var ToReset in animWithTriggers)
+            {
+                ToReset.SetBack();
+
             }
         }
     }

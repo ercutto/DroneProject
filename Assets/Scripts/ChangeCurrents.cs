@@ -81,12 +81,12 @@ namespace PinBall
             first = true;
             second = false;
            
-            Invoke(nameof(InvokeAnimatorBoss), 1f);
+            Invoke(nameof(InvokeAnimatorBoss), 2f);
         }
         public void SetBack()
         {
             
-            Invoke(nameof(InvokeAnimatorMain), 1f);
+            Invoke(nameof(InvokeAnimatorMain), 2f);
 
             first = false;
             second = true;

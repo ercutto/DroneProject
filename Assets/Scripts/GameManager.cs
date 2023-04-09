@@ -27,7 +27,7 @@ namespace PinBall
         public Image ballHitBar;
         public Image BossHealthBar;
         public int maxHit=10;
-
+        public Boss boss;
         public AudioSource effectAudioSource;
         public AudioClip ballMinusSound,ballPlusSound;
         #endregion
@@ -182,7 +182,7 @@ namespace PinBall
                 mechanics.isMainBallSpawned = false;
                 currentHit = 0;
                 ballHitBar.fillAmount = 0.0f;
-
+                boss.AnimatorsReset();
                 ChangeScore();
                 mechanics.Spawnball_Main();
                 restarter.RestartAll();
