@@ -30,6 +30,12 @@ namespace PinBall
         public Boss boss;
         public AudioSource effectAudioSource;
         public AudioClip ballMinusSound,ballPlusSound;
+        public GoogleAdMobController googleAdMobController;
+        public int rewardMaxCount = 3;
+        public int rewardCount;
+        public bool revardCountFinished;
+        public Text rewardCoundText;
+       
         #endregion
         #region Private
 
@@ -63,8 +69,7 @@ namespace PinBall
             //    table.transform.Rotate(-45, 0, 0);
             //}
             //Application.targetFrameRate = 60;
-
-            
+            PlayAddmobFuncion();
 
         }
 
@@ -182,6 +187,10 @@ namespace PinBall
                 mechanics.isMainBallSpawned = false;
                 currentHit = 0;
                 ballHitBar.fillAmount = 0.0f;
+                rewardMaxCount = 3;
+                rewardCount = 1;
+                revardCountFinished = false;
+                rewardCoundText.text = rewardMaxCount.ToString();
                 boss.AnimatorsReset();
                 ChangeScore();
                 mechanics.Spawnball_Main();
@@ -262,10 +271,16 @@ namespace PinBall
             else { effectAudioSource.PlayOneShot(ballPlusSound); }
 
             currentBall -= ballCount;
+
             if (currentBall <= 0)
             {
                 currentBall = 0;
+
                 ballFinished = true;
+                
+
+               
+
             }
           
 
@@ -277,13 +292,62 @@ namespace PinBall
         {
             totalAmountOfBall += amount;
             if (totalAmountOfBall < 1)
-            { NoMoreBallOnScene = true;
-                playerData.Save(currentScore);
-                uIController.ActiveOrFalse(uIController.GameOverUI);
+            {
+                WaitforPlayerSelectingContinueOrRestart();
             }
 
+        }
+        #endregion
+        #region PlayerContinueOrRestart
+        public void WaitforPlayerSelectingContinueOrRestart()
+        {
+            uIController.ActiveOrFalse(uIController.GameOverUI);
+        }
+        public void PlayerSelectToContinue()
+        {
+            if (rewardMaxCount>0)
+            {
+                revardCountFinished = false;
+                rewardMaxCount-=rewardCount;
+                rewardCoundText.text = rewardMaxCount.ToString();
+            }
+            else
+            {
+                revardCountFinished = true;
+            }
+            
 
+            if (revardCountFinished)
+            {
+                return;
+            }
+            else
+            {
+                uIController.ActiveOrFalse(uIController.GameOverUI);
+                ballFinished = false;
+                NoMoreBallOnScene = false;
+                BallCount(-1);
+                mechanics.isMainBallSpawned = false;
+                mechanics.Spawnball_Main();
+            }
+           
+        }
+        public void WaitforPlayerSelectNotToContiue()
+        {
+            NoMoreBallOnScene = true;
+            playerData.Save(currentScore);
+        }
+        #endregion
+        #region AddMobPlay
 
+        public void PlayAddmobFuncion()
+        {
+            googleAdMobController.RequestBannerAd();
+        }
+        public void CallRewardVideo()
+        {
+            if (revardCountFinished) { return; }
+            else {googleAdMobController.RequestAndLoadRewardedAd(); }
         }
         #endregion
     }

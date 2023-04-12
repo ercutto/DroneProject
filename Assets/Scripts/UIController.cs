@@ -16,13 +16,14 @@ namespace PinBall
             UiAnimation,
             startPanel;
         public bool isPushed;
+        public bool AddMobVideoIsPlayed;
         public Text fps;
         public AudioSource audioSource;
         public AudioSource HandlesAndHigVolumes;
         public AudioClip _clip,wellcome,keepers;
-        
         WaitForSeconds delay =new WaitForSeconds(3f);
-       
+        WaitForSeconds videoTime =new WaitForSeconds(3f);
+
 
         // Start is called before the first frame update
         void Start()
@@ -46,6 +47,10 @@ namespace PinBall
             
 
         }
+        //public void ContinueGameAfterRevard()
+        //{
+        //    gameManager.PlayerSelectToContinue();
+        //}
         public void RestartGame()
         {
 
@@ -79,8 +84,21 @@ namespace PinBall
             source.PlayOneShot(clip);
         }
        
+        public void AddMobVideoPlay()
+        {
+            StartCoroutine(PlayVideo());
+        }
         
+        IEnumerator PlayVideo()
+        {
+            PlayingVideo();
+            yield return new WaitUntil(()=>AddMobVideoIsPlayed);
 
+        }
+        void PlayingVideo()
+        {
+
+        }
 
     }
 }
