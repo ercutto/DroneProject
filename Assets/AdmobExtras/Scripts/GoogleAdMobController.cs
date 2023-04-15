@@ -113,9 +113,11 @@ namespace PinBall
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
+
+        string adUnitId = "ca-app-pub-3801799039994541~9753091071";
 #elif UNITY_IPHONE
-        string adUnitId = "ca-app-pub-3940256099942544/2934735716";
+
+        string adUnitId = "ca-app-pub-3801799039994541~4902662025";
 #else
         string adUnitId = "unexpected_platform";
 #endif
@@ -125,6 +127,8 @@ namespace PinBall
             {
                 bannerView.Destroy();
             }
+            //string adUnitId = "ca-app-pub-3940256099942544/2934735716";
+            //string adUnitId = "ca-app-pub-3940256099942544/6300978111";
 
             // Create a 320x50 banner at top of the screen
             bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);

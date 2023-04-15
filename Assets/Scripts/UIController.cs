@@ -21,8 +21,10 @@ namespace PinBall
         public AudioSource audioSource;
         public AudioSource HandlesAndHigVolumes;
         public AudioClip _clip,wellcome,keepers;
+        public ChangeCurrents changeCurrents;
         WaitForSeconds delay =new WaitForSeconds(3f);
         WaitForSeconds videoTime =new WaitForSeconds(3f);
+        
 
 
         // Start is called before the first frame update
@@ -54,13 +56,23 @@ namespace PinBall
         public void RestartGame()
         {
 
-            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(audioSource, _clip); StartCoroutine(nameof(StartAfterTime), GameOverUI); } }
+            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(audioSource, _clip); StartCoroutine(nameof(RestartAfterTime), GameOverUI); } }
                 
                 
         }
+        IEnumerator RestartAfterTime(GameObject obj)
+        {
+            //gameManager.ResetGameVariables();
+            changeCurrents.SetBack();
+            yield return delay;
+            ActiveOrFalse(obj);
+            gameManager.ResetGameVariables();
+            PlaySounds(audioSource, wellcome);
+            isPushed = false;
+        }
         IEnumerator StartAfterTime(GameObject obj)
         {
-            gameManager.ResetGameVariables();
+            gameManager.ResetGameVariables();      
             yield return delay;
             ActiveOrFalse(obj);
             PlaySounds(audioSource, wellcome);

@@ -69,7 +69,7 @@ namespace PinBall
             //    table.transform.Rotate(-45, 0, 0);
             //}
             //Application.targetFrameRate = 60;
-            PlayAddmobFuncion();
+           
 
         }
 
@@ -336,6 +336,10 @@ namespace PinBall
         {
             NoMoreBallOnScene = true;
             playerData.Save(currentScore);
+            restarter.RestartAll();
+            boss.AnimatorsReset();
+            changeCurrents.SetBack();
+            
         }
         #endregion
         #region AddMobPlay

@@ -19,7 +19,7 @@ namespace PinBall
         public GameObject colliders;
         public bool first,second,transforming;
         public GateController gateController;
-
+        public GameObject gameHealthBar;
         public Animator sceneAnimator;
         public Transform ballToTrigger;
 
@@ -81,12 +81,12 @@ namespace PinBall
             first = true;
             second = false;
            
-            Invoke(nameof(InvokeAnimatorBoss), 2f);
+            Invoke(nameof(InvokeAnimatorBoss), 1f);
         }
         public void SetBack()
         {
-            
-            Invoke(nameof(InvokeAnimatorMain), 2f);
+            gameHealthBar.gameObject.SetActive(true);
+            Invoke(nameof(InvokeAnimatorMain), 1f);
 
             first = false;
             second = true;
