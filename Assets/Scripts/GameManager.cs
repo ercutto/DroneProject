@@ -69,7 +69,7 @@ namespace PinBall
             //    table.transform.Rotate(-45, 0, 0);
             //}
             //Application.targetFrameRate = 60;
-           
+            
 
         }
 
@@ -193,7 +193,7 @@ namespace PinBall
                 rewardCoundText.text = rewardMaxCount.ToString();
                 boss.AnimatorsReset();
                 ChangeScore();
-                mechanics.Spawnball_Main();
+                Invoke(nameof(SpawningBall),3);
                 restarter.RestartAll();
                 //countOfHit = 0;
             }
@@ -202,6 +202,10 @@ namespace PinBall
                 return;
             }
 
+        }
+        void SpawningBall()
+        {
+            mechanics.Spawnball_Main();
         }
         #endregion
         #region hitcount

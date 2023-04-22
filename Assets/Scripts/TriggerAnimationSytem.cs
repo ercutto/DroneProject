@@ -83,6 +83,16 @@ namespace PinBall
             }
 
         }
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("UIBall"))
+            {
+                if (triggerButton.activeInHierarchy) { return; }
+                else { triggerButton.SetActive(true); }
+                
+            }
+
+        }
         private void OnTriggerExit2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("UIBall"))

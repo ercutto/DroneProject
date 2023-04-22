@@ -276,8 +276,12 @@ namespace PinBall
             Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
             gameManager.AddScore(point);
         }
+        void IfStacked()
+        {
 
+        }
 
     }
+   
     #endregion
 }

@@ -48,6 +48,7 @@ namespace PinBall {
             {
                 bosshealthBar.gameObject.SetActive(false);
                 gamehealthBar.gameObject.SetActive(true);
+                gameManager.AddScore(10000);
                 gameManager.BallCount(-1);
                 changeCurrents.SetBall();
                 changeCurrents.SetBack();

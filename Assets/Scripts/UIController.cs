@@ -23,8 +23,8 @@ namespace PinBall
         public AudioClip _clip,wellcome,keepers;
         public ChangeCurrents changeCurrents;
         WaitForSeconds delay =new WaitForSeconds(3f);
-        WaitForSeconds videoTime =new WaitForSeconds(3f);
-        
+        WaitForSeconds buttonTime =new WaitForSeconds(3f);
+        public Button[] buttons;
 
 
         // Start is called before the first frame update
@@ -62,11 +62,11 @@ namespace PinBall
         }
         IEnumerator RestartAfterTime(GameObject obj)
         {
-            //gameManager.ResetGameVariables();
+            gameManager.ResetGameVariables();
             changeCurrents.SetBack();
             yield return delay;
             ActiveOrFalse(obj);
-            gameManager.ResetGameVariables();
+            
             PlaySounds(audioSource, wellcome);
             isPushed = false;
         }
@@ -95,22 +95,21 @@ namespace PinBall
         {
             source.PlayOneShot(clip);
         }
+        //Enables buttons after coroutine
+        public void SetBackButtons()
+        {
+            StartCoroutine(SetBackButtonsTime());
+        }
+        IEnumerator SetBackButtonsTime()
+        {
+            yield return buttonTime;
+            foreach (var allButtons in buttons)
+            {
+                allButtons.enabled = true;
+            }
+        }
+
        
-        public void AddMobVideoPlay()
-        {
-            StartCoroutine(PlayVideo());
-        }
-        
-        IEnumerator PlayVideo()
-        {
-            PlayingVideo();
-            yield return new WaitUntil(()=>AddMobVideoIsPlayed);
-
-        }
-        void PlayingVideo()
-        {
-
-        }
 
     }
 }

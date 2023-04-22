@@ -12,6 +12,7 @@ namespace PinBall {
         public Boss boss = null;
         private string Idle = "Idle";
         private string Eat = "Eat";
+        public GameManager gameManager;
 
         public BonusComplating bonusComplating = null;
         public void Start()
@@ -40,7 +41,7 @@ namespace PinBall {
         {
             if (other.gameObject.CompareTag("ball"))
             {
-                if (isPuzlle) { coll.enabled = false; animator.Play(Eat,0); boss.BossHealthCont(); }
+                if (isPuzlle) { coll.enabled = false; animator.Play(Eat,0); boss.BossHealthCont(); gameManager.AddScore(500); }
                 else
                 {
                     animator.SetTrigger(key);

@@ -198,7 +198,7 @@ namespace GoogleMobileAds.Sample
         /// </summary>
         public void LoadMainScene()
         {
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("Game");
         }
 
         /// <summary>

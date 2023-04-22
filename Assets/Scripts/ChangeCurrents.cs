@@ -22,7 +22,8 @@ namespace PinBall
         public GameObject gameHealthBar;
         public Animator sceneAnimator;
         public Transform ballToTrigger;
-
+        private string currentAnimation="SceneIdle";
+        public AnimatorClipInfo[] animations;
         public bool wait;
         float distance;
 
@@ -86,10 +87,17 @@ namespace PinBall
         public void SetBack()
         {
             gameHealthBar.gameObject.SetActive(true);
-            Invoke(nameof(InvokeAnimatorMain), 1f);
+            
+            animations = sceneAnimator.GetCurrentAnimatorClipInfo(0);
+            if(currentAnimation == animations[0].clip.name) { return; }
+            {
+                Invoke(nameof(InvokeAnimatorMain), 1f);
+                first = false;
+                second = true;
+            }
+            
 
-            first = false;
-            second = true;
+            
             
         }
         void InvokeAnimatorBoss()
