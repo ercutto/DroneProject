@@ -35,6 +35,7 @@ namespace PinBall
         public int rewardCount;
         public bool revardCountFinished;
         public Text rewardCoundText;
+        public Text finalScore;
        
         #endregion
         #region Private
@@ -290,6 +291,7 @@ namespace PinBall
 
             ballCountText.text = currentBall.ToString();
             machineBallCount.text = currentBall.ToString();
+            
 
         }
         public void TotalBallCount(int amount)
@@ -297,6 +299,8 @@ namespace PinBall
             totalAmountOfBall += amount;
             if (totalAmountOfBall < 1)
             {
+                uIController.buttonUI.SetActive(false);
+                uIController.UiCamera.SetActive(true);
                 WaitforPlayerSelectingContinueOrRestart();
             }
 
@@ -306,6 +310,7 @@ namespace PinBall
         public void WaitforPlayerSelectingContinueOrRestart()
         {
             uIController.ActiveOrFalse(uIController.GameOverUI);
+            finalScore.text = scoreString;
         }
         public void PlayerSelectToContinue()
         {
@@ -327,6 +332,8 @@ namespace PinBall
             }
             else
             {
+                uIController.ActiveOrFalse(uIController.UiCamera);
+                uIController.ActiveOrFalse(uIController.buttonUI);
                 uIController.ActiveOrFalse(uIController.GameOverUI);
                 ballFinished = false;
                 NoMoreBallOnScene = false;

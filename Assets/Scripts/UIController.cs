@@ -14,7 +14,10 @@ namespace PinBall
             TriggerButton,
             triggerContainer,
             UiAnimation,
-            startPanel;
+            startPanel,
+            buttonUI,
+            UiCamera
+            ;
         public bool isPushed;
         public bool AddMobVideoIsPlayed;
         public Text fps;
@@ -43,7 +46,12 @@ namespace PinBall
         }
         public void StartGame()//and Restart
         {
-            if (!isPushed) { isPushed = true; if (isPushed) { PlaySounds( audioSource, _clip); ActiveOrFalse(startPanel); ActiveOrFalse(UiAnimation); StartCoroutine(nameof(StartAfterTime), StartUI);} }
+            if (!isPushed) { isPushed = true; if (isPushed) { PlaySounds( audioSource, _clip);
+                    ActiveOrFalse(startPanel);
+                    StartCoroutine(nameof(StartAfterTime), UiCamera);
+                    StartCoroutine(nameof(StartAfterTime), buttonUI); 
+                    ActiveOrFalse(UiAnimation);
+                    StartCoroutine(nameof(StartAfterTime), StartUI);} }
            
             
             
@@ -56,7 +64,11 @@ namespace PinBall
         public void RestartGame()
         {
 
-            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(audioSource, _clip); StartCoroutine(nameof(RestartAfterTime), GameOverUI); } }
+            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(audioSource, _clip); StartCoroutine(nameof(RestartAfterTime), GameOverUI);
+                    StartCoroutine(nameof(RestartAfterTime), buttonUI);
+                    StartCoroutine(nameof(RestartAfterTime), UiCamera);
+                }
+        }
                 
                 
         }
