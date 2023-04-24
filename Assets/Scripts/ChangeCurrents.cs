@@ -13,7 +13,7 @@ namespace PinBall
         public Transform bossFrom;
         private Vector3 bossStart;
         private Vector3 bosEnd;
-
+        
         public GameObject BossMap;        
         public GameObject ball;
         public GameObject colliders;
@@ -26,6 +26,8 @@ namespace PinBall
         public AnimatorClipInfo[] animations;
         public bool wait;
         float distance;
+        public AudioSource effectSource;
+        public AudioClip clip;
 
         // Start is called before the first frame update
         void Start()
@@ -132,10 +134,12 @@ namespace PinBall
         }
         public void Transforming()
         {
+            effectSource.PlayOneShot(clip);
             transforming = true;
         }
         public void TransformingEnded()
         {
+            effectSource.PlayOneShot(clip);
             transforming = false;
         }
         public void SetBall()

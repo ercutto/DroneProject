@@ -2623,7 +2623,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.9833333
+  - time: 2.4833333
     functionName: TransformingEnded
     data: 
     objectReferenceParameter: {fileID: 0}

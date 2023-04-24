@@ -27,6 +27,7 @@ namespace PinBall
         public bool _editing;
         private Reflector reflector = null;
         private Keepers keepers = null;
+        private float speed=1f;
         //private string _refTag = "ref";
         private string _kepTag = "keeper";
         private string _hit = "hit";
@@ -35,10 +36,12 @@ namespace PinBall
         private string _lose = "lose";
         private Vector3 from;
         Vector3 lastVelocity;
-        Vector3 velocity;
+        Vector3 velocity=new Vector3(3f,3f,3f);
         public float speedMultiplier = 25f;
         private GameObject currentReflector;
+   
        
+
 
         //float ySpeed;
         #endregion
@@ -73,6 +76,12 @@ namespace PinBall
         {
 
             lastVelocity = Rb.velocity;
+            if (Rb.velocity.magnitude < 0.0001f)
+            {
+                IfBallStuck();
+
+            }
+            
             //CheckGround();
             Ball_movement();
            
@@ -117,13 +126,12 @@ namespace PinBall
   
 
                // if (!hitToReflector) { /*lastVelocity = Rb.velocity;*/ }
-                
                
-                
-
-
             }
-           
+
+            
+
+
         }
 
         void RelasedForce()
@@ -272,12 +280,23 @@ namespace PinBall
             point = reflector.pointvalue;
             //hitToReflector = true;
             reflector.IsTouched();
+            if (direction.magnitude * currentHitValue < velocity.magnitude)
+            {
+                Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
+            }
+            else
+            {
+                Rb.AddForce(direction * 10f, ForceMode.Impulse);
+            }
             
-            Rb.AddForce(direction * currentHitValue, ForceMode.Impulse);
             gameManager.AddScore(point);
         }
-        void IfStacked()
+        void IfBallStuck()
         {
+
+            Rb.AddForce(Vector3.right * speed, ForceMode.Impulse);
+
+           
 
         }
 
