@@ -199,8 +199,8 @@ namespace GoogleMobileAds.Sample
         /// </summary>
         public void LoadMainScene()
         {
-            //SceneManager.LoadScene("Game");
-            UmpCont.SetActive(false);
+            SceneManager.LoadScene("Game");
+            //UmpCont.SetActive(false);
         }
 
         /// <summary>

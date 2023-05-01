@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/AdmobExtras/Scenes/GoogleUmpScene.unity
+    guid: 519bac61a0bdc4f9499da1e60252500d
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: b3abdb767380cde408c2b5e36641aa12
   m_configObjects: {}
