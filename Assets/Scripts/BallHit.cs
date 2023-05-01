@@ -39,7 +39,8 @@ namespace PinBall
         Vector3 velocity=new Vector3(3f,3f,3f);
         public float speedMultiplier = 25f;
         private GameObject currentReflector;
-   
+        private int lOrR =1;
+        
        
 
 
@@ -293,8 +294,8 @@ namespace PinBall
         }
         void IfBallStuck()
         {
-
-            Rb.AddForce(Vector3.right * speed, ForceMode.Impulse);
+            lOrR = Random.Range(-lOrR, lOrR);
+            Rb.AddForce(Vector3.right * lOrR, ForceMode.Impulse);
 
            
 

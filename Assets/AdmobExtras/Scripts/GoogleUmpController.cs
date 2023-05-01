@@ -46,6 +46,7 @@ namespace GoogleMobileAds.Sample
         public Button BtnLoadMainScene;
 
         private ConsentForm _consentForm;
+        public GameObject UmpCont;
 
         #region Unity API
 
@@ -198,7 +199,8 @@ namespace GoogleMobileAds.Sample
         /// </summary>
         public void LoadMainScene()
         {
-            SceneManager.LoadScene("Game");
+            //SceneManager.LoadScene("Game");
+            UmpCont.SetActive(false);
         }
 
         /// <summary>
