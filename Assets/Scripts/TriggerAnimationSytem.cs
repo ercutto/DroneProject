@@ -9,8 +9,9 @@ namespace PinBall
         public Image spring;
         public Image ball;
         public float ballAnimSpeed;
+       
         Vector3 startPos;
-        
+       
         public Image springTop;
         public bool isPushingStarted;
         public bool isReleaseStarted;
@@ -50,8 +51,7 @@ namespace PinBall
                     Release();
                 }
             }
-               
-      
+
         }
         public void Push()
         {
@@ -80,6 +80,16 @@ namespace PinBall
             if (other.gameObject.CompareTag("UIBall"))
             {
                 triggerButton.SetActive(true);
+            }
+
+        }
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("UIBall"))
+            {
+                if (triggerButton.activeInHierarchy) { return; }
+                else { triggerButton.SetActive(true); }
+                
             }
 
         }

@@ -13,18 +13,21 @@ namespace PinBall
         public Transform bossFrom;
         private Vector3 bossStart;
         private Vector3 bosEnd;
-
+        
         public GameObject BossMap;        
         public GameObject ball;
         public GameObject colliders;
         public bool first,second,transforming;
         public GateController gateController;
-
+        public GameObject gameHealthBar;
         public Animator sceneAnimator;
         public Transform ballToTrigger;
-
+        private string currentAnimation="SceneIdle";
+        public AnimatorClipInfo[] animations;
         public bool wait;
         float distance;
+        public AudioSource effectSource;
+        public AudioClip clip;
 
         // Start is called before the first frame update
         void Start()
@@ -85,11 +88,18 @@ namespace PinBall
         }
         public void SetBack()
         {
+            gameHealthBar.gameObject.SetActive(true);
             
-            Invoke(nameof(InvokeAnimatorMain), 1f);
+            animations = sceneAnimator.GetCurrentAnimatorClipInfo(0);
+            if(currentAnimation == animations[0].clip.name) { return; }
+            {
+                Invoke(nameof(InvokeAnimatorMain), 1f);
+                first = false;
+                second = true;
+            }
+            
 
-            first = false;
-            second = true;
+            
             
         }
         void InvokeAnimatorBoss()
@@ -124,10 +134,12 @@ namespace PinBall
         }
         public void Transforming()
         {
+            effectSource.PlayOneShot(clip);
             transforming = true;
         }
         public void TransformingEnded()
         {
+            effectSource.PlayOneShot(clip);
             transforming = false;
         }
         public void SetBall()

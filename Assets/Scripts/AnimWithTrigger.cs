@@ -8,21 +8,29 @@ namespace PinBall {
         public AudioSource source;
         public AudioClip clip;
         public bool isPuzlle;
-        public  Collider coll;
+        private BoxCollider coll=null;
         public Boss boss = null;
-        
+        private string Idle = "Idle";
+        private string Eat = "Eat";
+        public GameManager gameManager;
+
         public BonusComplating bonusComplating = null;
+        public void Start()
+        {
+            if (isPuzlle) { coll = GetComponent<BoxCollider>(); }
+        }
         public void SetBack()
         {
             if (isPuzlle)
             {
-                coll.enabled = true;
+               
                 if (this.gameObject.activeInHierarchy)
                 {
+                    coll.enabled = true;
                     //bonusComplating.SetBack();
 
-                    animator.SetTrigger("restart");
-                    boss.bossHealth = 0;
+                    animator.Play(Idle,0);
+                    
                 }
                 
                 
@@ -33,9 +41,12 @@ namespace PinBall {
         {
             if (other.gameObject.CompareTag("ball"))
             {
-                if (isPuzlle) { coll.enabled = false; boss.BossHealthCont(); }
-
-                animator.SetTrigger(key);
+                if (isPuzlle) { coll.enabled = false; animator.Play(Eat,0); boss.BossHealthCont(); gameManager.AddScore(500); }
+                else
+                {
+                    animator.SetTrigger(key);
+                }
+                
 
                 source.PlayOneShot(clip);
             }

@@ -118,10 +118,18 @@ namespace PinBall
             }
             else
             {
-                rb.isKinematic = false;
-                rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
-                //ball.transform.position = to;
-                KickBall();
+                if (!currents.transforming)
+                {
+                    rb.isKinematic = false;
+                    rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+                    //ball.transform.position = to;
+                    KickBall();
+                }
+                else
+                {
+                    ball.transform.position = toMainSpawnPosition;
+                }
+                
             }
 
             rb.isKinematic = false;

@@ -1,5 +1,4 @@
 using System.Collections;
-
 using UnityEngine;
 namespace PinBall {
     public class CollCheck : MonoBehaviour
@@ -51,10 +50,11 @@ namespace PinBall {
         public virtual void ScoreAndAction()
         {
             //col.enabled = false;
-      
-                col.enabled = false;
-         
-           
+
+            //col.enabled = false;
+            StartCoroutine(ColorIsWaiting());
+               
+
             //gameManager.AddHit(1);
         }
       

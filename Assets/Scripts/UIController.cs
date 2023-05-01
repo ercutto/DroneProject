@@ -14,15 +14,21 @@ namespace PinBall
             TriggerButton,
             triggerContainer,
             UiAnimation,
-            startPanel;
+            startPanel,
+            buttonUI,
+            UiCamera
+            ;
         public bool isPushed;
+        public bool AddMobVideoIsPlayed;
         public Text fps;
         public AudioSource audioSource;
         public AudioSource HandlesAndHigVolumes;
         public AudioClip _clip,wellcome,keepers;
-        
+        public ChangeCurrents changeCurrents;
         WaitForSeconds delay =new WaitForSeconds(3f);
-       
+        WaitForSeconds buttonTime =new WaitForSeconds(3f);
+        public Button[] buttons;
+
 
         // Start is called before the first frame update
         void Start()
@@ -40,22 +46,45 @@ namespace PinBall
         }
         public void StartGame()//and Restart
         {
-            if (!isPushed) { isPushed = true; if (isPushed) { PlaySounds( audioSource, _clip); ActiveOrFalse(startPanel); ActiveOrFalse(UiAnimation); StartCoroutine(nameof(StartAfterTime), StartUI);} }
+            if (!isPushed) { isPushed = true; if (isPushed) { PlaySounds( audioSource, _clip);
+                    ActiveOrFalse(startPanel);
+                    StartCoroutine(nameof(StartAfterTime), UiCamera);
+                    StartCoroutine(nameof(StartAfterTime), buttonUI); 
+                    ActiveOrFalse(UiAnimation);
+                    StartCoroutine(nameof(StartAfterTime), StartUI);} }
            
             
             
 
         }
+        //public void ContinueGameAfterRevard()
+        //{
+        //    gameManager.PlayerSelectToContinue();
+        //}
         public void RestartGame()
         {
 
-            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(audioSource, _clip); StartCoroutine(nameof(StartAfterTime), GameOverUI); } }
+            if(!isPushed){ isPushed = true; if(isPushed) { PlaySounds(audioSource, _clip); StartCoroutine(nameof(RestartAfterTime), GameOverUI);
+                    StartCoroutine(nameof(RestartAfterTime), buttonUI);
+                    StartCoroutine(nameof(RestartAfterTime), UiCamera);
+                }
+        }
                 
                 
         }
-        IEnumerator StartAfterTime(GameObject obj)
+        IEnumerator RestartAfterTime(GameObject obj)
         {
             gameManager.ResetGameVariables();
+            changeCurrents.SetBack();
+            yield return delay;
+            ActiveOrFalse(obj);
+            
+            PlaySounds(audioSource, wellcome);
+            isPushed = false;
+        }
+        IEnumerator StartAfterTime(GameObject obj)
+        {
+            gameManager.ResetGameVariables();      
             yield return delay;
             ActiveOrFalse(obj);
             PlaySounds(audioSource, wellcome);
@@ -78,9 +107,21 @@ namespace PinBall
         {
             source.PlayOneShot(clip);
         }
-       
-        
+        //Enables buttons after coroutine
+        public void SetBackButtons()
+        {
+            StartCoroutine(SetBackButtonsTime());
+        }
+        IEnumerator SetBackButtonsTime()
+        {
+            yield return buttonTime;
+            foreach (var allButtons in buttons)
+            {
+                allButtons.enabled = true;
+            }
+        }
 
+       
 
     }
 }
