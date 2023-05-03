@@ -27,7 +27,7 @@ namespace PinBall
         public bool _editing;
         private Reflector reflector = null;
         private Keepers keepers = null;
-        private float speed=1f;
+        //private float speed=1f;
         //private string _refTag = "ref";
         private string _kepTag = "keeper";
         private string _hit = "hit";
