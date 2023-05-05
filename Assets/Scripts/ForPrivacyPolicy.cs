@@ -37,7 +37,7 @@ namespace PinBall
         public void MoreInformation()
         {
            
-            Application.OpenURL("https://policies.google.com/privacy");
+            Application.OpenURL("https://ercuttogamelay.blogspot.com/2023/05/pixeldev-in-our-apps-and-games-we-use.html");
         }
         public void AcceptAll(int currentState)
         {

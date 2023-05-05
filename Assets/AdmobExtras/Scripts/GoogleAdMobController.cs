@@ -69,10 +69,10 @@ namespace PinBall
             // the main thread.
             // In this example we use MobileAdsEventExecutor to schedule these calls on
             // the next Update() loop.
-            //MobileAdsEventExecutor.ExecuteInUpdate(() =>
-            //{
-            //    statusText.text = "Initialization complete.";
-            //});
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
+                statusText.text = "Initialization complete.";
+            });
         }
 
         private void Update()
