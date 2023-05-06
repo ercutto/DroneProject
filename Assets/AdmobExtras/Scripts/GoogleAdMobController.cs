@@ -63,7 +63,7 @@ namespace PinBall
 
         private void HandleInitCompleteAction(InitializationStatus initstatus)
         {
-            Debug.Log("Initialization complete.");
+            //Debug.Log("Initialization complete.");
 
             // Callbacks from GoogleMobileAds are not guaranteed to be called on
             // the main thread.
@@ -77,17 +77,17 @@ namespace PinBall
 
         private void Update()
         {
-            if (showFpsMeter)
-            {
-                fpsMeter.gameObject.SetActive(true);
-                deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-                float fps = 1.0f / deltaTime;
-                fpsMeter.text = string.Format("{0:0.} fps", fps);
-            }
-            else
-            {
-                fpsMeter.gameObject.SetActive(false);
-            }
+            //if (showFpsMeter)
+            //{
+            //    fpsMeter.gameObject.SetActive(true);
+            //    deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+            //    float fps = 1.0f / deltaTime;
+            //    fpsMeter.text = string.Format("{0:0.} fps", fps);
+            //}
+            //else
+            //{
+            //    fpsMeter.gameObject.SetActive(false);
+            //}
         }
 
         #endregion
@@ -171,7 +171,7 @@ namespace PinBall
                 PrintStatus(msg);
             };
 
-            // Load a banner ad
+            //Load a banner ad
             bannerView.LoadAd(CreateAdRequest());
         }
 

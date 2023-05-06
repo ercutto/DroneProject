@@ -27,7 +27,7 @@ namespace PinBall
         public bool _editing;
         private Reflector reflector = null;
         private Keepers keepers = null;
-        private float speed=1f;
+        //private float speed=1f;
         //private string _refTag = "ref";
         private string _kepTag = "keeper";
         private string _hit = "hit";
@@ -39,9 +39,9 @@ namespace PinBall
         Vector3 velocity=new Vector3(3f,3f,3f);
         public float speedMultiplier = 25f;
         private GameObject currentReflector;
-        private int lOrR =1;
+        private int lOrR =2;
+        private float count;
         
-       
 
 
         //float ySpeed;
@@ -59,6 +59,7 @@ namespace PinBall
             addSpeed = 2;
             pushing = false;
             relased = false;
+            count = 0;
             //ySpeed = 0;
             mechanics = GameObject.FindGameObjectWithTag("mech").GetComponent<Mechanics>();
             Invoke(nameof(StartGame), startTime);
@@ -294,11 +295,28 @@ namespace PinBall
         }
         void IfBallStuck()
         {
-            lOrR = Random.Range(-lOrR, lOrR);
-            Rb.AddForce(Vector3.right * lOrR, ForceMode.Impulse);
+            if (count < 1)
+            {
+                count += Time.deltaTime;
+                if (count >= 1)
+                {
+                    lOrR = Random.Range(-lOrR, lOrR);
+                    EffectToBall();
+
+                }
+                
+            }
+
+            
+            
 
            
 
+        }
+        void EffectToBall()
+        {
+            Rb.AddForce(Vector3.right * lOrR, ForceMode.Impulse);
+            count = 0;
         }
 
     }

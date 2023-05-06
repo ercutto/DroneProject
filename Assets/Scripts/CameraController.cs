@@ -66,10 +66,14 @@ namespace PinBall
         void CurrentCamPos()
         {
             lookPos = Quaternion.Lerp(cam.transform.rotation, next, 5f * Time.deltaTime).normalized;
+   
             MovePos = Vector3.MoveTowards(cam.transform.position, nextMove, 10f * Time.deltaTime);
             camRb.MovePosition(MovePos);
             camRb.MoveRotation(lookPos);
             camTookPos = (camRb.position == nextMove && camRb.rotation == next);
+
+
+            
         }
         void FollowBall()
         {
