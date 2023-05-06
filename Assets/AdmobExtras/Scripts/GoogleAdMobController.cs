@@ -63,7 +63,7 @@ namespace PinBall
 
         private void HandleInitCompleteAction(InitializationStatus initstatus)
         {
-            Debug.Log("Initialization complete.");
+            //Debug.Log("Initialization complete.");
 
             // Callbacks from GoogleMobileAds are not guaranteed to be called on
             // the main thread.
@@ -171,7 +171,7 @@ namespace PinBall
                 PrintStatus(msg);
             };
 
-            // Load a banner ad
+            //Load a banner ad
             bannerView.LoadAd(CreateAdRequest());
         }
 
