@@ -71,7 +71,7 @@ namespace PinBall
             // the next Update() loop.
             MobileAdsEventExecutor.ExecuteInUpdate(() =>
             {
-                statusText.text = "Initialization complete.";
+                //statusText.text = "Initialization complete.";
             });
         }
 
@@ -107,7 +107,7 @@ namespace PinBall
 
         public void RequestBannerAd()
         {
-            PrintStatus("Requesting Banner ad.");
+            //PrintStatus("Requesting Banner ad.");
 
             // These ad units are configured to always serve test ads.
 #if UNITY_EDITOR
@@ -136,30 +136,30 @@ namespace PinBall
             // Add Event Handlers
             bannerView.OnBannerAdLoaded += () =>
             {
-                PrintStatus("Banner ad loaded.");
+                //PrintStatus("Banner ad loaded.");
                 OnAdLoadedEvent.Invoke();
             };
             bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
             {
-                PrintStatus("Banner ad failed to load with error: " + error.GetMessage());
+                //PrintStatus("Banner ad failed to load with error: " + error.GetMessage());
                 OnAdFailedToLoadEvent.Invoke();
             };
             bannerView.OnAdImpressionRecorded += () =>
             {
-                PrintStatus("Banner ad recorded an impression.");
+                //PrintStatus("Banner ad recorded an impression.");
             };
             bannerView.OnAdClicked += () =>
             {
-                PrintStatus("Banner ad recorded a click.");
+                //PrintStatus("Banner ad recorded a click.");
             };
             bannerView.OnAdFullScreenContentOpened += () =>
             {
-                PrintStatus("Banner ad opening.");
+                //PrintStatus("Banner ad opening.");
                 OnAdOpeningEvent.Invoke();
             };
             bannerView.OnAdFullScreenContentClosed += () =>
             {
-                PrintStatus("Banner ad closed.");
+                //PrintStatus("Banner ad closed.");
                 OnAdClosedEvent.Invoke();
             };
             bannerView.OnAdPaid += (AdValue adValue) =>
@@ -189,7 +189,7 @@ namespace PinBall
 
         public void RequestAndLoadInterstitialAd()
         {
-            PrintStatus("Requesting Interstitial ad.");
+            //PrintStatus("Requesting Interstitial ad.");
 
 #if UNITY_EDITOR
             string adUnitId = "unused";
@@ -213,41 +213,41 @@ namespace PinBall
                 {
                     if (loadError != null)
                     {
-                        PrintStatus("Interstitial ad failed to load with error: " +
-                            loadError.GetMessage());
+                        //PrintStatus("Interstitial ad failed to load with error: " +
+                         //   loadError.GetMessage());
                         return;
                     }
                     else if (ad == null)
                     {
-                        PrintStatus("Interstitial ad failed to load.");
+                        //PrintStatus("Interstitial ad failed to load.");
                         return;
                     }
 
-                    PrintStatus("Interstitial ad loaded.");
+                    //PrintStatus("Interstitial ad loaded.");
                     interstitialAd = ad;
 
                     ad.OnAdFullScreenContentOpened += () =>
                     {
-                        PrintStatus("Interstitial ad opening.");
+                        //PrintStatus("Interstitial ad opening.");
                         OnAdOpeningEvent.Invoke();
                     };
                     ad.OnAdFullScreenContentClosed += () =>
                     {
-                        PrintStatus("Interstitial ad closed.");
+                        //PrintStatus("Interstitial ad closed.");
                         OnAdClosedEvent.Invoke();
                     };
                     ad.OnAdImpressionRecorded += () =>
                     {
-                        PrintStatus("Interstitial ad recorded an impression.");
+                        //PrintStatus("Interstitial ad recorded an impression.");
                     };
                     ad.OnAdClicked += () =>
                     {
-                        PrintStatus("Interstitial ad recorded a click.");
+                        //PrintStatus("Interstitial ad recorded a click.");
                     };
                     ad.OnAdFullScreenContentFailed += (AdError error) =>
                     {
-                        PrintStatus("Interstitial ad failed to show with error: " +
-                                    error.GetMessage());
+                        //PrintStatus("Interstitial ad failed to show with error: " +
+                                    //error.GetMessage());
                     };
                     ad.OnAdPaid += (AdValue adValue) =>
                     {
@@ -268,7 +268,7 @@ namespace PinBall
             }
             else
             {
-                PrintStatus("Interstitial ad is not ready yet.");
+                //PrintStatus("Interstitial ad is not ready yet.");
             }
         }
 
@@ -286,7 +286,7 @@ namespace PinBall
 
         public void RequestAndLoadRewardedAd()
         {
-            PrintStatus("Requesting Rewarded ad.");
+           // PrintStatus("Requesting Rewarded ad.");
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
@@ -303,42 +303,42 @@ namespace PinBall
                 {
                     if (loadError != null)
                     {
-                        PrintStatus("Rewarded ad failed to load with error: " +
-                                    loadError.GetMessage());
+                        //PrintStatus("Rewarded ad failed to load with error: " +
+                         //           loadError.GetMessage());
                         return;
                     }
                     else if (ad == null)
                     {
-                        PrintStatus("Rewarded ad failed to load.");
+                       // PrintStatus("Rewarded ad failed to load.");
                         return;
                     }
 
-                    PrintStatus("Rewarded ad loaded.");
+                    //PrintStatus("Rewarded ad loaded.");
                     rewardedAd = ad;
                     ShowRewardedAd();
 
                     ad.OnAdFullScreenContentOpened += () =>
                     {
-                        PrintStatus("Rewarded ad opening.");
+                        //PrintStatus("Rewarded ad opening.");
                         OnAdOpeningEvent.Invoke();
                     };
                     ad.OnAdFullScreenContentClosed += () =>
                     {
-                        PrintStatus("Rewarded ad closed.");
+                        //PrintStatus("Rewarded ad closed.");
                         OnAdClosedEvent.Invoke();
                     };
                     ad.OnAdImpressionRecorded += () =>
                     {
-                        PrintStatus("Rewarded ad recorded an impression.");
+                        //PrintStatus("Rewarded ad recorded an impression.");
                     };
                     ad.OnAdClicked += () =>
                     {
-                        PrintStatus("Rewarded ad recorded a click.");
+                        //PrintStatus("Rewarded ad recorded a click.");
                     };
                     ad.OnAdFullScreenContentFailed += (AdError error) =>
                     {
-                        PrintStatus("Rewarded ad failed to show with error: " +
-                                   error.GetMessage());
+                        //PrintStatus("Rewarded ad failed to show with error: " +
+                           //        error.GetMessage());
                     };
                     ad.OnAdPaid += (AdValue adValue) =>
                     {
@@ -366,13 +366,13 @@ namespace PinBall
             }
             else
             {
-                PrintStatus("Rewarded ad is not ready yet.");
+                //PrintStatus("Rewarded ad is not ready yet.");
             }
         }
 
         public void RequestAndLoadRewardedInterstitialAd()
         {
-            PrintStatus("Requesting Rewarded Interstitial ad.");
+            //PrintStatus("Requesting Rewarded Interstitial ad.");
 
             // These ad units are configured to always serve test ads.
 #if UNITY_EDITOR
@@ -391,41 +391,41 @@ namespace PinBall
                 {
                     if (loadError != null)
                     {
-                        PrintStatus("Rewarded intersitial ad failed to load with error: " +
-                                    loadError.GetMessage());
+                        //PrintStatus("Rewarded intersitial ad failed to load with error: " +
+                        //            loadError.GetMessage());
                         return;
                     }
                     else if (ad == null)
                     {
-                        PrintStatus("Rewarded intersitial ad failed to load.");
+                        //PrintStatus("Rewarded intersitial ad failed to load.");
                         return;
                     }
 
-                    PrintStatus("Rewarded interstitial ad loaded.");
+                    //PrintStatus("Rewarded interstitial ad loaded.");
                     rewardedInterstitialAd = ad;
 
                     ad.OnAdFullScreenContentOpened += () =>
                     {
-                        PrintStatus("Rewarded intersitial ad opening.");
+                        //PrintStatus("Rewarded intersitial ad opening.");
                         OnAdOpeningEvent.Invoke();
                     };
                     ad.OnAdFullScreenContentClosed += () =>
                     {
-                        PrintStatus("Rewarded intersitial ad closed.");
+                        //PrintStatus("Rewarded intersitial ad closed.");
                         OnAdClosedEvent.Invoke();
                     };
                     ad.OnAdImpressionRecorded += () =>
                     {
-                        PrintStatus("Rewarded intersitial ad recorded an impression.");
+                        //PrintStatus("Rewarded intersitial ad recorded an impression.");
                     };
                     ad.OnAdClicked += () =>
                     {
-                        PrintStatus("Rewarded intersitial ad recorded a click.");
+                        //PrintStatus("Rewarded intersitial ad recorded a click.");
                     };
                     ad.OnAdFullScreenContentFailed += (AdError error) =>
                     {
-                        PrintStatus("Rewarded intersitial ad failed to show with error: " +
-                                    error.GetMessage());
+                        //PrintStatus("Rewarded intersitial ad failed to show with error: " +
+                        //            error.GetMessage());
                     };
                     ad.OnAdPaid += (AdValue adValue) =>
                     {
@@ -449,7 +449,7 @@ namespace PinBall
             }
             else
             {
-                PrintStatus("Rewarded Interstitial ad is not ready yet.");
+                //PrintStatus("Rewarded Interstitial ad is not ready yet.");
             }
         }
 
