@@ -18,7 +18,7 @@ namespace PinBall
         // Start is called before the first frame update
         public void Awake()
         {
-            PlayerPrefs.SetInt("trackOrNot", 0);
+            //PlayerPrefs.SetInt("trackOrNot", 0);
             trackOrNot = PlayerPrefs.GetInt("trackOrNot", trackOrNot);
             if (trackOrNot == 1)
             {

@@ -28,6 +28,7 @@ namespace PinBall
         WaitForSeconds delay =new WaitForSeconds(3f);
         WaitForSeconds buttonTime =new WaitForSeconds(3f);
         public Button[] buttons;
+       
 
 
         // Start is called before the first frame update
@@ -120,7 +121,16 @@ namespace PinBall
                 allButtons.enabled = true;
             }
         }
+        public void DisableButton()
+        {
+            foreach (var allButtons in buttons)
+            {
+                allButtons.enabled = false;
+            }
 
+        }
+        
+    
        
 
     }

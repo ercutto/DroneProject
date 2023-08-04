@@ -75,20 +75,20 @@ namespace PinBall
             });
         }
 
-        private void Update()
-        {
-            //if (showFpsMeter)
-            //{
-            //    fpsMeter.gameObject.SetActive(true);
-            //    deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-            //    float fps = 1.0f / deltaTime;
-            //    fpsMeter.text = string.Format("{0:0.} fps", fps);
-            //}
-            //else
-            //{
-            //    fpsMeter.gameObject.SetActive(false);
-            //}
-        }
+        //private void Update()
+        //{
+        //    //if (showFpsMeter)
+        //    //{
+        //    //    fpsMeter.gameObject.SetActive(true);
+        //    //    deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+        //    //    float fps = 1.0f / deltaTime;
+        //    //    fpsMeter.text = string.Format("{0:0.} fps", fps);
+        //    //}
+        //    //else
+        //    //{
+        //    //    fpsMeter.gameObject.SetActive(false);
+        //    //}
+        //}
 
         #endregion
 
@@ -111,10 +111,10 @@ namespace PinBall
 
             // These ad units are configured to always serve test ads.
 #if UNITY_EDITOR
-            string adUnitId = "unused";
+            string adUnitId = "ca-app-pub-3940256099942544/6300978111";
 #elif UNITY_ANDROID
 
-        string adUnitId = "ca-app-pub-3801799039994541~9753091071";
+        string adUnitId = "ca-app-pub-3801799039994541/2287369251";
 #elif UNITY_IPHONE
 
         string adUnitId = "ca-app-pub-3801799039994541~4902662025";
@@ -287,10 +287,19 @@ namespace PinBall
         public void RequestAndLoadRewardedAd()
         {
            // PrintStatus("Requesting Rewarded ad.");
+//#if UNITY_EDITOR
+//            string adUnitId = "unused";
+//#elif UNITY_ANDROID
+//        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+//#elif UNITY_IPHONE
+//        string adUnitId = "ca-app-pub-3940256099942544/1712485313";
+//#else
+//        string adUnitId = "unexpected_platform";
+//#endif
 #if UNITY_EDITOR
-            string adUnitId = "unused";
+            string adUnitId = "ca-app-pub-3940256099942544/5354046379";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        string adUnitId = "ca-app-pub-3801799039994541/6745489011";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
@@ -384,6 +393,15 @@ namespace PinBall
 #else
             string adUnitId = "unexpected_platform";
 #endif
+            //#if UNITY_EDITOR
+            //            string adUnitId = "ca-app-pub-3801799039994541/6745489011";
+            //#elif UNITY_ANDROID
+            //            string adUnitId = "ca-app-pub-3801799039994541/6745489011";
+            //#elif UNITY_IPHONE
+            //            string adUnitId = "ca-app-pub-3940256099942544/6978759866";
+            //#else
+            //            string adUnitId = "unexpected_platform";
+            //#endif
 
             // Create a rewarded interstitial.
             RewardedInterstitialAd.Load(adUnitId, CreateAdRequest(),

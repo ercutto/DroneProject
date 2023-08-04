@@ -23,6 +23,9 @@ namespace PinBall
         public UIController uIController;
         public ForgeGarbages forgeGarbages;
         public ChangeCurrents changeCurrents;
+        //Check here if commercial is not playing
+        private bool rewardShowed;
+        //private bool rewardCanceled;
 
         public Image ballHitBar;
         public Image BossHealthBar;
@@ -70,7 +73,8 @@ namespace PinBall
             //    table.transform.Rotate(-45, 0, 0);
             //}
             //Application.targetFrameRate = 60;
-            
+            rewardShowed = false;
+            //rewardCanceled = false;
 
         }
 
@@ -197,6 +201,7 @@ namespace PinBall
                 Invoke(nameof(SpawningBall),3);
                 restarter.RestartAll();
                 //countOfHit = 0;
+                rewardShowed= false;
             }
             else
             {
@@ -319,6 +324,7 @@ namespace PinBall
                 revardCountFinished = false;
                 rewardMaxCount-=rewardCount;
                 rewardCoundText.text = rewardMaxCount.ToString();
+                
             }
             else
             {
@@ -340,6 +346,7 @@ namespace PinBall
                 BallCount(-1);
                 mechanics.isMainBallSpawned = false;
                 mechanics.Spawnball_Main();
+                rewardShowed = true;
             }
            
         }
@@ -361,9 +368,21 @@ namespace PinBall
         }
         public void CallRewardVideo()
         {
-            if (revardCountFinished) { return; }
-            else {googleAdMobController.RequestAndLoadRewardedAd(); }
+            if (!rewardShowed)
+            {
+                if (revardCountFinished) { return; }
+                else { googleAdMobController.RequestAndLoadRewardedAd(); }
+
+            }
+           
+            
+
         }
+        //IEnumerator RewardButtonClicked()
+        //{
+        //    yield return new WaitForSeconds(10);
+            
+        //}
         #endregion
     }
 }
